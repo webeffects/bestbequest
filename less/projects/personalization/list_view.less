@@ -1,0 +1,103 @@
+/* List View -------------------------------- */
+// This file makes the tables that are presented as list view, listing
+// treatments, effectiveness, evidence rating, strong match
+// Note that list view can contain either treatment summary or survey.
+/* ------------------------------------------ */
+
+// backbone ID that populates table is list-container
+#list-container {
+    clear: both;
+}
+
+#personalization[data-view="list_view"] {
+    aside {
+        h2 {
+            display: none;
+        }
+    }
+    table {
+        td {
+            [data-evidence-bubble]{
+                //margin: 0 auto;
+                margin-left: 2em;
+            }
+            [data-match-strength]{
+                margin-left: 1em;
+            }
+            p {
+                padding-top: (@font-size-base * 0.25);
+            }
+        }
+        p {
+            .mixin_font_subtext;
+            margin-bottom: 0;
+        }
+        [data-radial] {
+            float: left;
+            margin-right: (@font-size-base * 1);
+        }
+    }
+    th {
+        [data-sort="ascending"] {
+            span {
+                 .icon-arrow-triangle-up;
+            }
+        }
+        [data-sort="descending"] {
+            span {
+                 .icon-arrow-triangle-down;
+            }
+        }
+        a {
+            &[data-active="true"] {
+            }
+            &[data-active="false"] {
+                color: @mwh_color_text;
+            }
+        }
+    }
+    tbody {
+        tr {
+            // clicking on table rows will load the treatments
+            &:hover {
+                background-color: @mwh_grey_light;
+                cursor: pointer;
+
+                p {
+                    color: @mwh_color_links;
+                }
+            }
+        }
+        // when user selects treatment, whole table row is highlighted
+        [data-selected="true"] {
+            background-color: @mwh_grey_light;
+
+            &:hover {
+                cursor: not-allowed;
+
+                p {
+                    color: @mwh_color_text;
+                }
+            }
+            td {
+                border-top-color: @mwh_color_figures;
+
+                &:first-child {
+                    border-left: 0.1em solid @mwh_color_figures;
+                }
+                &:last-child {
+                    border-right: 0.1em solid @mwh_color_figures;
+                }
+            }
+            & + tr td {
+                border-top-color: @mwh_color_figures;
+            }
+            &:last-of-type {
+                td {
+                    border-bottom: 0.1em solid @mwh_color_figures;
+                }
+            }
+        }
+    }
+
+}

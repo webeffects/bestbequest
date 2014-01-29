@@ -1,0 +1,176 @@
+/* Graphs pie ------------ */
+// Graphs pie to list view for Effectiveness
+/* ------------------------------------------ */
+
+
+//mixin for graphs pies
+.graphic_gauge (@x:0px, @y:0px){
+	// background: url("../images/personalization/pie_chart.png")  no-repeat;
+	background-position: @x @y;
+	width: 20px;
+	height: 20px;
+}
+[data-radial] {
+    background: url("../images/personalization/pie_chart.png")  no-repeat;
+}
+@media  only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+    [data-radial] {
+        background: url("../images/personalization/pie_chart_retina.png")  no-repeat;
+        background-size: 15em 33.5em;
+    }
+}
+
+
+[data-radial], [data-radial="0"] {
+	.graphic_gauge(-0.5em, -1em);
+}
+[data-radial="1"], [data-radial="2"] {
+	.graphic_gauge(-0.5em, -4em);
+}
+[data-radial="3"], [data-radial="4"] {
+	.graphic_gauge(-3.5em, -4em);
+}
+[data-radial="5"], [data-radial="6"] {
+	.graphic_gauge(-6.5em, -4em);
+}
+[data-radial="7"], [data-radial="8"] {
+	.graphic_gauge(-9.5em, -4em);
+}
+[data-radial="9"], [data-radial="10"] {
+	.graphic_gauge(-12.5em, -4em);
+}
+[data-radial="11"], [data-radial="12"] {
+	.graphic_gauge(-0.5em, -7em);
+}
+[data-radial="13"], [data-radial="14"] {
+	.graphic_gauge(-3.5em, -7em);
+}
+[data-radial="15"], [data-radial="16"] {
+	.graphic_gauge(-6.5em, -7em);
+}
+[data-radial="17"], [data-radial="18"] {
+	.graphic_gauge(-9.5em, -7em);
+}
+[data-radial="19"], [data-radial="20"] {
+	.graphic_gauge(-12.5em, -7em);
+}
+[data-radial="21"], [data-radial="22"] {
+	.graphic_gauge(-0.5em, -10em);
+}
+[data-radial="23"], [data-radial="24"] {
+	.graphic_gauge(-3.5em, -10em);
+}
+[data-radial="25"], [data-radial="26"] {
+	.graphic_gauge(-6.5em, -10em);
+}
+[data-radial="27"], [data-radial="28"] {
+	.graphic_gauge(-9.5em, -10em);
+}
+[data-radial="29"], [data-radial="30"] {
+	.graphic_gauge(-12.5em, -10em);
+}
+[data-radial="21"], [data-radial="32"] {
+	.graphic_gauge(-0.5em, -13em);
+}
+[data-radial="33"], [data-radial="34"] {
+	.graphic_gauge(-3.5em, -13em);
+}
+[data-radial="35"], [data-radial="36"] {
+	.graphic_gauge(-6.5em, -13em);
+}
+[data-radial="37"], [data-radial="38"] {
+	.graphic_gauge(-9.5em, -13em);
+}
+[data-radial="39"], [data-radial="40"] {
+	.graphic_gauge(-12.5em, -13em);
+}
+[data-radial="41"], [data-radial="42"] {
+	.graphic_gauge(-0.5em, -16em);
+}
+[data-radial="43"], [data-radial="44"] {
+	.graphic_gauge(-3.5em, -16em);
+}
+[data-radial="45"], [data-radial="46"] {
+	.graphic_gauge(-6.5em, -16em);
+}
+[data-radial="47"], [data-radial="48"] {
+	.graphic_gauge(-9.5em, -16em);
+}
+[data-radial="49"], [data-radial="50"] {
+	.graphic_gauge(-12.5em, -16em);
+}
+[data-radial="51"], [data-radial="52"] {
+	.graphic_gauge(-0.5em, -19em);
+}
+[data-radial="53"], [data-radial="54"] {
+	.graphic_gauge(-3.5em, -19em);
+}
+[data-radial="55"], [data-radial="56"] {
+	.graphic_gauge(-6.5em, -19em);
+}
+[data-radial="57"], [data-radial="58"] {
+	.graphic_gauge(-9.5em, -19em);
+}
+[data-radial="59"], [data-radial="60"] {
+	.graphic_gauge(-12.5em, -19em);
+}
+[data-radial="61"], [data-radial="62"] {
+	.graphic_gauge(-0.5em, -22em);
+}
+[data-radial="63"], [data-radial="64"] {
+	.graphic_gauge(-3.5em, -22em);
+}
+[data-radial="65"], [data-radial="66"] {
+	.graphic_gauge(-6.5em, -22em);
+}
+[data-radial="67"], [data-radial="68"] {
+	.graphic_gauge(-9.5em, -22em);
+}
+[data-radial="69"], [data-radial="70"] {
+	.graphic_gauge(-12.5em, -22em);
+}
+[data-radial="71"], [data-radial="72"] {
+	.graphic_gauge(-0.5em, -25em);
+}
+[data-radial="73"], [data-radial="74"] {
+	.graphic_gauge(-3.5em, -25em);
+}
+[data-radial="75"], [data-radial="76"] {
+	.graphic_gauge(-6.5em, -25em);
+}
+[data-radial="77"], [data-radial="78"] {
+	.graphic_gauge(-9.5em, -25em);
+}
+[data-radial="79"], [data-radial="80"] {
+	.graphic_gauge(-12.5em, -25em);
+}
+[data-radial="81"], [data-radial="82"] {
+	.graphic_gauge(-0.5em, -28em);
+}
+[data-radial="83"], [data-radial="84"] {
+	.graphic_gauge(-3.5em, -28em);
+}
+[data-radial="85"], [data-radial="86"] {
+	.graphic_gauge(-6.5em, -28em);
+}
+[data-radial="87"], [data-radial="88"] {
+	.graphic_gauge(-9.5em, -28em);
+}
+[data-radial="89"], [data-radial="90"] {
+	.graphic_gauge(-12.5em, -28em);
+}
+[data-radial="91"], [data-radial="92"] {
+	.graphic_gauge(-0.5em, -31em);
+}
+[data-radial="93"], [data-radial="94"] {
+	.graphic_gauge(-3.5em, -31em);
+}
+[data-radial="95"], [data-radial="96"] {
+	.graphic_gauge(-6.5em, -31em);
+}
+[data-radial="97"], [data-radial="98"] {
+	.graphic_gauge(-9.5em, -31em);
+}
+[data-radial="99"], [data-radial="100"] {
+	.graphic_gauge(-12.5em, -31em);
+}

@@ -1,0 +1,72 @@
+/* Home Page styling */
+/*
+    This defines the style for Home Page.
+    Element html can be found in nagini/src/js/nagini/templates/home.hbs
+    Style variables can be found in archery/less/projects/humanization/humanization_variables.less under section HomePage Variables
+/*
+*/
+
+/* ------------------------- */
+/*  Begin Home Page  Banner  */
+/* ------------------------- */
+
+.home-banner {
+    background: url(../img/home_bg.jpg) no-repeat;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: 0 33%;
+    #mixin_nagini_size .font(1);
+    #mixin_nagini_size .margin-bottom(20);
+    .home-text {
+        .mixin_header_nagini(36);
+        padding: @home-jumbotron-text-margin;
+        font-weight: @home-jumbotron-text-weight;
+        color:@mwh_color_base;
+        #mixin_nagini_size .text-shadow(0, 1, 4, rgba(0,0,0, 0.5), 3.6);
+        i {
+            #mixin_nagini_size .font(5.8 / 3.6);
+            #mixin_nagini_size .margin-bottom(35, 5.8);
+            display: block;
+        }
+    }
+}
+
+
+
+/* Home Articles  styling */
+/*
+    This defines the style for home article and home video, which is positioned under the banner.
+    The home article html can be found under : .humanization .container .home-articles
+    Element class can be found in humanization/js/nagini/templates/home.hbs line 39
+    Style variables can be found in archery/less/projects/humanization/humanization_variables.less  under section Home Variables
+*/
+/* -------------------------- */
+/*  Begin Home Articles Style */
+/* -------------------------- */
+.humanization[role="main"] .home-article {
+    > header {
+        text-align: center;
+        padding: @home-article-header-spacing;
+        i {
+            #mixin_nagini_size .font(10);
+            #mixin_nagini_size .line-height(128, 7);
+            color: @home-article-header-icon-color;
+            display: block;
+            clear: both;
+        }
+        > h3 {
+            margin-top: 0;
+        }
+    }
+    p {
+        #mixin_nagini_size .font(1.8);
+        #mixin_nagini_size .line-height(25, 1.8);
+    }
+}
+
+.home-video {
+    padding: @home-video-spacing;
+}

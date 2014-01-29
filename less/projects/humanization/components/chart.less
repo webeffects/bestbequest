@@ -1,0 +1,71 @@
+// Jimmy: this file needs a description. Why does it exist?
+
+.top-treatments-chart-wrapper {
+    font-size: 10px;
+    border: 0.1em solid @brand-secondary;
+    padding: 0 0.5em 2em;
+
+    // Jimmy *** while these classes have generic names, this is OK, as they are
+    // nested under a very specific-named class, .top-treatments-chart-wrapper{}
+    .bullet {
+        .marker {
+            display: none;
+        }
+        .tick {
+            display: none;
+        }
+        .range.s0 {
+            fill: @brand-success;
+            height: 1.6em; }
+        .measure.s0 {
+            fill: lightsteelblue;
+            display: none;
+        }
+        .measure.s1 {
+            fill: steelblue;
+            display: none;
+        }
+        .title {
+            font-size: 2.6em;
+            font-weight: 100;
+            display: inline;
+            color:@mwh_color_text;
+        }
+        .subtitle {
+            fill: #000;
+            display: inline;
+            font-size: 1.4em;
+            font-weight: 100;
+        }
+        .bar {
+            background-color: @brand-success;
+            #mixin_nagini_size .height(16);
+        }
+        .scale {
+            position: absolute;
+            #mixin_nagini_position .top(5);
+            #mixin_nagini_size .width(1);
+            #mixin_nagini_size .height(18);
+            border-left: 0.1em solid @brand-secondary;
+        }
+        .scale-group-label {
+            display: inline-block;
+            color: @mwh_grey_medium;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .scale-value {
+            position: absolute;
+            #mixin_nagini_position .top(2);
+            font-weight: 100;
+        }
+
+    }
+    h5, h6 {
+        margin-top: 0;
+    }
+    h2 {
+        margin: 0.67em 0 0.33em;
+        padding: 0 0.5em;
+    }
+}

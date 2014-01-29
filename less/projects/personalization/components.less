@@ -1,0 +1,247 @@
+/* Components ------------------------------- */
+// This file creates reoccuring pieces on Personalization, that are too small to
+// merit having its own LESS file
+// If a component is too large to describe, consider making it a separate file.
+// That consideration is on an arbitrary level, per-case.
+/* ------------------------------------------ */
+
+#personalization {
+
+    // deals with popover styling. If all projects share similar styling, move
+    // to /archery/src/bootstrap/popovers.less
+    .popover {
+        .rounded_corners(0);
+    }
+    .popover_help {
+        // if a help icon triggers popover
+        &.icon-help {
+            &:link, &:visited {
+                color: @mwh_grey_medium;
+            }
+            &:hover {
+                color: @mwh_grey_medium_dark;
+            }
+        }
+    }
+    a.icon-help.popover_help {
+        color: @mwh_grey_medium;
+    }
+}
+
+// the toggle between explore (bullseye) and personalize (survey)
+#explore_personalize_toggle {
+
+    li {
+        padding: 0;
+        height: (@font-size-base * 5);
+    }
+    a {
+        display: block;
+        overflow: auto;
+        padding: (@font-size-base * 0.5) (@font-size-base * 1.5);
+        .rounded_corners((@font-size-base * 0.5));
+
+        &:focus {
+            outline: 0;
+        }
+
+        &[data-selected="true"], &[data-selected="false"]:hover {
+            color: @mwh_color_links;
+        }
+        &[data-selected="false"], &[data-selected="true"]:hover {
+            color: @mwh_grey_medium;
+        }
+        span:first-child {
+            width: 1em;
+            height: 1em;
+            margin: 0 0.166667em 0 0;
+            font-size: (@font-size-base * 3);
+            line-height: 1em;
+            // background-image: url("/static/placeholders/explore_personalization_toggle_sprites.png");
+            // background-size: 3em 12em;
+            // background-repeat: no-repeat;
+            // .icon-treatments-explore;
+        }
+        span:first-child + span {
+            .mixin_font_subheading;
+            line-height: 1.5em;
+            margin: 0;
+        }
+    }
+    // first child is bullseye
+    #toggle_explore {
+        span:first-child {
+            .icon-treatments-explore;
+        }
+    }
+    // second child is survey
+    #toggle_personalize {
+        span:first-child {
+            .icon-treatments-personalize;
+        }
+    }
+
+    span {
+        float: left;
+        display: block;
+    }
+    + hr {
+        margin-top: 0;
+    }
+    @media (min-width: @screen-md-min) {
+        #toggle_explore {
+            width: 14em;
+        }
+        // second child is survey
+        #toggle_personalize {
+            width: 17em;
+        }
+    }
+    @media (min-width: @screen-lg-min) {
+        #toggle_explore {
+            width: 50%;
+        }
+        // second child is survey
+        #toggle_personalize {
+            width: 50%;
+        }
+    }
+    @media (min-width: @screen-xl-min) {
+    }
+    @media @mwh_mq_ipad {
+        #toggle_explore {
+            width: 148px;
+        }
+        // second child is survey
+        #toggle_personalize {
+            width: 180px;
+        }
+    }
+}
+
+// the buttons that toggle between bullseye and list view
+#bullseye_list_toggle {
+    height: (@font-size-base * 5);
+
+    button {
+        .mixin_font_subheading;
+        line-height: 1.5em;
+        padding: (@font-size-base * 0.2) (@font-size-base * .95);
+        border-color: @mwh_grey_medium;
+
+        span {
+            display: block;
+            float: left;
+            margin-right: (@font-size-base * 0.25);
+        }
+    }
+    button[data-selected="true"] {
+        color: @mwh_color_base;
+        background-color: @mwh_color_links;
+        border-color: @mwh_color_links;
+        .inner-shadow ( 0, 0.1em, 0.2em, 0, 0.2 );
+    }
+    button[data-selected="false"] {
+        color: @mwh_color_text;
+        background-color: @mwh_grey_light;
+    }
+}
+
+// Legend Tables
+.personalization_legend {
+    #personalization > .row > section & h2 {
+        .mixin_font_subheading;
+        padding: (5em / @variable_font_subheading_multiplier) (15em / @variable_font_subheading_multiplier) (15em / @variable_font_subheading_multiplier);
+    }
+    h3 {
+        .mixin_font_standard;
+        font-weight: bold;
+    }
+    h4 {
+        .mixin_font_standard;
+    }
+    figure {
+        margin: 0 0 @font-size-base 0;
+        clear: both;
+        overflow: hidden;
+
+        [data-evidence-bubble], [data-match-strength],
+        [data-radial], [data-eligibility-coverage] {
+            float: left;
+            margin-right: @font-size-base;
+        }
+        [data-eligibility-coverage] {
+            margin-right: (@font-size-base * 0.5);
+        }
+        figcaption {
+            float: left;
+
+            p {
+                // padding-top: (@font-size-base * 0.25);
+            }
+        }
+    }
+    &.personalization_legend_horizontal {
+        figure {
+            clear: none;
+        }
+    }
+    &.personalization_legend_toggle {
+        h3 {
+            clear: both;
+            padding: 0 (15em / @variable_font_standard_multiplier);
+
+            .popover {
+                font-size: (10em / @variable_font_standard_multiplier);
+            }
+            .popover-content {
+                .mixin_font_subtext;
+            }
+        }
+        h4 {
+
+        }
+        small {
+            display: block;
+            clear: both;
+            padding: 0 (15em / @variable_font_subtext_multiplier);
+        }
+        figure {
+            margin: 0 0 0 0.5em;
+            padding: 0.4em 1.4em 0.4em 0.9em;
+            border: 0.1em solid @mwh_color_base;
+            .rounded_corners(0.5em);
+            float: left;
+            clear: both;
+
+            &:hover {
+                cursor: pointer;
+                border-color: @mwh_grey_medium_light;
+
+                p {
+                    color: @mwh_color_figures;
+                }
+            }
+            &[data-selected="true"] {
+                background-color: @mwh_grey_light;
+                border-color: @mwh_grey_medium_light;
+
+                &:hover {
+                    background-color: @mwh_color_base;
+                }
+                p {
+                }
+            }
+            & + h3 {
+                padding-top: (10em / @variable_font_standard_multiplier);
+            }
+        }
+    }
+    small + figure {
+        padding-top: (@font-size-base * 0.5);
+    }
+}
+.personalization_icon_fact {
+
+
+}

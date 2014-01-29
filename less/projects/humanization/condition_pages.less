@@ -1,0 +1,183 @@
+/* Condition Pages -------------------------- */
+// This file creates the styling specific Condition Pages.
+// Condition pages are a single-page format, with the following sections:
+// - Treatments (initial landing page)
+// - About
+// - Questions
+// - Questions
+// - Share
+/* ------------------------------------------ */
+.condition-buttons {
+    margin-left: 0;
+    margin-right: 0;
+    .btn {
+        float: left;
+    }
+}
+.humanization[role="main"] {
+    .condition-title {
+        position: relative;
+        #mixin_nagini_size .height(420);
+        background: url(../img/condition-title-bg.png) no-repeat;
+        a {
+            color: @mwh_color_text;
+        }
+        h2 {
+            position: absolute;
+            font-weight: 100;
+            #mixin_nagini_size .font(3.6);
+            .number {
+                #mixin_nagini_size .font(2.6/ 3.6);
+                #mixin_nagini_size .padding-right(10, 2.6);
+                #mixin_nagini_size .line-height(45, 2.6);
+                float: left;
+                color: @brand-secondary;
+            }
+            &.first-title {
+                #mixin_nagini_position .top(150, 3.6);
+                #mixin_nagini_position .left(45, 3.6);
+            }
+            &.second-title {
+                #mixin_nagini_position .top(20, 3.6);
+                #mixin_nagini_position .left(390, 3.6);
+            }
+            &.third-title {
+                #mixin_nagini_position .top(215, 3.6);
+                #mixin_nagini_position .left(405, 3.6);
+            }
+        }
+    }
+    .coming-soon {
+        margin: 0;
+        h1 {
+            #mixin_nagini_size .font(6.4);
+            #mixin_nagini_size .margin(120, 0, 10, 0, @divider: 6.4);
+        }
+        .nagini-condition-title {
+            font-weight: 700;
+            font-style: italic;
+        }
+        p a {
+            color:@mwh_color_text;
+            text-decoration: underline;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+.nagini-condition-nav {
+    position: absolute;
+    bottom: 12%;
+    #mixin_nagini_size .font(2.4);
+    #mixin_nagini_size .padding(10, 10, @divider: 2.4);
+    #mixin_nagini_size .border-radius(5, 2.4);
+    #mixin_nagini_size .text-shadow(0, 2, 2, rgba(0,0,0, 0.4), 2.4);
+    a {
+        color: @mwh_color_base;
+        #mixin_nagini_size .padding-right(15, 2.4);
+        i {
+            #mixin_nagini_size .padding-right(10, 2.4);
+        }
+    }
+}
+.condition-header {
+    #mixin_nagini_size .line-height(36, 2.4);
+    #mixin_nagini_size .margin-top(40,2.4);
+    position: absolute;
+    &.top-treatments {
+        bottom: 0;
+    }
+    i {
+        float: left;
+        color: #FDD42B;
+        font-size: 1.5em;
+        #mixin_nagini_size .padding-right(10, 3.6);
+        &:before {
+            #mixin_nagini_position .top(-9, 3.6);
+            position: relative;
+        }
+    }
+}
+
+.top-treatments-chart-buttons {
+    #mixin_nagini_size .height(87);
+    background: #DBF4F7;
+    #mixin_nagini_size .border-top-radius(5);
+    nav {
+        padding-top: 1em;
+        a {
+            color: @mwh_grey_medium_dark;
+            font-weight: 700;
+            #mixin_nagini_size .font(1.3);
+            #mixin_nagini_size .line-height(24, 1.3);
+            #mixin_nagini_size .padding(0, 10, @divider:1.3);
+            #mixin_nagini_size .margin-right(5, 1.3);
+            &:hover {
+                color: @brand-secondary;
+                text-decoration: none;
+            }
+            &.active {
+                #mixin_nagini .border(@width:2, @color: #48CBDE, @divider:1.3);
+                #mixin_nagini_size .border-radius(10, 1.3);
+                background: @mwh_color_base;
+                font-weight: 400;
+                text-decoration: none;
+            }
+        }
+    }
+}
+#treatments-risk {
+    #mixin_nagini_size .padding-top(30);
+    .general-population {
+        #mixin_nagini .border(@color:#000);
+        #mixin_nagini_size .height(10);
+        #mixin_nagini_size .margin-bottom(20);
+        border-bottom: none;
+        p {
+            padding: 0;
+            #mixin_nagini_size .margin-top(-20, 1.4);
+            #mixin_nagini_size .line-height(10, 1.4);
+        }
+    }
+    .bottom-treatments-risk {
+        width: 100%;
+        float: left;
+        .specific-population {
+            width: 70%;
+            float: left;
+            #mixin_nagini_size .margin-top(20);
+            #mixin_nagini_size .height(10);
+            #mixin_nagini .border(@color:#000);
+            border-top: 0;
+            p {
+                padding: 0;
+                #mixin_nagini_size .margin-top(20, 1.4);
+                #mixin_nagini_size .line-height(10, 1.4);
+            }
+        }
+        .nagini-icon-legend {
+            #mixin_nagini_size .font(1.4);
+            #mixin_nagini_size .padding-top(20, 1.4);
+            #mixin_nagini_size .line-height(24, 1.4);
+            i {
+                #mixin_nagini_size .font(1.4);
+                #mixin_nagini_size .margin-right(10, 1.4);
+            }
+        }
+    }
+    .people-row {
+        i {
+            float: left;
+            width: 10%;
+            color: lighten(@brand-secondary, 30%);
+            #mixin_nagini_size .font(7.5);
+            text-align: center;
+            &.active-icon {
+                color: @brand-secondary;
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,32 @@
+/* Footer stye */
+/*
+    This defines the style for Footer.
+    Element html can be found in nagini/src/js/nagini/templates/footer.hbs
+    Style variables can be found in archery/less/projects/humanization/humanization_variables.less under section Footer Variables
+/*
+*/
+
+/* -------------------- */
+/*  Begin Footer Style  */
+/* -------------------- */
+
+footer[role="contentinfo"]  {
+    min-height: 17.5em;
+    background-color: @brand-success;
+    #mixin_nagini_size .padding(30, 0, @divider:1);
+    h4{
+        color: @global-footer-header-color;
+        #mixin_nagini_size .font(1.4);
+        text-transform: @global-footer-header-style;
+    }
+    a {
+        color: @global-footer-link-color;
+        font-weight: lighter;
+        display: block;
+        #mixin_nagini_size .font(1.4);
+        #mixin_nagini_size .line-height(20, 1.4);
+    }
+    .brand-logo {
+        margin: 0;
+    }
+}

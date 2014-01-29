@@ -1,0 +1,81 @@
+/* Nagini Typography ------------------------ */
+// This file will defined the basic sizes for all headers or paragraphs from nagini
+// and it will also make them nagini specific
+/* ------------------------------------------ */
+.content-header {
+    color: @brand-primary;
+    font-weight: @content-header-weight;
+    line-height: @content-header-height;
+    margin: @content-header-margin;
+    [class*="icon"] {
+        font-size: @content-header-icon-size;
+        float: left;
+        padding-right: @content-header-icon-spacing;
+    }
+}
+
+.humanization[role="main"],
+.humanization-nav {
+    h1 {
+        .mixin_header_nagini(36);
+    }
+    h2 {
+        .mixin_header_nagini(30);
+    }
+    h3 {
+        .mixin_header_nagini(24);
+    }
+    h4 {
+        .mixin_header_nagini(18);
+        &.thin-header {
+            #mixin_nagini_size .margin-top(10, 1.8);
+        }
+    }
+    h5 {
+        .mixin_font_base_nagini;
+    }
+    h6 {
+        .mixin_header_nagini(12);
+    }
+    h3, h4 {
+        font-weight: 600;
+        margin-top: 1em;
+        margin-bottom: .5em;
+    }
+    h1 {
+        font-weight: 700;
+        margin-bottom: .83em;
+        margin-top: .55em;
+        i {
+            color: @brand-primary;
+            padding-right: 10px;
+        }
+    }
+    p {
+        #mixin_nagini_size .font();
+        #mixin_nagini_size .line-height(20, 1.4);
+    }
+    .thin-header {
+        font-weight: 400;
+    }
+    .thiner-header {
+        font-weight: 100;
+    }
+    .thick-header {
+        font-weight: 600;
+    }
+    .light-text {
+        color: @mwh_grey_medium;
+        font-weight: 100;
+    }
+    .content-header {
+        font-weight: 300;
+    }
+}
+.humanization[role="main"] {
+    li {
+        #mixin_nagini_size .font();
+        #mixin_nagini_size .margin(10, 20, @divider:1.4);
+        #mixin_nagini_size .line-height(20, 1.4);
+    }
+}

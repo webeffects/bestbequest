@@ -1,0 +1,75 @@
+/* Global Mixins ---------------------------- */
+// This file adds mixin classes that can be shared across all projects
+//
+// A mixin that will be used globally will have the preface, ".mixin_"
+//
+// Variables that will be used internally for just this file will have the
+// prefix, "@internal_"
+//
+// Variabes that can be used externally will have the prefix, "@variable_"
+/* ------------------------------------------ */
+
+// resets styling on buttons, thereby giving a flat design
+.mixin_button_reset {
+    margin: 0;
+    border-width: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+// Notice that we have separated the multiplier out of the font size definition.
+// The reason why we are taking this extra step is that it makes it much simpler
+// to define padding and borders without having to use REM values
+//
+// For example, if I make a <P> with a mixin .mixin_font_standard; and I require
+// that <P> to have a 1-pixel border, I can do:
+// border: (1em / @variable_font_standard_multiplier) solid #FFF;
+// another example: 2 pixel padding:
+// padding: (2em / @variable_font_standard_multiplier);// standard font size and leading
+
+// standard font size and leading for Humanization (14/20)
+@internal_font_base_nagini_leading: (@font-size-base * 1.42857142857);
+@variable_font_base_nagini_multiplier: 14;
+.mixin_font_base_nagini {
+    font-size: (@font-size-base * (@variable_font_base_nagini_multiplier / 10));
+    line-height: @internal_font_base_nagini_leading;
+    // margin: 0;
+}
+.mixin_font_base_nagini_margin {
+    margin: 0 0 @internal_font_base_nagini_leading 0;
+}
+
+// standard font size and leading for Personaliztion (15/20)
+@internal_font_standard_leading: (@font-size-base * 1.333333);
+@variable_font_standard_multiplier: 15;
+.mixin_font_standard {
+    font-size: (@font-size-base * (@variable_font_standard_multiplier / 10));
+    line-height: @internal_font_standard_leading;
+    margin: 0;
+}
+.mixin_font_standard_margin {
+    margin: 0 0 @internal_font_standard_leading 0;
+}
+
+// for subheadings
+@internal_font_subheading_leading: (@font-size-base * 1);
+@variable_font_subheading_multiplier: 20;
+.mixin_font_subheading {
+    font-size: (@font-size-base * (@variable_font_subheading_multiplier / 10));
+    line-height: @internal_font_subheading_leading;
+    margin: 0;
+}
+.mixin_font_subheading_margin {
+    margin: 0 0 @internal_font_subheading_leading 0;
+}
+
+// for smaller text such as notes, annotations, table entries
+@internal_font_subtext_leading: (@font-size-base * 1.25);
+@variable_font_subtext_multiplier: 12;
+.mixin_font_subtext {
+    font-size: (@font-size-base * (@variable_font_subtext_multiplier / 10));
+    line-height: @internal_font_subtext_leading;
+}
+.mixin_font_standard_subtext {
+    margin: 0 0 @internal_font_subtext_leading 0;
+}

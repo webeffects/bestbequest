@@ -1,0 +1,17 @@
+/* IE 7 & 8 Reset --------------------------- */
+// This file will handle MSIE browsers versions 7 and 8 as one entity.
+// Body class .ie7_8 {} is the target.
+// The primary consideration is that we will do away with liquid layout, which
+// will alleviate the majority of styling issues.
+// The expectation here is user is on a 1024 screen as most analytics have shown
+// that is the strongest correlation between resolution and older versions of IE
+// Rules rescinded: pixel sizing and !important declaration are allowable.
+/* ------------------------------------------ */
+
+.ie7_8 {
+    .container {
+        &[role="main"], &[role="navigation"] {
+            width: 984px;
+        }
+    }
+}

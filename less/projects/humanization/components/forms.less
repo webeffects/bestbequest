@@ -1,0 +1,115 @@
+/* Nagini Form styling */
+/*
+    This defines the style for Form elements.
+    Style variables can be found in archery/less/projects/humanization/humanization_variables.less under section Form Variables
+/*
+*/
+
+/* ------------------- */
+/*  Beg in Form Style  */
+/* ------------------- */
+
+
+.nagini_form[role="form"] {
+    margin: 0;
+    label, input, textarea {
+        display: block;
+        width: @form-field-width;
+    }
+    label {
+        font-weight: @label-weight;
+        #mixin_nagini_size .font(1.4);
+        #mixin_nagini_size .padding(20, 0, @divider:1.4);
+    }
+    input {
+        #mixin_nagini_size .font(1.8);
+        #mixin_nagini_size .height(36, 1.8) ;
+        #mixin_nagini_size .padding(0, 5, @divider: 1.8);
+        #mixin_nagini .border(@width: 1, @color: #CCC, @divider: 1.8);
+        #mixin_nagini_size .border-radius(4, 1.8);
+        font-weight: 300;
+        &:focus {
+            border-color: @brand-secondary;
+            outline: none;
+        }
+        &:invalid {
+            border-color: @brand-primary;
+        }
+    }
+    textarea {
+        #mixin_nagini_size .font(1.8);
+        #mixin_nagini_size .min-height(100, 1.8);
+        #mixin_nagini .border(@divider: 1.8);
+        #mixin_nagini_size .border-radius(4, 1.8);
+        #mixin_nagini_size .padding(5, @divider: 1.8);
+    }
+    .nagini-form-intro {
+        padding: 5% 0;
+        margin: 0;
+    }
+}
+
+// The following style defines all the button styles from nagini.
+// All of them will be under .nagini prefix and nested under this prefix, for better readability
+
+.nagini {
+    &_btn {
+        #mixin_nagini_size .font(1.8);
+        #mixin_nagini_size .margin(25, 0, 20, 0, 1.8);
+        #mixin_nagini_size .border-radius(4, 1.8);
+        font-weight: 300;
+        width: @form-field-width;
+        color: #FFF;
+    }
+    &_btn_danger {
+        background: @danger-background;
+    }
+    &_btn_larger {
+        #mixin_nagini_size .font(2.2);
+        #mixin_nagini_size .height(51, 2.2);
+        #mixin_nagini_size .padding(0, 20, @divider: 2.2);
+        #mixin_nagini_size .margin-right(10, 2.2);
+        #mixin_nagini_size .line-height(51, 2.2);
+        font-weight: 400;
+        width: auto;
+        i {
+            #mixin_nagini_size .font(3.6/ 2.2);
+            #mixin_nagini_size .padding-right(10, 3.6);
+            float: left;
+            &.icon-bullseye {
+                #mixin_nagini_size .font(4 / 2.2);
+                #mixin_nagini_size .margin-top(0, 4.8);
+            }
+        }
+    }
+    &_btn_popup {
+        #mixin_nagini_size .font(1.4);
+        background: @btn-popup-background;
+        font-weight: @btn-popup-weight;
+        color: @btn-popup-color;
+        &:hover {
+            background: @btn-popup-hover;
+            color: inherit;
+        }
+    }
+}
+
+.humanization[role="main"] {
+    .alert-success {
+        #mixin_nagini_size .font(1.4);
+        #mixin_nagini_size .margin(10, 0, @divider: 1.4);
+        #mixin_nagini_size .padding(10, 10,  @divider: 1.4);
+        #mixin_nagini_size .line-height(18, 1.4);
+        .close {
+            float: right;
+            background: none;
+            border: none;
+            padding: 0;
+            #mixin_nagini_size .font(1.8 / 1.4);
+            #mixin_nagini_size .line-height(18, 1.8);
+            #mixin_nagini_size .square(18, 1.8);
+            font-family: "wiser-icons";
+            content:"\f158";
+        }
+    }
+}

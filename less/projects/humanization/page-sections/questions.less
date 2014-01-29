@@ -1,0 +1,82 @@
+// Jimmy: this file needs a description. Why does it exist?
+
+// Jimmy ***** questions-section is not a defined ARIA role. Consider using classes or IDs instead
+[role="questions-section"]{
+    .content-header {
+        margin: @questions-main-header-margin;
+    }
+}
+// Jimmy ***** questions-to-ask is not a defined ARIA role. Consider using classes or IDs instead
+[role="questions-to-ask"] {
+    border: 0.1em solid @brand-secondary;
+    border-radius: @questions-to-ask-radius;
+    ol {
+        padding: 0 2.5em;
+        li {
+            padding: @questions-to-ask-question-spacing;
+            // font-size: @font-size-base;
+            // Jimmy: 14/20 font is defined in global_mixins.less
+            .mixin_font_base_nagini;
+            a {
+                color: @questions-to-ask-color;
+            }
+        }
+    }
+}
+// Jimmy ***** questions-navigation is not a defined ARIA role. Consider using classes or IDs instead
+[role="questions-navigation"] {
+    span {
+        display: block;
+        color: @questions-navigation-color;
+        padding: @questions-navigation-spacing;
+        text-decoration: underline;
+        // font-size: @font-size-base;
+        // Jimmy: 14/20 font is defined in global_mixins.less
+        .mixin_font_base_nagini;
+    }
+}
+// Jimmy ***** questions-form is not a defined ARIA role. Consider using classes or IDs instead
+.humanization[role="main"] [role="questions-form"] {
+    border: @questions-form-border;
+    border-radius: @questions-form-radius;
+    margin: @questions-form-margin;
+    h3 {
+        margin: @questions-form-header-margin;
+        padding: @questions-form-header-spacing;
+        background: @questions-form-header-background;
+        color: @questions-form-header-color;
+        line-height: @questions-form-header-height;
+        border-top-right-radius: @questions-form-header-radius;
+        border-top-left-radius: @questions-form-header-radius;
+    }
+}
+// Jimmy ***** related-row is not a defined ARIA role. Consider using classes or IDs instead
+.humanization[role="main"] .related-row {
+    margin: @related-row-margin;
+    > h3 {
+        color: @related-row-header-color;
+        font-weight: @related-row-header-weight;
+        padding: 0 .5em;
+    }
+    img {
+        border: @related-row-image-border;
+        margin: @related-row-image-margin;
+        max-width: 100%;
+    }
+    figure {
+        #mixin_nagini_size .font(1);
+        margin: 0;
+        figcaption {
+            color: @related-row-figure-caption-color;
+            margin-top: 1em;
+            h4 {
+                margin: 0;
+            }
+            a {
+                color: @related-row-figure-caption-color;
+                .mixin_font_base_nagini;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,40 @@
+/* layout reset for IE legacy --------------- */
+// This creates the general layout structure for IE browsers
+/* ------------------------------------------ */
+
+
+/* resets for header/ navigation ------------ */
+// [role="navigation"] {
+//     width: 984px\9;
+//     *width: 954px;
+// }
+
+
+/* resets for global footer ---------------- */
+// [role="contentinfo"] {
+
+//     > .container {
+//         width: 984px\9;
+//         *width: 954px;
+//     }
+// }
+
+
+.ie8 {
+    /* resets for main/article ------------- */
+    #personalization {
+        width: 984px;
+
+        > .row {
+            > section {
+                float: left;
+                width: 328px;
+            }
+            > aside {
+                float: right;
+                width: 574px;
+                margin: 0;
+            }
+        }
+    }
+}

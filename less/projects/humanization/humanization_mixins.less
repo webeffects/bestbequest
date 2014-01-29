@@ -1,0 +1,196 @@
+/* Nagini Mixins ---------------------------- */
+//
+// This file adds mixin classes that can be shared across nagini project
+//
+/* ------------------------------------------ */
+
+.mixin_header_nagini(@variable_nagini_header_multiplier) {
+    @internal_nagini_header_leading : 1.3em;
+    @internal_nagini_header_size : (@font-size-base * (@variable_nagini_header_multiplier / 10));
+    font-size:@internal_nagini_header_size;
+    line-height: @internal_nagini_header_leading;
+}
+
+
+// For different sizes, we're going to use a NameSpace defined by #mixin_nagini_size
+// All the mixins are going to be placed inside this nameSpace.
+// In order to use it in a less file, we need to add this line: #mixin_nagini_size .font
+
+// The way the size mixin works, is like this:
+
+//  1. you add a multiplier variable, which can be anything you want, starting from a number, ending with a different variable, like @font-size-base, which is the default value of this variable.
+//  2. You add a divider variable, which will be used to reset your default font-size-base to 1em = 10px. This can be done like this:
+//      a. you set the font-size for your element, to 14px, which should be 1.4 em. This can be done through #mixin_nagini_size .font(1.4);
+//      b. you want to set a padding top to your element of 8px, so, you do that like this #mixin_nagini_size .padding-top(8, @divider: 1.4);. This will compile: padding-top: 0.8em; = 8px;
+//  3. Your less should look like this: #mixin_nagini_size .padding(12, 5); Compiled, this would look like this: padding: 1.2em 0.5em.
+//     Notice: If you're using both padding and margin options, you have the following combinations:
+//              a. #mixin_nagini_size .padding-top(12); - This will compile -  padding-top:1.2em;
+//              b. #mixin_nagini_size .padding(12, 15); - This will compile -  padding:1.2em 1.5em;
+//              c. #mixin_nagini_size .padding(12, 12, @divider:0.5); - This will compile - padding:0.6em;
+//              d. #mixin_nagini_size .padding-left(12); - This will compile - padding-left: 0 0 0 1.2em;
+
+//     Notice: The multiplier is automatically divided with 10 as default, so we can introduce the default pixel size. For example : #mixin_nagini_size .padding(8 10); will compile padding 0.8em 1em;
+
+//    Notice: All the up mentioned compiling values, are obtained, if your font-size-base is reset to 1em = 10px. If you have a font-size of 1.4em, and you want to enter a padding of 0.6em,
+//            you need to add a @divider:1.4 to your padding, so that your mixin will look like this: #mixin_nagini_size .padding(0.6, 0.6, @divider:1.4);
+//              Example: #mixin_nagini_size .font(3.6), will compile font-size:3.6em;
+
+
+
+#mixin_nagini_size {
+    .font(@element_multiplier: 1.4) {
+        font-size: @font-size-base * @element_multiplier;
+    }
+
+    // Padding mixin
+
+    .padding-top(@top: 0, @divider: 1,  @multiplier: @font-size-base / @divider / 10) {
+        padding-top: (@top * @multiplier);
+    }
+    .padding-bottom(@bottom: 0, @divider: 1,  @multiplier: @font-size-base / @divider / 10){
+        padding-bottom: (@bottom * @multiplier);
+    }
+    .padding-left(@left: 0, @divider: 1,  @multiplier: @font-size-base / @divider / 10) {
+        padding-left: (@left * @multiplier);
+    }
+    .padding-right(@right: 0, @divider: 1,  @multiplier: @font-size-base / @divider / 10) {
+        padding-right: (@right * @multiplier);
+    }
+    .padding(@top: 0, @right: 0, @bottom: @top, @left: @right, @divider: 1,  @multiplier: @font-size-base / @divider / 10) when (@bottom = @top) and (@right = @left) and not (@right = @top){
+        padding: (@top * @multiplier) (@right * @multiplier);
+    }
+    .padding(@top: 0, @right: 0, @bottom: @top, @left: @right, @divider: 1,  @multiplier: @font-size-base / @divider / 10) when (@bottom = @top) and (@right = @top) {
+        padding: (@top * @multiplier);
+    }
+    .padding(@top, @right, @bottom, @left, @divider: 1,  @multiplier: @font-size-base / @divider / 10) when (isnumber(@top)) and (isnumber(@bottom)) and (isnumber(@left)) and (isnumber(@right)){
+        padding: (@top * @multiplier) (@right * @multiplier) (@bottom * @multiplier) (@left * @multiplier);
+    }
+
+    // Margin mixin
+
+    .margin-top(@top: 0, @divider: 1,  @multiplier: @font-size-base / @divider / 10) {
+        margin-top: (@top * @multiplier);
+    }
+    .margin-bottom(@bottom: 0, @divider: 1,  @multiplier: @font-size-base / @divider / 10){
+        margin-bottom: (@bottom * @multiplier);
+    }
+    .margin-left(@left: 0, @divider: 1,  @multiplier: @font-size-base / @divider / 10) {
+        margin-left: (@left * @multiplier);
+    }
+    .margin-right(@right: 0, @divider: 1,  @multiplier: @font-size-base / @divider / 10) {
+        margin-right: (@right * @multiplier);
+    }
+    .margin(@top: 0, @right: 0, @bottom: @top, @left: @right, @divider: 1,  @multiplier: @font-size-base / @divider / 10) when (@bottom = @top) and (@right = @left) and not (@right = @top){
+        margin: (@top * @multiplier) (@right * @multiplier);
+    }
+    .margin(@top: 0, @right: 0, @bottom: @top, @left: @right, @divider: 1,  @multiplier: @font-size-base / @divider / 10) when (@bottom = @top) and (@right = @top) {
+        margin: (@top * @multiplier);
+    }
+    .margin(@top, @right, @bottom, @left, @divider: 1,  @multiplier: @font-size-base / @divider / 10) when (isnumber(@top)) and (isnumber(@bottom)) and (isnumber(@left)) and (isnumber(@right)){
+        margin: (@top * @multiplier) (@right * @multiplier) (@bottom * @multiplier) (@left * @multiplier);
+    }
+
+
+//    Using the up mentioned formula: @font-size-base / @divider / 10, which has the following elements:
+//          a. @font-size-base - default size - 1em = 10px. This font-size-base value is changed, if you want to increase the element font-size to 14px for example.
+//                  In this case the new font-size will be 1.4em, and it will be defined by #mixin_nagini_size .font(1.4);
+//          b. @divider - this is the option that is previously used when you're making your font-size bigger. So, if you increased your font-size to 1.4em, then your divider should be 1.4;
+//          c. 10 - this number should remain fixed. Division by 10 allows us to use real pixel values in our code.
+//          Example on how this formula can be applied:
+//              - #mixin_nagini_size .border-radius(5); This will compile, if your default font-size is font-size-base - border-radius:0.5em. If you changed your font-size, then the border-radius will have the value of @radius/new-font-size/@font-size-base
+
+    .width(@width: 0, @divider: 1,  @multiplier: @font-size-base / @divider / 10) {
+        width: @width * @multiplier;
+    }
+    .height(@height: 0, @divider: 1,  @multiplier: @font-size-base / @divider / 10) {
+        height: @height * @multiplier;
+    }
+    .min-height(@height: 0, @divider: 1,  @multiplier: @font-size-base / @divider / 10) {
+        min-height: @height * @multiplier;
+    }
+    .square(@width: 0, @divider: 1,  @multiplier: @font-size-base / @divider / 10) {
+        width: @width * @multiplier;
+        height: @width * @multiplier;
+    }
+    .line-height(@height: 0, @divider: 1,  @multiplier: @font-size-base / @divider / 10) {
+        line-height: @height * @multiplier;
+    }
+
+    .border-radius(@size: 0, @divider: 1,  @multiplier: @font-size-base / @divider / 10 ) {
+        @radius : @size * @multiplier;
+        border-radius: @radius;
+    }
+    .border-top-radius(@size: 0, @divider: 1,  @multiplier: @font-size-base / @divider / 10 ) {
+        @radius : @size * @multiplier;
+        border-top-right-radius: @radius;
+        border-top-left-radius: @radius;
+    }
+    .border-right-radius(@size: 0, @divider: 1,  @multiplier: @font-size-base / @divider / 10 ) {
+        @radius : @size * @multiplier;
+        border-bottom-right-radius: @radius;
+        border-top-right-radius: @radius;
+    }
+    .border-bottom-radius(@size: 0, @divider: 1,  @multiplier: @font-size-base / @divider / 10 ) {
+        @radius : @size * @multiplier;
+        border-bottom-right-radius: @radius;
+        border-bottom-left-radius: @radius;
+    }
+    .border-left-radius(@size: 0, @divider: 1,  @multiplier: @font-size-base / @divider / 10 ) {
+        @radius : @size * @multiplier;
+        border-bottom-left-radius: @radius;
+        border-top-left-radius: @radius;
+    }
+
+    .text-shadow(@height: 0, @width: 0, @blur:0, @color: #000, @divider:1,   @multiplier: @font-size-base / @divider / 10 ) {
+        text-shadow: @height * @multiplier @width * @multiplier @blur * @multiplier @color;
+    }
+
+    .box-shadow(@height: 0, @width: 0, @blur: 0, @spread: 0, @color: #000, @inset: 0, @divider:1,   @multiplier: @font-size-base / @divider / 10 ) when (@inset = inset) {
+        box-shadow: @height * @multiplier @width * @multiplier @blur * @multiplier @spread * @multiplier @color @inset;
+    }
+    .box-shadow(@height: 0, @width: 0, @blur: 0, @spread: 0, @color: #000, @inset: 0, @divider:1,   @multiplier: @font-size-base / @divider / 10 ) when (isnumber(@inset)) {
+        box-shadow: @height * @multiplier @width * @multiplier @blur * @multiplier @spread * @multiplier @color;
+    }
+
+
+}
+
+// Position namespace with all the mixins, top, bottom, left, right
+
+#mixin_nagini_position {
+
+    .top(@top: 0, @divider: 1,  @multiplier: @font-size-base / @divider / 10) {
+        top: @top * @multiplier;
+    }
+    .left(@left: 0, @divider: 1,  @multiplier: @font-size-base / @divider / 10) {
+        left: @left * @multiplier;
+    }
+    .right(@right: 0, @divider: 1,  @multiplier: @font-size-base / @divider / 10) {
+        right: @right * @multiplier;
+    }
+    .bottom(@bottom: 0, @divider: 1,  @multiplier: @font-size-base / @divider / 10) {
+        bottom: @bottom * @multiplier;
+    }
+
+}
+
+#mixin_nagini {
+
+// Border mixin
+
+    .border(@width: 1; @style: solid ; @color: @mwh_grey_border; @divider: 1;  @multiplier: @font-size-base / @divider / 10) {
+        border: @width * @multiplier @style @color;
+    }
+    .border-top(@width: 1; @style: solid ; @color: @mwh_grey_border; @divider: 1;  @multiplier: @font-size-base / @divider / 10) {
+        border-top: @width * @multiplier @style @color;
+    }
+    .border-bottom(@width: 1; @style: solid ; @color: @mwh_grey_border; @divider: 1;  @multiplier: @font-size-base / @divider / 10) {
+        border-bottom: @width * @multiplier @style @color;
+    }
+    .border-left(@width: 1; @style: solid ; @color: @mwh_grey_border; @divider: 1;  @multiplier: @font-size-base / @divider / 10) {
+        border-left: @width * @multiplier @style @color;
+    }
+    .border-right(@width: 1; @style: solid ; @color: @mwh_grey_border; @divider: 1;  @multiplier: @font-size-base / @divider / 10) {
+        border-right: @width * @multiplier @style @color;
+    }
+}

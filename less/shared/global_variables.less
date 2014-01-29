@@ -1,0 +1,176 @@
+// Global Variables
+//
+// This file creates the global variables across all the MWH products.
+// Bootstrap Variables will be drawing from this file.
+// The reason why we are creating a separate file for MWH variables vs Bootstrap
+// variables is because this file presents custom variables, and is in a
+// consolidated location.
+//
+// Markup:
+// <div class="kss_colors {$modifiers}"></div>
+//
+// .mwh_color_text          - base color for text
+// .mwh_color_links         - base color for icons, links
+// .mwh_color_figures       - base color for menu items, insets, diagrams
+// .mwh_color_supplement    - base color for supplemental items, icons, footer
+// .mwh_color_highlight     - base color for stars, highlights
+// .mwh_color_base          - base color for background
+//
+// Styleguide 1.1
+
+.kss_colors {
+    width: 96px;
+    height: 56px;
+    border: 2px solid #000;
+    border-radius: 10px;
+}
+.mwh_color_text {
+    background-color: @mwh_color_text;
+}
+.mwh_color_links {
+    background-color: @mwh_color_links;
+}
+.mwh_color_figures {
+    background-color: @mwh_color_figures;
+}
+.mwh_color_supplement {
+    background-color: @mwh_color_supplement;
+}
+.mwh_color_highlight {
+    background-color: @mwh_color_highlight;
+}
+.mwh_color_base {
+    background-color: @mwh_color_base;
+}
+/* Colors ----------------------------------- */
+/* ------------------------------------------ */
+// base color for text: charcoal
+@mwh_color_text:        #353B3C;
+// base color for icons, links: red
+@mwh_color_links:       #F0443C;
+// base color for menu items, insets, diagrams: blue
+@mwh_color_figures:     #4CCAE1;
+// base color for supplemental items, icons, footer: green
+@mwh_color_supplement:  #A8C461;
+// base color for stars, highlights: yellow
+@mwh_color_highlight:   #FDD45E;
+// base background is white
+@mwh_color_base:        #FFF;
+
+// Jimmy: we are going to phase out the following greyscale definitions.
+// Find where they exist in the code and replace with the new set of greyscales.
+// *****************************
+// Grey Palette: disabled
+@mwh_grey_disabled:     #F5F5F5;
+// Grey Palette: active
+@mwh_grey_active:       #999;
+// Grey Palette: buttons
+@mwh_grey_button:       #666;
+// Grey Palette: borders
+@mwh_grey_border:       #CCC;
+// *****************************
+
+// New Greyscale definitions
+// Jimmy: I originally considered naming the variables for their function
+// instead of appearance, but I'm thinking it would be too hard to keep track or
+// remember. We will make an exception here to define greyscale variables with
+// with cosmetic names.
+
+// Extra Dark Grey is undefined for now
+// @mwh_grey_extra_dark
+
+// Dark Grey: used mainly for strong borders
+// 30% tint renders as #727677
+@mwh_grey_dark: tint(@mwh_color_text, 30%);
+
+// Medium Dark Grey: annotated text (e.g. captions)
+// 50% tint renders as #9A9D9E
+@mwh_grey_medium_dark: tint(@mwh_color_text, 50%);
+
+// Medium Grey: navigational icons, borders on disabled buttons
+// 70% tint renders as #C2C4C5
+@mwh_grey_medium: tint(@mwh_color_text, 70%);
+
+// Medium Light Grey: color of horizontal rules, table lines, dividers
+// 80% tint renders as #D7D8D8
+@mwh_grey_medium_light: tint(@mwh_color_text, 80%);
+
+// Light Grey: background color for well text and disabled buttons,
+// hover color if the initial background color is white
+// 94% tint renders as #F3F3F3
+@mwh_grey_light: tint(@mwh_color_text, 94%);
+
+// Extra Light Grey is used only on bullseye for now
+// 96% tint renders as #F7F7F7
+@mwh_grey_extra_light: tint(@mwh_color_text, 96%);
+/* ------------------------------------------ */
+
+/* Paths ------------------------------------ */
+/* ------------------------------------------ */
+/* ------------------------------------------ */
+
+/* Grid Math -------------------------------- */
+/* ------------------------------------------ */
+// width of column on small breakpoint
+// responds to @screen-sm
+@mwh_sm_column_width: (@container-sm / @grid-columns);
+@mwh_sm_column_no_gutter: @mwh_sm_column_width - @grid-gutter-width;
+// width of column on medium breakpoint
+// responds to @screen-md
+@mwh_md_column_width: (@container-md / @grid-columns);
+@mwh_md_column_no_gutter: @mwh_md_column_width - @grid-gutter-width;
+// width of column on large breakpoint
+// responds to @screen-lg
+@mwh_lg_column_width: (@container-lg / @grid-columns);
+@mwh_lg_column_no_gutter: @mwh_lg_column_width - @grid-gutter-width;
+// width of column on extra-large breakpoint
+// responds to @screen-xl
+@mwh_xl_column_width: (@container-xl / @grid-columns);
+@mwh_xl_column_no_gutter: @mwh_xl_column_width - @grid-gutter-width;
+/* ------------------------------------------ */
+
+/* iOS Media Queries ------------------------ */
+/* ------------------------------------------ */
+// usage example:
+// @media @ipad {}
+//
+// use prefix mwh_mq
+
+// All iPads in portrait & landscape
+@mwh_mq_ipad:                   ~"only screen and (min-device-width : 768px) and (max-device-width : 1024px)";
+// All iPads in landscape
+@mwh_mq_ipad_landscape:         ~"only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape)";
+// All iPads in portrait
+@mwh_mq_ipad_portrait:          ~"only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait)";
+
+// ipad Mini, iPad 1 & 2 in portrait & landscape
+@mwh_mq_ipad_early:             ~"only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 1)";
+/*ipad Mini, iPad 1 & 2 in landscape*/
+@mwh_mq_ipad_early_landscape:   ~"only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio: 1)";
+/*ipad Mini, iPad 1 & 2 in portrait*/
+@mwh_mq_ipad_early_portrait:    ~"only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio: 1)";
+
+// Retina iPad (includes Mini Retina) in portrait & landscape
+@mwh_mq_ipad_retina:            ~"only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 2)";
+// Retina iPad in landscape
+@mwh_mq_ipad_retina_landscape:  ~"only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio: 2)";
+// Retina iPad in portrait
+@mwh_mq_ipad_retina_portrait:   ~"only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio: 2)";
+
+// iPhone 2G, 3G, 4, 4S Media Queries
+@mwh_mq_iphone_early:           ~"only screen and (min-device-width : 320px) and (max-device-width : 480px)";
+// iPhone 2G-4S in landscape
+@mwh_mq_iphone_early_landscape: ~"only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape)";
+// iPhone 2G-4S in portrait
+@mwh_mq_iphone_early_portrait:  ~"only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait)";
+
+// iPhone 5 (includes 5C) in portrait & landscape
+@mwh_mq_iphone_5:               ~"only screen and (min-device-width : 320px) and (max-device-width : 568px)";
+// iPhone 5 in landscape
+@mwh_mq_iphone_5_landscape:     ~"only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape)";
+// iPhone 5 in portrait
+@mwh_mq_iphone_5_portrait:      ~"only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait)";
+/* ------------------------------------------ */
+/* ------------------------------------------ */
+
+

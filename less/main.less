@@ -1,0 +1,123 @@
+// Global Variables
+//
+// Styleguide 1.
+@import "shared/global_variables.less";
+// for now we can't get this to work so we are going to add global variables right here.
+
+/* Paths ------------------------------------ */
+/* ------------------------------------------ */
+// Twitter Bootstrap files and components
+@mwh_path_bootstrap: "../components/bootstrap/less/";
+// Font files, including icon fonts
+@mwh_path_fonts: "/";
+// Image files, such as corporate logos or backgrounds
+@mwh_path_imate: "/";
+/* ------------------------------------------ */
+
+// Basic Reset for pages
+@import "shared/global_reset.less";
+
+// Mixins to be shared across the entire site
+@import "shared/global_mixins.less";
+
+// Our Iconography library
+@import "shared/icons.less";
+
+// Fallback Mixins, for inconsistent browser supports, e.g., border-radius
+@import "shared/fallback_mixins.less";
+
+// Fallback Reset for MSIE 7 and 8
+//@import "shared/ie_7_8_reset.less";
+/* ------------------------------------------ */
+
+/* Bootstrap -------------------------------- */
+/* ------------------------------------------ */
+
+// this file replaces the original bootstrap.less in Bootstrap
+@import "bootstrap/bootstrap.less";
+/* ------------------------------------------ */
+
+/* Bootstrap Overrides ---------------------- */
+/* ------------------------------------------ */
+// That is to say, if bootstrap classes must be overridden, create a file with
+// the same name as the the original Bootstrap file containing the class in
+// question. Only add the modified attributes, to promote DRY.
+
+// Core variables and mixins
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+
+// Reset
+@import "bootstrap/normalize.less";
+
+// Core CSS
+@import "bootstrap/type.less";
+@import "bootstrap/grid.less";
+
+// Components
+@import "bootstrap/dropdowns.less";
+@import "bootstrap/progress-bars.less";
+
+// Components w/ JavaScript
+@import "bootstrap/popovers.less";
+
+// Utility classes
+// no overrides currently
+/* ------------------------------------------ */
+
+/* Global Components ------------------------ */
+/* ------------------------------------------ */
+
+// Global Navigation
+@import "shared/components/navigation.less";
+
+// Global Footer
+@import "shared/components/footer.less";
+/* ------------------------------------------ */
+
+/* Project-Specific Styling ----------------- */
+/* ------------------------------------------ */
+// The ordering of the projects should not matter - cascading order is
+// irrelevant. If CSS lives inside project folder, it must be self-contained
+// and cannot affect styling globally.
+
+// Humanization
+@import "projects/humanization/imports.less";
+
+// Personalization (i.e. Bullseye)
+@import "projects/personalization/imports.less";
+/* ------------------------------------------ */
+
+/* Global Utilities, Fallbacks, Mixins ------ */
+/* ------------------------------------------ */
+// These files will affect styling, globally.
+
+/* Main Imports ----------------------------- */
+// This file serves several purposes:
+// 1. Import the necessary files and/or components from Bootstrap
+// 2. Import globally shared styling across all projects
+//    (a) resets, utilities, variables
+//    (b) polyfills, mixins, fallbacks for lesser browsers
+// 3. Import project-specific styling
+//    (a) Humanization
+//    (b) Personalization
+//
+// This file has contains all the imports of all the LESS files for the site.
+// Note that we are taking the route serving one CSS file for all pages and all
+// applications. At the benefit of smaller load times and less complexity, the
+// constraints are such that we have to pay closer attention to modularity, best
+// practices, naming conventions, and cascading orders. The main less file will
+// start with Bootstrap, and add modifications as needed. There will be no
+// modifications to the Boostrap components.
+//
+// paths to files are defined in global_variables.less
+//
+// The listing of files:
+// 1. Global Utilities, Fallbacks, Mixins
+// 2. Bootstrap
+// 3. Bootstrap Overrides
+// 4. Global Components (e.g. navigation, footer)
+// 5. Project-Specific
+//    (a) Humanization
+//    (b) Personalization
+/* ------------------------------------------ */

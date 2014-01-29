@@ -1,0 +1,744 @@
+/* Global Navigation styling */
+/*
+    This defines the style for Global Navigation.
+    Element html can be found in nagini/src/js/nagini/templates/header.hbs and nagini/src/js/nagini/templates/partials/
+    Style variables can be found in archery/less/projects/humanization/humanization_variables.less under section Global Nav Variables
+/*
+*/
+
+/* --------------------------------- */
+/*  Begin Global Navigation   Style  */
+/* --------------------------------- */
+
+.humanization-nav {
+    top: @navbar-height;
+}
+
+/*  Health Topics menu styling */
+/*
+    This defines the style for Health Topics button from header nav.
+    The Health Topics button is placed under section. .top-menu-panel header.panel-heading
+    Element class can be found in humanization/js/nagini/templates/header.hbs line 39
+    Style variables can be found in archery/less/projects/humanization/humanization_variables.less under section Global Nav Variables
+/*
+*/
+/* --------------------------------- */
+/*  Begin Health Topics menu  Style  */
+/* --------------------------------- */
+
+.global-nav-main-panel {
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    background: none;
+    > .panel-heading {
+        background: transparent;
+        border: none;
+        height: @navbar-height;
+        margin-top: -@navbar-height;
+        #mixin_nagini_size .padding(0,15,0,0);
+        a {
+            display: block;
+            #mixin_nagini_size .line-height(50, 1.8);
+            color: @global-nav-top-menu-color;
+            background: none;
+            #mixin_nagini_size .padding(0, 13, @divider: 1.8);
+            font-size: @global-nav-main-link-size; // @divider: 1.8
+            font-weight: @global-nav-main-link-weight;
+            i {
+                #mixin_nagini_size .line-height(18, 1.8);
+                &:before {
+                    position: relative;
+                    #mixin_nagini_position .top(18, 1.8);
+                }
+            }
+             &.collapsed {
+                background: @global-nav-background;
+                &:hover {
+                    background: @global-nav-background;
+                    text-decoration: none;
+                }
+                i:before {
+                    content: '\f114';
+                }
+            }
+        }
+    }
+}
+
+/* Health Topics dropdown  styling */
+/*
+    This defines the style for Health Topics dropdown from header nav.
+    The Health Topics dropdown is placed under section. .global-nav-main-panel header.panel-heading
+    Element id can be found in humanization/js/nagini/templates/header.hbs line 39
+    If you're trying to change the classes/ids of dropdown links, the html can be found in: nagini/js/nagini/templates/partials/globalnavdropdown.hbs
+    Style variables can be found in archery/less/projects/humanization/humanization_variables.less  under section Global Nav Variables
+*/
+/* ------------------------------ */
+/*  Begin Top Menu Dropdown Style */
+/* ------------------------------ */
+
+#global-nav-dropdown {
+    overflow: hidden;
+    padding-left: 0;
+    .panel-body {
+        background: @global-nav-background;
+        padding: 0;
+        width: 100%;
+        display: block;
+        .divider {
+            #mixin_nagini_size .margin(10,13);
+            #mixin_nagini .border-bottom(@color:@global-nav-divider-background);
+        }
+        ul {
+            padding: 0;
+            list-style: none;
+            li {
+                position: relative;
+                i {
+                    display: none;
+                    position: absolute;
+                    #mixin_nagini_position .left(-15);
+                    #mixin_nagini_position .top(4);
+                    #mixin_nagini_size .square(25);
+                    #mixin_nagini_size .line-height(27);
+                    #mixin_nagini_size .border-radius(15);
+                    background: @mwh_color_links;
+                    color: @mwh_color_base;
+                    text-align: center;
+                }
+                &.help-tip {
+                    i {
+                        display: block;
+                    }
+                    a {
+                        color: @global-nav-color;
+                    }
+                }
+            }
+            li > a {
+                color: @global-nav-color;
+                #mixin_nagini_size .font(1.4);
+                font-weight: @global-nav-weight;
+                background: @global-nav-background;
+                #mixin_nagini_size .padding(8, 13, @divider: 1.4);
+                #mixin_nagini_size .line-height(20,1.4);
+                display: block;
+                &:hover {
+                    color: @global-nav-color;
+                    background: @global-nav-hover-background;
+                    text-decoration: none;
+                }
+            }
+        }
+        .popover {
+            #mixin_nagini_size .width(205);
+            background: @global-nav-popup-background;
+            font-size: 1em; // @divider: 1.4
+            #mixin_nagini_size .margin-left(-45, 1);
+            color: @global-nav-popup-color;
+            text-align: center;
+            &.right .arrow, .arrow:after{
+                border-right-color: @global-nav-popup-background;
+            }
+            .popover-title {
+                background-color: @global-nav-popup-background;
+                border-bottom: none;
+                font-weight: 200;
+                #mixin_nagini_size .font();
+                margin: 0;
+            }
+            .popover-content {
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+            .btn {
+                #mixin_nagini_size .margin(1,0);
+                width: 47%;
+            }
+        }
+    }
+}
+
+
+/* Global Nav Panel styling */
+/*
+    This defines the style for global nav panel, that appears after you click a link from top dropdown.
+    The Health Topics dropdown is placed under section: .humanization-nav .global-nav-main-panel #global-nav-main
+    Element id can be found in humanization/js/nagini/templates/header.hbs
+    .global-nav-panel class can be found in nagini/js/nagini/templates/partials/globalnavmainmenu.hbs
+    Style variables can be found in archery/less/projects/humanization/humanization_variables.less  under section Global Nav Variables
+*/
+
+/* --------------------------- */
+/*  Begin Top Panel Style      */
+/* --------------------------- */
+
+#global-nav-main {
+    z-index: 10;
+    width: 100%;
+}
+
+.global-nav-panel {
+    width: 100%;
+    background: @global-nav-panel-background;
+    overflow: hidden;
+    header {
+        background: @global-nav-panel-header-background;
+        #mixin_nagini_size .height(@global-nav-panel-header-height); //48
+        #mixin_nagini_size .line-height(@global-nav-panel-header-height);
+        #mixin_nagini_size .width(972);
+        .open {
+            a, a:hover, a:focus {
+                background: @global-nav-panel-header-background;
+                border-color: @mwh_color_base;
+            }
+        }
+        a {
+            font-size: @global-nav-panel-header-size; // divider: 1.8;
+            color: @global-nav-panel-header-color;
+            font-weight: 100;
+            display: block;
+            #mixin_nagini_size .padding(0,5,0,10,1.8);
+            #mixin_nagini_size .height(36,1.8);
+            #mixin_nagini_size .line-height(36,1.8);
+            #mixin_nagini_size .margin-top(6,1.8);
+            #mixin_nagini_size .border-radius(5,1.8);
+            #mixin_nagini .border(@color:@mwh_color_base, @divider:1.8);
+            box-sizing: border-box;
+            i {
+                float: right;
+                &:before {
+                    position: relative;
+                    #mixin_nagini_position .top(3,1.8);
+                }
+            }
+            &.letter-dropdown {
+                width: 70%;
+                float: right;
+                font-weight: 700;
+            }
+            &.panel-back-link {
+                #mixin_nagini_size .font(2.4);
+                #mixin_nagini_size .height(48,2.4);
+                #mixin_nagini_size .line-height(48, 2.4);
+                #mixin_nagini_size .padding(0,0,0,12,2.4);
+                border: none;
+                margin-top: 0;
+                i {
+                    float: left;
+                    &:before{
+                        top: 0;
+                        #mixin_nagini_size .padding-right(12,2.4);
+                    }
+                }
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+        .letter-dropdown-link.open {
+            a {
+                border: none;
+                #mixin_nagini_size .height(43,1.8); // divider rate from header a
+                #mixin_nagini_size .line-height(36, 1.8);
+                background: @global-nav-panel-letter-dropdown-background;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                text-decoration: none;
+                i:before {
+                    content: '\f114';
+                }
+            }
+        }
+    } // end of header section, from global nav panel
+    footer {
+        #mixin_nagini_size .height(@global-nav-panel-header-height);
+        #mixin_nagini_size .width(972);
+        background: @mwh_grey_light;
+        #mixin_nagini .border(@color:@mwh_grey_medium);
+        border-top: none;
+        .help-link {
+            #mixin_nagini_size .font();
+            #mixin_nagini_size .line-height(48,1.4);
+            #mixin_nagini_size .padding-left(12, 1.4);
+            color: #000;
+            i {
+                color: @mwh_grey_medium_light;
+                #mixin_nagini_size .font(1.8/ 1.4);
+                #mixin_nagini_size .padding-right(5,1.8);
+            }
+        }
+        .nagini_form.find-form {
+            #mixin_nagini_size .padding(6, 12);
+            display: none;
+            input, .btn.btn-dark {
+                #mixin_nagini_size .font();
+                #mixin_nagini_size .height(36,1.4);
+            }
+            input {
+                #mixin_nagini_size .padding(0,5, @divider:1.4);
+                width: 33%;
+            }
+            .btn.btn-dark {
+                width: auto;
+                margin: 0;
+                #mixin_nagini_size .line-height(36, 1.4);
+                #mixin_nagini_size .margin-left(9, 1.4);
+                #mixin_nagini_size .padding(0, 10, @divider:1.4);
+                border-radius: 0;
+                background: rgba(52,58,59,.8);
+                color: @mwh_color_base;
+                &:hover {
+                    background: rgba(52,58,59,1);
+                }
+            }
+            .popover {
+                #mixin_nagini_size .font();
+                #mixin_nagini .border(@width:1, @color:@brand-primary,@divider:1.4);
+                .popover-content{
+                    #mixin_nagini_size .font(1);
+                    color: @mwh_color_text;
+                }
+                &.top {
+                    .arrow {
+                        border-top-color: @brand-primary;
+                    }
+                }
+            }
+        }
+    } // global nav panel footer section
+
+    /* Global Nav Letter Dropdown  style */
+    /*
+
+        This defines the style for letter dropdown, that appears after you click the letter link from global panel header.
+        The Letter  dropdown is placed under section: .global-nav-panel header .global-nav-letter-dropdown
+        .global-nav-panel class can be found in nagini/js/nagini/templates/partials/globalnavmainmenu.hbs
+        Style variables can be found in archery/less/projects/humanization/humanization_variables.less  under section Global Nav Variables
+
+    */
+
+    /* ------------------------------------------------ */
+    /*      Begin Global Nav Letter Dropdown Style      */
+    /* ------------------------------------------------ */
+
+    .global-nav-letter-dropdown {
+        position: absolute;
+        #mixin_nagini_position .top(@global-nav-panel-header-height);
+        width: 100%;
+        background: @global-nav-panel-letter-dropdown-background;
+        z-index: 1000;
+        #mixin_nagini .border-top(@color: @mwh_grey_medium_light);
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 100%;
+            li {
+                float: left;
+                width: 7.69%;
+                a {
+                    color: @mwh_color_base;
+                    border: none;
+
+                    font-size: @global-nav-panel-letter-dropdown-size; // divider: 3.6
+                    #mixin_nagini_size .height(@global-nav-panel-letter-dropdown-height,3.6);
+                    #mixin_nagini_size .line-height(@global-nav-panel-letter-dropdown-height,3.6);
+                    #mixin_nagini .border-right(@color: @mwh_grey_medium_light,@divider: 3.6);
+                    #mixin_nagini .border-bottom(@color: @mwh_grey_medium_light,@divider: 3.6);
+                    font-weight: @global-nav-panel-letter-dropdown-weight;
+                    display: block;
+                    text-align: center;
+                    border-radius: 0;
+                    padding: 0;
+                    margin: 0;
+                    &.selected, &:hover {
+                        color: @global-nav-panel-letter-dropdown-selected;
+                        text-decoration: inherit;
+                    }
+                    &.disabled {
+                        color: @global-nav-panel-letter-dropdown-disabled;
+                        cursor: default;
+                    }
+                }
+            }
+        }
+    }
+    /* Global Nav Categories dropdown */
+    /*
+
+        This defines the style for letter dropdown, that appears after you click the letter link from global panel header.
+        The Letter  dropdown is placed under section: .global-nav-panel header .global-nav-letter-dropdown
+        .global-nav-letter-dropdown class can be found in nagini/js/nagini/templates/partials/globalnavmainmenu.hbs
+        Style variables can be found in archery/less/projects/humanization/humanization_variables.less  under section Global Nav Variables
+
+    */
+
+    /* --------------------------------------------- */
+    /*  Begin Global Nav  Categories Dropdown Style  */
+    /* --------------------------------------------- */
+
+    .global-nav-panel-categories.open {
+        background: @global-nav-background;
+        #mixin_nagini_size .padding(0,15);
+        display: block;
+        a {
+            i:before {
+                content: '\f114';
+                #mixin_nagini_position .top(0);
+            }
+        }
+        .divider {
+            #mixin_nagini_size .margin(9,13);
+            #mixin_nagini .border-bottom(@color:@global-nav-divider-background);
+        }
+        > .dropdown-menu {
+            background: @global-nav-background;
+            padding: 0;
+            border: none;
+            border-radius: 0;
+            #mixin_nagini_size .margin-left(10);
+            width: 98%;
+            list-style: none;
+            #mixin_nagini_position .right(-1);
+            left: auto;
+            li > a {
+                color: @global-nav-color;
+                #mixin_nagini_size .font(); // divider: 1.4
+                #mixin_nagini_size .padding(8,0,8,13,1.4);
+                #mixin_nagini_size .height(36, 1.4);
+                #mixin_nagini_size .line-height(20,1.4);
+                font-weight: @global-nav-weight;
+                background: @global-nav-background;
+                display: block;
+                border: none;
+                box-sizing: border-box;
+                border-radius: 0;
+                &:hover {
+                    color: @global-nav-color;
+                    background: @global-nav-hover-background;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+
+
+/* Global Nav Panel Carousel style */
+/*
+
+    This defines the style for global nav panel carousel, that appears after you click on a dropdown link.
+    The carousel is placed under section: .global-nav-panel .global-nav-carousel
+    .global-nav-panel class can be found in nagini/js/nagini/templates/partials/globalnavmainmenu.hbs
+    Style variables can be found in archery/less/projects/humanization/humanization_variables.less  under section Global Nav Variables
+
+*/
+
+/* ---------------------------------- */
+/*  Begin Global Nav  Carousel Style  */
+/* ---------------------------------- */
+
+.global-nav-carousel {
+    #mixin_nagini .border(@color: @mwh_grey_medium);
+    #mixin_nagini_size .width(972);
+    border-bottom: none;
+    h4 {
+        margin-top: 0;
+    }
+    &.border-panel {
+        #mixin_nagini .border-bottom(@color: @mwh_grey_border);
+        #mixin_nagini_size .padding-bottom(20);
+        textarea {
+            min-height: 18em;
+        }
+    }
+    .global-nav-carousel-links {
+        #mixin_nagini_size .margin(20, 0);
+        a {
+            display: block;
+            #mixin_nagini_size .font(1.5);
+            #mixin_nagini_size .line-height(20, 1.5);
+            #mixin_nagini_size .padding(10, 15, @divider: 1.5);
+            #mixin_nagini_size .margin(0, -15, @divider: 1.5);
+            #mixin_nagini .border-bottom(@color: @mwh_grey_border, @divider: 1.5);
+            color: @global-nav-panel-links-column-item-color;
+            i {
+                color: @global-nav-panel-links-icon-color;
+                font-size: @global-nav-panel-links-icon-size; // @divider 1.6
+                #mixin_nagini_size .padding(10,15, @divider: 1.575);
+                &:before {
+                    position: relative;
+                    top: 0;
+                }
+            }
+            &:hover {
+                background: @global-nav-panel-links-column-hover-background;
+                text-decoration: none;
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    } // end carousel links style
+    .letter-column {
+        text-align: right;
+        position: relative;
+        #mixin_nagini_size .margin(20, 0);
+        #mixin_nagini_size .height(450);
+        .letter,
+        .continued_letter{
+            #mixin_nagini_size .font(4.8);
+            font-weight: @global-nav-panel-letter-column-weight;
+            display: block;
+            position: absolute;
+            #mixin_nagini_position .right(15, 4.8);
+        }
+        .letter {
+            color: @brand-secondary;
+        }
+        .continued_letter{
+            color: @global-nav-panel-letter-column-continue-color;
+        }
+        .bottom-letter{
+            position: absolute;
+            bottom: 0;
+            right: 1em;
+        }
+    } // end letter column style
+
+    .carousel-control {
+        width: 8.33%;
+        top: @global-nav-global-nav-carousel-control-top;
+        padding: 0;
+        background: @mwh_color_base;
+        &.left, &.right {
+            background-image: none;
+            color: rgba(53, 59, 60, 0.15);
+            #mixin_nagini_size .font(5);
+            text-shadow: none;
+        }
+        &:hover, &:focus {
+            color: rgba(53, 59, 60, 1);
+            .opacity(1);
+        }
+        .panel-slide-left,
+        .panel-slide-right{
+            opacity: 1;
+            top: 45%;
+            color:#fff;
+        }
+        .panel-slide-left{
+            #mixin_nagini_position .left(15, 5);
+        }
+        .panel-slide-left:before {
+            color: rgba(53, 59, 60, 0.15);
+        }
+        .panel-slide-right {
+            #mixin_nagini_position .right(15, 5);
+        }
+        .panel-slide-right:before {
+            color: rgba(53, 59, 60, 0.15);
+        }
+    }
+
+}
+.nagini-global-nav-loading {
+    #mixin_nagini_size .font(1.4);
+    width: 100%;
+    text-align: center;
+
+}
+/* Global Nav Details style */
+/*
+
+    This defines the style for global nav details panel, that appears after you click on a main link from global nav.
+    The panel is placed under section: .global-nav-main-panel .global-nav-details
+    #global-nav-details id can be found in nagini/js/nagini/templates/header.hbs
+    If you want to change any element in global-nav-details, you can do that, by accessing: nagini/js/nagini/templates/shared/globalnavdetails.hbs
+    Style variables can be found in archery/less/projects/humanization/humanization_variables.less under section Global Nav Variables
+
+*/
+
+/* ---------------------------------- */
+/*  Begin Global Nav  Details  Style  */
+/* ---------------------------------- */
+
+#global-nav-details {
+    z-index: 11;
+    width: 100%;
+    font-size: @font-size-base;
+    background: @mwh_color_base;
+    h4 {
+        margin-top: 0;
+    }
+    .global-nav-carousel {
+        #mixin_nagini_size .height(520);
+    }
+    /* ------------------------------------- */
+    /*        Begin Back Column Style        */
+    /* ------------------------------------- */
+
+    .back-column {
+        a {
+            color: @mwh_grey_medium_dark;
+            position: relative;
+            #mixin_nagini_size .font(1.2);
+            #mixin_nagini_size .padding(5, 0, 0, 15, 1.2);
+            display: block;
+            i {
+                position: absolute;
+                #mixin_nagini_size .font(3 / 1.2); // @divider: 3
+                #mixin_nagini_position .left(-8,3);
+                #mixin_nagini_position .top(-3,3);
+            }
+        }
+    }
+}
+
+
+
+
+/* Global Nav Help style */
+/*
+
+    This defines the style for global nav help panel, that appears after you click on the help link from global nav.
+    The panel is placed under section: .global-nav-main-panel .global-nav-help
+    #global-nav-help id can be found in nagini/js/nagini/templates/header.hbs
+    If you want to change any element in global-nav-help, you can do that, by accessing: nagini/js/nagini/templates/shared/globalnavhelp.hbs
+    Style variables can be found in archery/less/projects/humanization/humanization_variables.less under section Global Nav Variables
+
+*/
+
+/* ------------------------------ */
+/*  Begin Global Nav  Help Style  */
+/* ------------------------------ */
+#global-nav-help {
+    background: @mwh_color_base;
+    #mixin_nagini_position .right(-16);
+    left: inherit;
+    border: @global-nav-global-nav-carousel-border;
+    overflow: hidden;
+    [role="help-panel"] {
+        display: block;
+        #mixin_nagini_size .width(700);
+    }
+    h5 {
+        font-weight: 700;
+        #mixin_nagini_size .font(1.4);
+        #mixin_nagini_size .padding(9, 20, @divider:1.4);
+        #mixin_nagini_size .line-height(14,1.4);
+        margin: 0;
+    }
+    ul {
+        padding: 0;
+        list-style: none;
+        li {
+            #mixin_nagini_size .font(1.4);
+            #mixin_nagini_size .padding(5, 20, @divider:1.4);
+            #mixin_nagini_size .height(40, 1.4);
+            #mixin_nagini_size .line-height(40, 1.4);
+            #mixin_nagini .border-bottom(@color:@mwh_grey_medium_light, @divider:1.4);
+            display: block;
+            width: 100%;
+            float: left;
+            &:last-child {
+                border-bottom:none;
+            }
+            * {
+                float: left;
+                width: auto;
+                margin: 0;
+                padding: 0;
+                #mixin_nagini_size .line-height(31, 1.4);
+                #mixin_nagini_size .height(31,1.4);
+            }
+            label {
+                #mixin_nagini_size .padding-left(10,1.4);
+            }
+        }
+    }
+}
+/* Ask a health question  style */
+/*
+
+    This defines the style for ask a health question , that appears after you click on Ask a Health Question link from global nav.
+    The panel is placed under section: .global-nav-main-panel .global-nav-carousel-ask
+    #global-nav-carousel-ask id can be found in nagini/js/nagini/templates/partials/globalnavmainmenu.hbs
+    Style variables can be found in archery/less/projects/humanization/humanization_variables.less under section Global Nav Variables
+
+*/
+
+/* ----------------------------------- */
+/*  Begin Ask a health question Style  */
+/* ----------------------------------- */
+
+#global-nav-carousel-ask {
+    .question-sent {
+        #mixin_nagini_size .font(1.8);
+        #mixin_nagini_size .line-height(24, 1.8);
+        #mixin_nagini_size .margin(25, 0, @divider: 1.8);
+    }
+}
+
+/* Employer Benefits  style */
+/*
+
+    This defines the style for employer benefits panel, that appears after you click on Your Employer Benefits link from global nav.
+    The panel is placed under section: .global-nav-main-panel .global-nav-details
+    #your-employer-benefits id can be found in nagini/js/nagini/templates/partials/globalnavmainmenu.hbs
+    Style variables can be found in archery/less/projects/humanization/humanization_variables.less under section Global Nav Variables
+
+*/
+
+/* ------------------------------- */
+/*  Begin Employer Benefits Style  */
+/* ------------------------------- */
+
+#your-employer-benefits {
+    .benefits-column {
+        article {
+            #mixin_nagini .border-bottom(@color:@mwh_grey_light);
+            &:last-child{
+                border-bottom: none;
+            }
+            h3{
+                .mixin_header_nagini(24);
+                #mixin_nagini_size .margin(20, 0, 10, 0, 2.4);
+                font-weight: 600;
+            }
+            p {
+                #mixin_nagini_size .font(1.4);
+                #mixin_nagini_size .line-height(20, 1.4);
+                color: @mwh_color_text;
+            }
+        }
+    }
+}
+
+@media  (min-width: @screen-md-min) {
+    .global-nav-panel{
+        header, footer, .global-nav-carousel {
+            #mixin_nagini_size .width(720);
+        }
+    }
+}
+
+@media  (min-width: @screen-lg-min) {
+    .global-nav-panel{
+        header, footer, .global-nav-carousel {
+            #mixin_nagini_size .width(864);
+        }
+    }
+}
+
+@media  (min-width: @screen-xl-min) {
+    .global-nav-panel{
+        header, footer, .global-nav-carousel {
+            #mixin_nagini_size .width(972);
+        }
+    }
+}

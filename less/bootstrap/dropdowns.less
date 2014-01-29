@@ -1,0 +1,15 @@
+/* Dropdowns (Bootstrap) -------------------- */
+// This file modifies the styling from dropdowns.less as our design asthetic
+// takes a very different approach than Bootstrap defaults.
+/* ------------------------------------------ */
+
+.dropdown_menu_tier {
+    &:before {
+        display: block;
+        content: "";
+        height: 0;
+        margin-right: (@grid-gutter-width / 2);
+        margin-left: (@grid-gutter-width / 2);
+        border-top: 0.1em solid #000;
+    }
+}

@@ -1,0 +1,32 @@
+/* Grids (Bootstrap) ------------------------ */
+// This file adds additional breakpoints to Boostrap's grid.less
+/* ------------------------------------------ */
+
+// Set the container width, and override it for fixed navbars in media queries
+.container {
+    @media (min-width: @screen-sm) {
+        width: @container-sm;
+    }
+    @media (min-width: @screen-md) {
+        width: @container-md;
+    }
+    @media (min-width: @screen-lg-min) {
+        width: @container-lg;
+    }
+    @media (min-width: @screen-xl-min) {
+        width: @container-xl;
+    }
+}
+// Extra Large grid
+//
+// Columns, offsets, pushes, and pulls for the large desktop device range.
+
+@media (min-width: @screen-xl-min) {
+    .make-grid-columns-float(xl);
+    .make-grid(@grid-columns, xl, width);
+    .make-grid(@grid-columns, xl, pull);
+    .make-grid(@grid-columns, xl, push);
+    .make-grid(@grid-columns, xl, offset);
+}
+
+

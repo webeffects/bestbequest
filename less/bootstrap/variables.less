@@ -1,0 +1,257 @@
+/* Variables (Bootstrap) -------------------- */
+// This file modifies the variables set in Boostrap variables.less
+/* ------------------------------------------ */
+
+
+// Global values
+// --------------------------------------------------
+
+// Brand colors
+// -------------------------
+
+@brand-primary:         @mwh_color_links;
+@brand-success:         @mwh_color_supplement;
+@brand-warning:         @mwh_color_highlight;
+
+// Scaffolding
+// -------------------------
+
+@text-color:            @mwh_color_text;
+
+// Links
+// -------------------------
+
+@link-color:            @mwh_color_links;
+@link-hover-color:      @mwh_color_links;
+
+// Typography
+// -------------------------
+// Bootstrap's treatment of font sizing is a fundamentally flawed approach as it
+// relies on pixel sizing. Dump all of it. Reset everything.
+
+@font-family-sans-serif:  "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+@font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
+@font-family-base:        @font-family-sans-serif;
+
+@font-size-base:          1em;
+@font-size-large:         @font-size-base;
+@font-size-small:         @font-size-base;
+
+@font-size-h1:            @font-size-base;
+@font-size-h2:            @font-size-base;
+@font-size-h3:            @font-size-base;
+@font-size-h4:            @font-size-base;
+@font-size-h5:            @font-size-base;
+@font-size-h6:            @font-size-base;
+
+@line-height-base:        1;
+// the original logic for this line in variables.less indicates lack of
+// understanding of visual presentation of typography.
+@line-height-computed:    floor(@font-size-base * @line-height-base);
+
+@headings-font-family:    @font-family-base;
+@headings-font-weight:    400;
+@headings-line-height:    1;
+@headings-color:          inherit;
+
+// Iconography
+// -------------------------
+
+@icon-font-path:          "../fonts/icons/";
+//@icon-font-name:          "icons-9ee82a68db663a88e273228cd7483d91";
+@icon-font-name:          "wiser-icons-a2dc4f3c3337e6385df3de33731923a5";
+
+// Components
+// -------------------------
+// Based on 14px font-size and 1.428 line-height (~20px to start)
+
+// Tables
+// -------------------------
+
+@table-cell-padding:                 1em;
+@table-border-color:                 @mwh_grey_medium_light;
+
+// Buttons
+// -------------------------
+
+// Forms
+// -------------------------
+
+// Dropdowns
+// -------------------------
+
+// COMPONENT VARIABLES
+// --------------------------------------------------
+
+// Z-index master list
+// -------------------------
+// Used for a bird's eye view of components dependent on the z-axis
+// Try to avoid customizing these :)
+
+// Media queries breakpoints
+// --------------------------------------------------
+
+// Extra small screen / phone
+// Note: Deprecated @screen-xs and @screen-phone as of v3.0.1
+@screen-xs:                  480px;
+@screen-xs-min:              @screen-xs;
+@screen-phone:               @screen-xs-min;
+
+// Small screen / tablet
+// Note: Deprecated @screen-sm and @screen-tablet as of v3.0.1
+// Resolutions: 768, 960
+@screen-sm:                  768px;
+@screen-sm-min:              @screen-sm;
+@screen-tablet:              @screen-sm-min;
+
+// landscape tablets, smallest desktops
+// Note: Deprecated @screen-md and @screen-desktop as of v3.0.1
+// Resolutions: 1024, 1152
+@screen-md:                  992px;
+@screen-md-min:              @screen-md;
+@screen-desktop:             @screen-md-min;
+
+// Large screen / wide desktop
+// Note: Deprecated @screen-lg and @screen-lg-desktop as of v3.0.1
+// Resolutions: 1280
+@screen-lg:                  1200px;
+@screen-lg-min:              @screen-lg;
+@screen-lg-desktop:          @screen-lg-min;
+
+// Extra Large screen / wide desktop
+// Resolutions: 1366, 1440, and up
+@screen-xl:                  1330px;
+@screen-xl-min:              @screen-xl;
+@screen-xl-desktop:          @screen-xl-min;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-xs-max:              (@screen-sm-min - 1);
+@screen-sm-max:              (@screen-md-min - 1);
+@screen-md-max:              (@screen-lg-min - 1);
+@screen-lg-max:              (@screen-xl-min - 1);
+
+
+// Grid system
+// --------------------------------------------------
+
+// Number of columns in the grid system
+@grid-columns:              12;
+// Padding, to be divided by two and applied to the left and right of all columns
+@grid-gutter-width:         3em;
+// Point at which the navbar stops collapsing
+@grid-float-breakpoint:     @screen-sm-min;
+
+
+// Navbar
+// -------------------------
+
+// Basics of a navbar
+@navbar-height:                    (@font-size-base * 5);
+
+// Navs
+// -------------------------
+
+@nav-link-hover-bg:                         @mwh_grey_light;
+
+// Pagination
+// -------------------------
+
+@pagination-hover-bg:                  @mwh_grey_light;
+
+// Pager
+// -------------------------
+
+// @pager-border-radius:                  15px;
+@pager-disabled-color:                 @mwh_grey_medium;
+
+// Jumbotron
+// -------------------------
+
+@jumbotron-padding:              0;
+
+// Form states and alerts
+// -------------------------
+
+// Tooltips
+// -------------------------
+
+// Popovers
+// -------------------------
+
+// Labels
+// -------------------------
+
+// Modals
+// -------------------------
+
+// Alerts
+// -------------------------
+
+// Progress bars
+// -------------------------
+@progress-bg:                 @mwh_color_base;
+@progress-bar-color:          @mwh_color_text;
+@progress-bar-bg:             @mwh_color_supplement;
+
+// List group
+// -------------------------
+
+// Panels
+// -------------------------
+
+// Thumbnails
+// -------------------------
+
+// Wells
+// -------------------------
+
+// Badges
+// -------------------------
+
+// Breadcrumbs
+// -------------------------
+
+// Carousel
+// ------------------------
+
+// Close
+// ------------------------
+
+// Code
+// ------------------------
+
+// Type
+// ------------------------
+
+// this is color for annotated text
+@headings-small-color:        @mwh_grey_medium_dark;
+
+// Miscellaneous
+// -------------------------
+
+// Hr border color
+@hr-border:                   @mwh_grey_medium_light;
+
+// Container sizes
+// --------------------------------------------------
+
+// Small screen / tablet
+// 12 columns of 64 pixels each makes 768
+@container-tablet:              (76.8em);
+@container-sm:                  @container-tablet;
+
+// Medium screen / desktop
+// 12 columns of 80 pixels each makes 960
+@container-desktop:             (96em);
+@container-md:                  @container-desktop;
+
+// Large screen / wide desktop
+// 12 columns of 96 pixels each makes 1152
+@container-large-desktop:       (115.2em);
+@container-lg:                  @container-large-desktop;
+
+// Large screen / wide desktop
+// 12 columns of 108 pixels each makes 1296
+@container-xlarge-desktop:      (129.6em);
+@container-xl:                  @container-xlarge-desktop;

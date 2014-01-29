@@ -1,0 +1,241 @@
+//
+// Variables
+// --------------------------------------------------
+
+// -------------------------
+
+// Jimmy ******* if the variables in this file are share the same name as
+// bootstrap variables, move them to /src/less/bootstrap/variables, as it is the
+// modifying file for the actual Bootstrap file, as part of cascading order.
+
+@brand-secondary:                               @mwh_color_figures;
+@brand-dark:                                    @mwh_grey_dark;
+@brand-danger:                                  #D9534F;
+@brand-info:                                    #5BC0DE;
+
+// Scaffolding
+// -------------------------
+
+@header-background:                             @brand-primary;
+
+// Typography
+// -------------------------
+
+@font-size-basic:                                1em;
+
+// // Page headers
+
+@content-header-weight:             300;
+@content-header-icon-size:          1.4em;
+@content-header-height:             @content-header-icon-size;
+@content-header-icon-spacing:       0.33em;
+@content-header-margin:             0.67em -0.5em;
+
+// // Header and Footer Variables
+// // -------------------------
+
+// Basics of a navbar
+@navbar-size:                               @font-size-basic * 1.8;
+//*********** Rename this variable to define its purpose, not its placement
+//*********** Jimmy
+@navbar-right-size:                         @font-size-basic * 1.4;
+@navbar-brand-padding:                      5em;
+@navbar-active-background:                  @brand-secondary;
+@navbar-form-padding:                       0;
+@navbar-form-height:                        2.8em;
+@navbar-form-field-padding:                 0 2.5em 0 1em;
+@navbar-form-size:                          @font-size-basic*1.6;
+@navbar-form-margin:                        (@navbar-height - @navbar-form-height)/2;
+@navbar-form-icon-size:                     1.8em;
+@navbar-form-icon-top:                      0.35em;
+@navbar-form-icon-color:                    @brand-primary;
+@navbar-form-responsive-height:             @navbar-form-height + @navbar-form-margin;
+@navbar-form-responsive-icon-top: (@navbar-form-responsive-height - @navbar-form-icon-size)/3;
+@navbar-responsive-right-size:              @font-size-basic*1.8;
+@navbar-responsive-right-padding:           1em 2em;
+@navbar-responsive-right-color:             @brand-primary;
+
+//Global nav variables
+
+@global-nav-background:                     @brand-secondary;
+@global-nav-hover-background:               lighten(@global-nav-background, 10%);
+@global-nav-top-menu-color:                 @mwh_color_base;
+@global-nav-color:                          #000;
+@global-nav-panel-letter-column-size:       @font-size-base;
+@global-nav-weight:                         300;
+@global-nav-main-link-size:                 @font-size-basic * 1.8;
+@global-nav-main-link-spacing:              0 0.75em;
+@global-nav-main-link-weight:               600;
+@global-nav-dropdown-width:                 inherit;
+@global-nav-divider-background:             @mwh_color_base;
+// Jimmy: @global-nav-size not defined!
+// ********************
+@global-nav-size:                           1em;    // Jimmy is putting this
+                                                    // here temporarily.
+                                                    // Repair later!
+@global-nav-popup-background:               @brand-dark;
+@global-nav-popup-size:                     1.4em;
+//*********** Rename this variable to define its purpose, not its placement
+//*********** Jimmy
+@global-nav-popup-position-left:            -4.5em;
+@global-nav-popup-color:                    @mwh_color_base;
+
+@global-nav-panel-background:               @mwh_color_base;
+@global-nav-panel-header-background:        @brand-secondary;
+@global-nav-panel-header-height:            48;
+@global-nav-panel-header-size:              @font-size-basic*1.8;
+@global-nav-panel-header-backlink-size:     @font-size-basic*2.4;
+@global-nav-panel-header-backlink-weight:   700;
+@global-nav-panel-header-color:             @mwh_color_base;
+@global-nav-panel-header-link-spacing:      0 .5em 0 .5em;
+@global-nav-panel-header-link-radius:       0.25em;
+@global-nav-panel-header-link-margin:       0.25em;
+
+@global-nav-global-nav-carousel-border:          0.1em solid @mwh_grey_medium_light;
+@global-nav-global-nav-carousel-item-spacing:    2em 0;
+@global-nav-global-nav-carousel-control-size:    5em;
+@global-nav-global-nav-carousel-control-top:     0;
+
+@global-nav-panel-links-column-item-color:          @mwh_color_text;
+@global-nav-panel-links-column-hover-background:    @mwh_grey_light;
+@global-nav-panel-links-icon-size:                  1.05em;
+@global-nav-panel-links-icon-color:                 @brand-primary;
+@global-nav-panel-links-icon-spacing:               0.65em 1em;
+
+@global-nav-panel-letter-column-height:             45em;
+@global-nav-panel-letter-column-size:               4.8em;
+@global-nav-panel-letter-column-weight:             700;
+@global-nav-panel-letter-column-continue-color:     @mwh_grey_medium_light;
+
+// Letter Dropdown
+
+@global-nav-panel-letter-dropdown-background:       @mwh_grey_dark;
+@global-nav-panel-letter-dropdown-height:           64;
+@global-nav-panel-letter-dropdown-weight:           700;
+@global-nav-panel-letter-dropdown-size:             @font-size-basic*3.6;
+@global-nav-panel-letter-dropdown-selected:         @brand-secondary;
+@global-nav-panel-letter-dropdown-disabled:         @mwh_grey_medium_light;
+
+// Jimmy ***** these variables must be renamed to defined function, not location
+// Sidenav variables
+
+@side-nav-icon-size:            3em;
+@side-nav-icon-spacing:         1em;
+@side-nav-header-links-spacing: 1em 0;
+@side-nav-link-spacing:         0.5em 0;
+@side-nav-link-color:           #000;
+@side-nav-link-active-color:    @brand-secondary;
+
+// Footer variables
+
+// Jimmy ***** these variables must be renamed to defined function, not location
+// if this is global footer, change variable to say @global-footer-_____
+@global-footer-height:         17.5em;
+@global-footer-link-color:     @mwh_color_base;
+@global-footer-header-color:   @mwh_color_base;
+@global-footer-header-size:    1.4em;
+@global-footer-header-style:   uppercase;
+
+// -------------------------
+// Components Variables - Let's add here the style for components like
+// accordion, jumbotron, tips, etc
+// -------------------------
+
+// Accordion Variables
+// -------------------------
+
+// Navbar accordion variables
+
+@side-nav-width:            25em;
+@side-nav-left-spacing:     1.5em;
+
+// Text accordion variables
+
+@text-accordion-heading-padding:    2em 1.5em 1em 0;
+@text-accordion-body-padding:       1.5em 0;
+
+// -------------------------
+// Form Variables
+// -------------------------
+// Jimmy: ******* these variables are too generic in naming. Make them more specific
+@form-field-width:          100%;
+@label-weight:              300;
+@label-padding:             1.5em 0 0;
+@input-size:                1.8em;
+@input-height:              2em;
+@input-padding:             0 0.5em;
+// Jimmy: rejecting this because the bootstrap variable is a color, not a whole border definition
+// @input-border:              0.1em solid @mwh_grey_border;
+@input-radius:              0.2em;
+@textarea-min-height:       10em;
+@textarea-border:           @input-border;
+@textarea-radius:           @input-radius;
+@textarea-padding:          @input-padding;
+@btn-popup-background:      #676B6C;
+@btn-popup-hover:           darken(@btn-popup-background, 10%);
+@btn-popup-weight:          700;
+@btn-popup-color:           @mwh_color_base;
+@btn-popup-size:            1.4em;
+
+// Buttons
+// Jimmy: ******* these variables are too generic in naming. Make them more specific
+@button-margin:             1.5em 0 1em;
+@button-radius:             0.2em;
+@button-size:               1.8em;
+@button-width:              @form-field-width;
+
+@danger-background:         @brand-primary;
+
+// -------------------------
+// Page Sections Variables - questions sections, etc...
+// -------------------------
+
+//Questions to ask - variables
+
+@questions-main-header-margin:      1em 0;
+@questions-to-ask-radius:           1em;
+@questions-to-ask-color:            #000;
+@questions-to-ask-question-spacing: .5em 0;
+@questions-to-ask-list-style:       inside;
+
+// Questions navigation - section with questions under questions to ask
+
+@questions-navigation-color:        #000;
+@questions-navigation-spacing:      0.5em 0;
+
+// Questions Form - all the variables from within ask a question form
+
+@questions-form-border:             0.1em solid @brand-secondary;
+@questions-form-radius:             @questions-to-ask-radius;
+@questions-form-margin:             2em -1.5em;
+@questions-form-header-margin:      0 -0.625em;
+@questions-form-header-spacing:     0 0.625em;
+@questions-form-header-background:  @brand-secondary;
+@questions-form-header-color:       @mwh_color_base;
+@questions-form-header-radius:      .33em;
+@questions-form-header-height:      @font-size-basic*2.4;
+
+// Related questions row variables
+
+@related-row-margin:                0 0 1em;
+@related-row-header-color:          @brand-primary;
+@related-row-header-weight:         300;
+@related-row-image-border:          0.1em solid @mwh_grey_active;
+@related-row-image-margin:          0;
+@related-row-figure-caption-color:  #000;
+
+
+// -------------------------
+// Pages Variables - home, etc...
+// -------------------------
+
+@home-jumbotron-text-margin:        5% 0.5em;
+@home-jumbotron-text-weight:        100;
+@home-jumbotron-text-height:        1.2em;
+
+@home-article-header-spacing:       0 5.5em;
+@home-article-header-icon-size:     9em;
+@home-article-header-icon-color:    @brand-primary;
+@home-article-text-size:            1.8em;
+
+@home-video-spacing:                8em 1.5em;

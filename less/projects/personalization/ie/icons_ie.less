@@ -1,0 +1,210 @@
+/* Icons style for IE ------------ */
+// This file rewrites the icon with sprite.png just for IE8
+/* ------------------------------------------ */
+
+//mixin sprite
+.sprite (@x:0px, @y:0px){
+    background: url("../images/personalization/ie/sprite_ie.png")  no-repeat;
+    background-position: @x @y;
+}
+
+
+// icons perzonalize
+/*
+.icon-treatments-explore {
+    .sprite(-10px, -42px);
+}
+
+#toggle_explore{
+    a[data-selected="true"]{
+
+        span:before{
+            .sprite(-10px, -10px); //red icon
+            width: 30px;
+        }
+        &:hover span:before{
+            .sprite(-10px, -42px); //gray icon
+            width: 30px;
+        }
+    }
+    a[data-selected="false"]:hover span:before{
+        .sprite(-10px, -10px); //red icon
+        width: 30px;
+    }
+}
+
+
+// icons explore and peronalize
+
+.icon-treatments-personalize {
+    .sprite(-45px, -43px);
+}
+#toggle_personalize{
+    a[data-selected="true"]{
+
+        span:before {
+            .sprite(-45px, -11px);
+            width: 30px;
+        }
+        &:hover span:before{
+            .sprite(-45px, -43px);
+            width: 30px;
+        }
+    }
+    a[data-selected="false"]:hover span:before{
+        .sprite(-45px, -11px);
+        width: 30px;
+    }
+}
+*/
+
+// icon Bullseye
+/*
+#bulleye_list_toggle button[data-selected="true"]{
+
+    span.icon-bullseye{
+        .sprite(-97px, -5px);
+        width: 30px;
+        height: 30px;
+    }
+    span.icon-table-list {
+        .sprite(-127px, -6px);
+        width: 30px;
+        height: 30px;
+    }
+}
+
+#bulleye_list_toggle button[data-selected="false"]{
+
+    span.icon-bullseye{
+        .sprite(-98px, -35px);
+        width: 30px;
+        height: 30px;
+    }
+    span.icon-table-list {
+        .sprite(-127px, -35px);
+        width: 30px;
+        height: 30px;
+    }
+}
+*/
+.ie7_8 {
+    //bullseye icons
+    #bullseye_render_toggles {
+        #bullseye_render_preview span:first-child:before {
+            .sprite(-100px, -160px);
+
+            &:hover{
+                .sprite(-100px, -176px);
+            }
+        }
+        #bullseye_render_data span:first-child:before {
+            .sprite(-130px, -160px);
+        }
+        #bullseye_render_labels span:first-child {
+            .sprite(-161px, -161px);
+        }
+    }
+
+    //list arrows
+    #personalization[data-view="list_view"] th {
+        [data-sort="descending"] span:before {
+            .sprite(-130px, -65px);
+        }
+        [data-sort="ascending"] span:before {
+            .sprite(-146px, -65px);
+        }
+    }
+
+    // match-strength icons
+    [data-match-strength] {
+        width: 20px;
+        height: 20px;
+        border: none;
+    }
+    [data-match-strength="strong"] {
+        .sprite(-10px, -102px);
+    }
+    [data-match-strength="moderate"] {
+        .sprite(-10px, -130px);
+    }
+    [data-match-strength="weak"] {
+        .sprite(-10px, -160px);
+    }
+    [data-radial] {
+        .sprite(-40px, -220px);
+    }
+
+    // evidence-bubble icons
+    [data-evidence-bubble] {
+        width: 20px;
+        height: 20px;
+    }
+    [data-evidence-bubble="passed"] {
+        .sprite(-40px, -102px);
+    }
+    [data-evidence-bubble="positive"] {
+        .sprite(-40px, -130px);
+    }
+    [data-evidence-bubble="doubtful"] {
+        .sprite(-40px, -160px);
+    }
+    [data-evidence-bubble="failed"] {
+        .sprite(-40px, -190px);
+    }
+
+    [data-out-of-pocket-cost] span {
+        .sprite(-130px, -130px);
+        width: 22px;
+        height: 22px;
+        border: none;
+    }
+
+    // anothers icons
+    .icon-arrow-simple-thin-right:before {
+        .sprite(-101px, -67px);
+        width: 15px;
+        height: 28px;
+    }
+    .icon-no-x {
+        .sprite(-220px, -130px);
+    }
+    .icon-price {
+        .sprite(-100px, -130px);
+    }
+    .icon-help:before{
+        .sprite(-160px, -99px);
+        width: 16px;
+    }
+
+    // survey navigation
+    #survey_pager.pager {
+        .previous span:before {
+            .sprite(-99px, -208px);
+            width: 12px;
+            height: 15px;
+        }
+        .done span:before {
+            .sprite(-128px, -190px);
+            width: 12px;
+            height: 15px;
+        }
+        .next span:before {
+            .sprite(-159px, -191px);
+            width: 12px;
+            height: 15px;
+        }
+        a:hover {
+            .previous span:before {
+                .sprite(-99px, -225px);
+            }
+            .done span:before {
+                .sprite(-132px, -223px);
+            }
+            .next span:before {
+                .sprite(-160px, -223px);
+            }
+        }
+    }
+}
+

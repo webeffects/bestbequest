@@ -1,0 +1,51 @@
+/* Fallback Mixins -------------------------- */
+// This file contains mixins that require cross-browser prefixes, such as
+// columns or gradients. As changes in browser capabilities evolve, we can
+// easily delete the parts that no longer become necessary.
+// Some parts are inspired by http://lesselements.com/
+/* ------------------------------------------ */
+
+
+.gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+    background: @color;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, @start), color-stop(1, @stop));
+    background: -ms-linear-gradient(bottom, @start, @stop);
+    background: -moz-linear-gradient(center bottom, @start 0%, @stop 100%);
+    background: -o-linear-gradient(@stop, @start);
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start));
+}
+
+// specify one border radius for all corners
+.rounded_corners(@radius: 0) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+// specify border radius, corner by corner
+.border_radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+    -webkit-border-top-right-radius: @topright;
+    -webkit-border-bottom-right-radius: @bottomright;
+    -webkit-border-bottom-left-radius: @bottomleft;
+    -webkit-border-top-left-radius: @topleft;
+    -moz-border-radius-topright: @topright;
+    -moz-border-radius-bottomright: @bottomright;
+    -moz-border-radius-bottomleft: @bottomleft;
+    -moz-border-radius-topleft: @topleft;
+    border-top-right-radius: @topright;
+    border-bottom-right-radius: @bottomright;
+    border-bottom-left-radius: @bottomleft;
+    border-top-left-radius: @topleft;
+    .background_clip(padding-box);
+}
+// pinning of background images
+.background_clip(@argument: padding-box) {
+    -moz-background-clip: @argument;
+    -webkit-background-clip: @argument;
+    background-clip: @argument;
+}
+// for inner box shadow
+.inner-shadow (@x: 0, @y: 0, @blur: 0, @color: 0, @alpha: 0) {
+    -webkit-box-shadow: inset @x @y @blur @color rgba(0, 0, 0, @alpha);
+    -moz-box-shadow:    inset @x @y @blur @color rgba(0, 0, 0, @alpha);
+    box-shadow:         inset @x @y @blur @color rgba(0, 0, 0, @alpha);
+}

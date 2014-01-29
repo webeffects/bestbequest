@@ -1,0 +1,180 @@
+/* Global Navigation ------------------------ */
+// This file creates the top header that contains site-wide navigation.
+/* ------------------------------------------ */
+
+/*
+@custom_navbar_base_color: #353B3C;
+@custom-navbar-height: 5em;
+@custom_navbar_prime_container_color: #F0443C;
+@custom_navbar_text_color: #FFF;
+@custom_navbar_text_alt_color: #353B3C;
+@custom_navbar_dropdown_highlight_color: #4CCAE1;
+@custom_navbar_dropdown_toggle_font_size: 2em;
+@custom_navbar_dropdown_links_font_size: 1.5em;
+
+body > header {
+    // for now we are going to use this to adjust navigation. It will be removed
+    // during nagini integration.
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: @custom_navbar_base_color;
+
+    > h1 {
+        display: none;
+    }
+}
+[role='navigation'] {
+    font-size: 10px;
+    background-color: @custom_navbar_base_color;
+    height: @custom-navbar-height;
+    margin-top: 0;
+
+    h1, h2, p {
+        color: #FFF;
+    }
+
+    h1 {
+        font-size: 2em;
+        line-height: (@custom-navbar-height / 2);
+    }
+
+
+    > div.container {
+        div {
+            height: @custom-navbar-height;
+        }
+    }
+
+
+    .navbar-toggle {
+        border-color: @navbar-default-toggle-border-color;
+
+        &:hover,
+        &:focus {
+            background-color: @navbar-default-toggle-hover-bg;
+        }
+        .icon-bar {
+            background-color: @navbar-default-toggle-icon-bar-bg;
+        }
+    }
+
+}
+
+
+#prime_nav_container {
+    background-color: @custom_navbar_prime_container_color;
+    padding: 0;
+
+    .dropdown {
+        float: left;
+        width: 40%;
+        padding-right: (@grid-gutter-width / 2);
+
+        button {
+            .mixin_button_reset;
+            width: 100%;
+            height: (@custom-navbar-height / @custom_navbar_dropdown_toggle_font_size);
+            padding-left: ((@grid-gutter-width / @custom_navbar_dropdown_toggle_font_size) / 2);
+            background-color: @custom_navbar_prime_container_color;
+            color: @custom_navbar_text_alt_color;
+            font-size: (@custom_navbar_dropdown_toggle_font_size);
+            text-align: left;
+
+            &:hover {
+                // color: @custom_navbar_text_color;
+                // background-color: @custom_navbar_dropdown_highlight_color;
+                span:first-child {
+                    display: none;
+                }
+                span + span {
+                    display: inline;
+                }
+            }
+            span + span {
+                display: none;
+            }
+        }
+        &.open {
+            button {
+                color: @custom_navbar_text_color;
+                background-color: @custom_navbar_dropdown_highlight_color;
+
+                span:first-child {
+                    display: none;
+                }
+                span + span {
+                    display: inline;
+                }
+            }
+        }
+        > .dropdown-menu {
+            // defined by #prime_nav_dropdown
+        }
+    }
+
+    > form {
+        position: relative;
+        padding-right: (@grid-gutter-width / 2);
+        float: left;
+        width: 60%;
+
+        input[type='text'] {
+            width: 100%;
+            margin: 0.6em 0 0 0;
+            border: 0px none;
+            padding: 0.33333em 0.6em;
+            font-size: 1.5em;
+            // height: 1.333333em;
+            .rounded_corners(0.2em);
+        }
+        button {
+            position: absolute;
+            right: 1.1em;
+            top: 0.45em;
+            margin: 0;
+            border: 0px none;
+            padding: 0;
+            background-color: transparent;
+            color: @custom_navbar_prime_container_color;
+            font-size: 2em;
+
+        }
+    }
+}
+// here is an example of doing extra work to override bootstrap defaults!
+#prime_nav_dropdown.dropdown-menu {
+    width: 130%;
+    border-width: 0;
+    padding: 0 0 0.5em 0;
+    box-shadow: none;
+    margin: 0;
+    font-size: 1em;
+    background-color: @custom_navbar_dropdown_highlight_color;
+    .border_radius(0, 0.5em, 0.5em, 0);
+
+    > li {
+        display: block;
+
+        > a {
+            font-size: @custom_navbar_dropdown_links_font_size;
+            padding: (@custom_navbar_dropdown_links_font_size / 3) ((@grid-gutter-width / @custom_navbar_dropdown_links_font_size) / 2);
+            font-weight: bold;
+            color: @custom_navbar_text_color;
+
+            &:hover {
+                color: @custom_navbar_text_alt_color;
+                background-color: @custom_navbar_text_color;
+            }
+        }
+    }
+    .dropdown_menu_tier {
+        &:before {
+            border-color: @custom_navbar_text_color;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+        }
+    }
+}
+*/
