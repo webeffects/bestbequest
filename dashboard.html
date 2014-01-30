@@ -106,6 +106,7 @@
   <script src="https://www.bestbequest.com/template/bb_2013/js/video-js/video.js" type="text/javascript" ></script>
   <script src="https://www.bestbequest.com/template/bb_2013/js/head.js" type="text/javascript" ></script>
   <script src="js/less.js" type="text/javascript" ></script>
+  <script src="js/functions.js" type="text/javascript" ></script>
 
 
 
@@ -223,7 +224,7 @@ margin-right: 5px;"> | </span>
       <div class="meet_row container border_container2 hidden-xs" style="width:100%; max-width: 1600px;">
         <div class="row" id='first_row'>
           <div class="col-xs-6 col-sm-2">
-                         <a href="#why_plan">
+                         <a id="account_link" href="#why_plan">
 
                <ul class="boxes">
 
@@ -323,341 +324,337 @@ margin-right: 5px;"> | </span>
           </div>
         </div>
       </div>
-      <div class="row" id="account-section" style="height:500px;">
-            <div class="account-sections">
-                <a class="account-item" href="#">1 <span class="account-text"> Manage Account</span></a>
-                <a class="account-item" href="#">2 <span class="account-text"> Manage Activation</span></a>
-                <a class="account-item" href="#">1 <span class="account-text"> Manage Payments</span></a>
-            </div>
-            <div class="account-links">
-                <a href="#">Contact Information</a>
-                <a href="#">Change Password</a>
-                <a href="#">Cancel Subscription</a>
-                <a href="#">Upgrade Subscription </a>
-            </div>
+      <div class="row" id="account-section" style="display: none;">
+          <div class="account-sections">
+              <a class="account-item" href="#manage-account">1 <span class="account-text"> Manage Account</span></a>
+              <a class="account-item" href="#manage-activation">2 <span class="account-text"> Manage Activation</span></a>
+              <a class="account-item" href="#manage-payments">3 <span class="account-text"> Manage Payments</span></a>
+          </div>
+          <div class="account-links" style="display: none;">
+              <a class="account-link-item" href="#manage-account-contact">Contact Information</a>
+              <a class="account-link-item" href="#manage-account-password">Change Password</a>
+              <a class="account-link-item" href="#manage-account-unsubscribe">Cancel Subscription</a>
+              <a class="account-link-item" href="#manage-account-upgrade">Upgrade Subscription </a>
+          </div>
+          <div class="row" id="account-panels" style="display: none; position: relative;">
+              <div id="account-carousel" class="container slide" data-interval="false">
+                  <div class="carousel-inner">
+                      <div class="item manage-account" id="manage-account-contact" style="display: none; min-height: 150px;">
+                          <h1>Contact Information</h1>
+                          <form>
+                              <input type="text" placeholder="First name:">
+                              <input type="text" placeholder="Middle name:">
+                              <input type="text" placeholder="Last name:">
+                              <input type="text" placeholder="Suffix:">
+                              <input type="text" placeholder="Street address:">
+                              <input type="text" placeholder="City:">
+                              <input type="text" placeholder="State:">
+                              <input type="text" placeholder="ZipCode:">
+                              <input type="text" placeholder="Country:">
+                              <input type="text" placeholder="Phone:">
+                              <input type="text" placeholder="Email:">
+                              <input type="submit" value="save changes" class="btn btn_large">
+                              <button class="btn btn_large">Cancel</button>
+                          </form>
+                      </div>
+                      <div class="item manage-account" id="manage-account-password" style="display: none; min-height: 150px;">
+                          <h1>Change Password</h1>
+                          <form>
+                              <input type="text" placeholder="Current:">
+                              <input type="text" placeholder="New:">
+                              <input type="text" placeholder="New:">
+                              <input type="text" placeholder="Re-type new:">
+                              <input type="submit" value="save changes" class="btn btn_large">
+                              <button class="btn btn_large">Cancel</button>
+                          </form>
+                      </div>
+                      <div class="item manage-account" id="manage-account-unsubscribe" style="display: none; min-height: 150px;">
+                          <h1>Cancel Subscription</h1>
+                          <p>After your account is cancelled you will no longer be able to access any of your account information</p>
+                          <form>
+                              <div class="btn-group" data-toggle="buttons">
+                                  <label class="btn btn-primary">
+                                      <input type="checkbox">
+                                  </label>
+                              </div>
+                              <label> I hereby confirm that I wish to cancel this account </label>
+                              <input type="submit" value="confirm" class="btn btn_large">
+                          </form>
+                      </div>
+                      <div class="item manage-account" id="manage-account-upgrade" style="display: none; min-height: 870px;">
+                          <h1>Upgrade your yearly subscription</h1>
+                          <div id="fill_package" style="margin-left:auto; margin-right:auto; text-align:center;">
+                              <div class="col-xs-3 feature_list" id="first_col">
+                                  <div id="filler">
+                                  </div>
+                                  <ul>
+                                      <li class="feature_head">
+                                          Account Features
+                                      </li>
+                                      <li class="first_feature">
+                                          Storage Size
+                                      </li>
+                                      <li class="first_feature">
+                                          Joint account
+                                      </li>
+                                      <li class="first_feature">
+                                          Personal Dashboard
+                                      </li>
+                                      <li class="first_feature">
+                                          Interview
+                                      </li>
+                                      <li class="first_feature">
+                                          Reports
+                                      </li>
+                                      <li class="first_feature">
+                                          Add Section pages
+                                      </li>
+                                      <li class="first_feature">
+                                          Email exchange
+                                      </li>
+                                      <li class="first_feature">
+                                          Edit pages
+                                      </li>
+                                      <li class="first_feature">
+                                          Business Survival Plan
+                                      </li>
+                                      <li class="feature_head_2">
+                                          Uploads | Downloads
+                                      </li>
+                                      <li class="second_feature">
+                                          Documents
+                                      </li>
+                                      <li class="media_feature">
+                                          Media vault
+                                          <br> {photos + videos}
+                                      </li>
+                                      <li class="second_feature">
+                                          Reports
+                                      </li>
+                                      <li class="feature_head_3">
+                                          Account Support
+                                      </li>
+                                      <li class="third_feature">
+                                          Email Support
+                                      </li>
+                                      <li class="third_feature">
+                                          Live Support
+                                      </li>
+                                      <li class="third_feature">
+                                          Text Verification
+                                      </li>
+                                  </ul>
+                              </div>
+                              <div class="col-xs-2 feature_list" id="second_col">
+                                  <div id="account" class="basic">
+                                      basic
+                                  </div>
+                                  <div class="money">
+                                      $0
+                                  </div>
+                                  <ul>
+                                      <li class="feature_head" id="basic_select">
+                                          Select Plan
+                                      </li>
+                                      <li class="first_feature">
+                                          100 MB
+                                      </li>
+                                      <li class="feature_no first_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/no-mark.png" alt="no">
+                                      </li>
+                                      <li class="first_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="first_feature">
+                                          limited
+                                      </li>
+                                      <li class="first_feature">
+                                          limited
+                                      </li>
+                                      <li class="first_feature">
+                                          limited
+                                      </li>
+                                      <li class="first_feature">
+                                          limited
+                                      </li>
+                                      <li class="first_feature">
+                                          limited
+                                      </li>
+                                      <li class="feature_no first_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/no-mark.png" alt="no">
+                                      </li>
+                                      <li class="feature_head_2">
+                                      &nbsp;
+                                      </li>
+                                      <li class="second_feature">
+                                          limited
+                                      </li>
+                                      <li class="second_feature">
+                                          limited
+                                      </li>
+                                      <li class="second_feature">
+                                          limited
+                                      </li>
+                                      <li class="feature_head_3">
+                                      &nbsp;
+                                      </li>
+                                      <li class="third_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="feature_no third_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/no-mark.png" alt="no">
+                                      </li>
+                                      <li class="feature_no third_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/no-mark.png" alt="no">
+                                      </li>
+                                  </ul>
+                              </div>
+                              <div class="col-xs-2 feature_list" id="third_col">
+                                  <div id="account" class="bronze">
+                                      single
+                                  </div>
+                                  <div class="money">
+                                      $149.<sup>99</sup>
+                                  </div>
+                                  <ul>
+                                      <li class="feature_head" id="single_select">
+                                          Select Plan
+                                      </li>
+                                      <li class="first_feature">
+                                          25 GB
+                                      </li>
+                                      <li class="feature_no first_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/no-mark.png" alt="no">
+                                      </li>
+                                      <li class="first_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="first_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="first_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="first_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="first_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="first_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="first_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="feature_head_2">
+                                      &nbsp;
+                                      </li>
+                                      <li class="second_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="second_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="second_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="feature_head_3">
+                                      &nbsp;
+                                      </li>
+                                      <li class="third_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="third_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="third_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                  </ul>
+                              </div>
+                              <div class="col-xs-2 feature_list" id="fourth_col">
+                                  <div id="account" class="silver">
+                                    joint
+                                  </div>
+                                  <div class="money">
+                                      $249.<sup>99</sup>
+                                  </div>
+                                  <ul>
+                                      <li class="feature_head" id="joint_select">
+                                          Select Plan
+                                      </li>
+                                      <li class="first_feature">
+                                          50 GB
+                                      </li>
+                                      <li class="first_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="first_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="first_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="first_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="first_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="first_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="first_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="first_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="feature_head_2">
+                                      &nbsp;
+                                      </li>
+                                      <li class="second_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="second_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="second_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="feature_head_3">
+                                      &nbsp;
+                                      </li>
+                                      <li class="third_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="third_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                      <li class="third_feature">
+                                          <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <form>
+                              <input type="submit" value="subscribe now>" class="btn btn_large">
+                              <input type="submit" value="subscribe now>" class="btn btn_large">
+                          </form>
+                      </div>
+                  </div>
+                  <!-- Controls -->
+                  <a class="left carousel-control" href="#account-carousel" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+                  </a>
+                  <a class="right carousel-control" href="#account-carousel" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                  </a>
+              </div>
+          </div>
       </div>
-      <div class="row" id="account-panels" style="position:relative; height:500px;">
-        <div id="account-carousel" class="container" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="item active" id="contact-information">
-                    <h1>Contact Information</h1>
-                    <form>
-                        <input type="text" placeholder="First name:">
-                        <input type="text" placeholder="Middle name:">
-                        <input type="text" placeholder="Last name:">
-                        <input type="text" placeholder="Suffix:">
-                        <input type="text" placeholder="Street address:">
-                        <input type="text" placeholder="City:">
-                        <input type="text" placeholder="State:">
-                        <input type="text" placeholder="ZipCode:">
-                        <input type="text" placeholder="Country:">
-                        <input type="text" placeholder="Phone:">
-                        <input type="text" placeholder="Email:">
-                        <input type="submit" value="save changes" class="btn btn_large">
-                        <button class="btn btn_large">Cancel</button>
-                    </form>
-                </div>
-                <div class="item" id="change-password">
-                    <h1>Change Password</h1>
-                    <form>
-                        <input type="text" placeholder="Current:">
-                        <input type="text" placeholder="New:">
-                        <input type="text" placeholder="New:">
-                        <input type="text" placeholder="Re-type new:">
-                        <input type="submit" value="save changes" class="btn btn_large">
-                        <button class="btn btn_large">Cancel</button>
-                    </form>
-                </div>
-                <div class="item" id="cancel-subscription">
-                    <h1>Cancel Subscription</h1>
-                    <p>After your account is cancelled you will no longer be able to access any of your account information</p>
-                    <form>
-                        <div class="btn-group" data-toggle="buttons">
-                            <label class="btn btn-primary">
-                                <input type="checkbox">
-                            </label>
-                        </div>
-                        <label> I hereby confirm that I wish to cancel this account </label>
-                        <input type="submit" value="confirm" class="btn btn_large">
-                    </form>
-                </div>
-                <div class="item" id="cancel-subscription">
-                    <h1>Upgrade your yearly subscription</h1>
-<div id="fill_package" style="margin-left:auto; margin-right:auto; text-align:center;">
-            <div class="col-xs-3 feature_list" id="first_col">
-                <div id="filler">
-                </div>
-                    <ul>
-                        <li class="feature_head">
-                            Account Features
-                        </li>
-                        <li class="first_feature">
-                            Storage Size
-                        </li>
-                        <li class="first_feature">
-                            Joint account
-                        </li>
-                        <li class="first_feature">
-                            Personal Dashboard
-                        </li>
-                        <li class="first_feature">
-                            Interview
-                        </li>
-                        <li class="first_feature">
-                            Reports
-                        </li>
-                        <li class="first_feature">
-                            Add Section pages
-                        </li>
-                        <li class="first_feature">
-                            Email exchange
-                        </li>
-                        <li class="first_feature">
-                            Edit pages
-                        </li>
-                        <li class="first_feature">
-                            Business Survival Plan
-                        </li>
-                        <li class="feature_head_2">
-                            Uploads | Downloads
-                        </li>
-                        <li class="second_feature">
-                            Documents
-                        </li>
-                        <li class="media_feature">
-                            Media vault
-                            <br> {photos + videos}
-                        </li>
-                        <li class="second_feature">
-                            Reports
-                        </li>
-                        <li class="feature_head_3">
-                            Account Support
-                        </li>
-                        <li class="third_feature">
-                            Email Support
-                        </li>
-                        <li class="third_feature">
-                            Live Support
-                        </li>
-                        <li class="third_feature">
-                            Text Verification
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-xs-2 feature_list" id="second_col">
-
-                <div id="account" class="basic">
-                    basic
-                </div>
-                <div class="money">
-                    $0
-
-                </div>
-                    <ul>
-                        <li class="feature_head" id="basic_select">
-                            Select Plan
-                        </li>
-                        <li class="first_feature">
-                            100 MB
-                        </li>
-                        <li class="feature_no first_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/no-mark.png" alt="no">
-                        </li>
-                        <li class="first_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="first_feature">
-                            limited
-                        </li>
-                        <li class="first_feature">
-                            limited
-                        </li>
-                        <li class="first_feature">
-                            limited
-                        </li>
-                        <li class="first_feature">
-                            limited
-                        </li>
-                        <li class="first_feature">
-                            limited
-                        </li>
-                        <li class="feature_no first_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/no-mark.png" alt="no">
-                        </li>
-                        <li class="feature_head_2">
-                        &nbsp;
-                        </li>
-                        <li class="second_feature">
-                            limited
-                        </li>
-                        <li class="second_feature">
-                            limited
-                        </li>
-                        <li class="second_feature">
-                            limited
-                        </li>
-                        <li class="feature_head_3">
-                        &nbsp;
-                        </li>
-                        <li class="third_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="feature_no third_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/no-mark.png" alt="no">
-                        </li>
-                        <li class="feature_no third_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/no-mark.png" alt="no">
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-xs-2 feature_list" id="third_col">
-
-                <div id="account" class="bronze">
-                    single
-                </div>
-                <div class="money">
-                    $149.<sup>99</sup>
-                </div>
-                    <ul>
-                        <li class="feature_head" id="single_select">
-                            Select Plan
-                        </li>
-                        <li class="first_feature">
-                            25 GB
-                        </li>
-                        <li class="feature_no first_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/no-mark.png" alt="no">
-                        </li>
-                        <li class="first_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="first_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="first_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="first_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="first_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="first_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="first_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="feature_head_2">
-                        &nbsp;
-                        </li>
-                        <li class="second_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="second_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="second_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="feature_head_3">
-                        &nbsp;
-                        </li>
-                        <li class="third_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="third_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="third_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-xs-2 feature_list" id="fourth_col">
-
-                   <div id="account" class="silver">
-                    joint
-                </div>
-                <div class="money">
-                    $249.<sup>99</sup>
-                </div>
-                    <ul>
-                        <li class="feature_head" id="joint_select">
-                            Select Plan
-                        </li>
-                        <li class="first_feature">
-                            50 GB
-                        </li>
-                        <li class="first_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="first_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="first_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="first_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="first_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="first_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="first_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="first_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="feature_head_2">
-                        &nbsp;
-                        </li>
-                        <li class="second_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="second_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="second_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="feature_head_3">
-                        &nbsp;
-                        </li>
-                        <li class="third_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="third_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                        <li class="third_feature">
-                            <img src="https://www.bestbequest.com/template/bb_2013/images/homepage/tickmark.png" alt="no">
-                        </li>
-                    </ul>
-                </div></div>
-                <input type="submit" value="subscribe now>" class="btn btn_large">
-                <input type="submit" value="subscribe now>" class="btn btn_large">
-
-                    </form>
-                </div>
-
-            </div>
-            <!-- Controls -->
-            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-        </div>
-      </div>
-  <div class="container border_container2" style="height:6px;width:100%;margin-bottom:3px;" ></div>
+    <div class="container border_container2" style="height:6px;width:100%;margin-bottom:3px;" ></div>
 
 
   <div id="super_bottom" class="container" style="width:100%">
