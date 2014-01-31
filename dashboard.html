@@ -24,25 +24,11 @@ owl: http://www.w3.org/2002/07/owl#" class="no-js no-touch">
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/images/icons/apple-touch-icon-152x152.png">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/icons/apple-touch-icon-144x144.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/icons/apple-touch-icon-72x72.png">
-    <link rel="stylesheet" href="https://www.bestbequest.com/template/bb_2013/new_style.css" type="text/css" media="screen,print" />
     <link rel="icon" type="image/ico" href="https://www.bestbequest.com/template/bb_2013/images/favicon.ico"/>
     <link href='//fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" href="https://www.bestbequest.com/template/bb_2013/js/jquery-ui/themes/redmond-modified/jquery-ui-1.9.2.custom.min.css" type="text/css" media="screen,print" />
-    <link rel="stylesheet" href="https://www.bestbequest.com/BestBequest/inc/modules/vault/css/vault_explorer.css" type="text/css" media="screen,print" />
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="https://www.bestbequest.com/template/bb_2013/style_ie7.css" type="text/css" media="screen,print" />
-    <![endif]-->
-    <link rel="stylesheet" href="/jquery-ui-1.8.14.custom.css" type="text/css" media="screen, print" />
-    <link rel="stylesheet" href="http://www.bestbequest.com/template/bb_2013/bootstrap/dist/css/bootstrap.min.css" type="text/css"/>
 
-    <link rel="stylesheet" type="text/css" media="all" href="https://www.bestbequest.com/template/bb_2013/jScrollPane.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="https://www.bestbequest.com/template/bb_2013/jquery.lightbox-0.5.css" />
-    <link rel="stylesheet" href="https://www.bestbequest.com/template/bb_2013/sifr.css" type="text/css">
-    <link rel="stylesheet" href="https://www.bestbequest.com/template/bb_2013/js/facebox/facebox.css" type="text/css">
-    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7292652/791502/css/fonts.css" />
-    <link rel="stylesheet" href="https://www.bestbequest.com/template/bb_2013/slider_style.css" type="text/css"/>
     <link rel="stylesheet/less" type="text/css" href="less/main.less" />
 
 <!--[if IE 8]>
@@ -62,102 +48,61 @@ owl: http://www.w3.org/2002/07/owl#" class="no-js no-touch">
 
 
 </head>
-  <body class="page_dashboard">
-  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
-          </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
-        </div>
-      </div>
-    </div>
-
-      <div id="smallTest" class="visible-sm visible-xs"></div>
-    <div id="xsTest" class="visible-xs"></div>
-
-    <div  id="login_bar" class="container" style="max-width:1000px;">
-      <div class="row" style="max-width: 1000px !important;
-margin-left: auto !important;
-margin-right: auto !important;">
-          <div class="col-xs-12" style="max-width: 1000px;
-margin-left: auto;
-margin-right: auto;">
-
-            <span class="hidden-xs " style="float:right; margin-right:20px;">
-           <ul>
-
-            <li style="display: inline-block">
-            <form name="login_form" id="header_login" action="https://www.bestbequest.com/login" method="post">
-            <input type="hidden" name="login" value="login">
-            <span class="field"><input placeholder="username/email" type="text" name="username" value=""></span>
-            <span class="field"><input placeholder="password" type="password" name="password" value=""></span>
-            <a onclick="document.login_form.submit()" class="bt_login">login</a> <span style="margin-left: 5px;
-margin-right: 5px;"> | </span>
-            <a href="https://www.bestbequest.com/signup">signup</a>
-
-            </form>
-            </li>
-              </ul>
-                          </span>
-               <span class="visible-xs" style="text-align:center; margin-bottom:25px">
-            <form style="text-align:center; margin-bottom:25px;" name="login_form2" id="header_login2" action="https://www.BestBequest.com/login" method="post">
-            <input type="hidden" name="login2" value="login">
-
-            <input placeholder="username" type="text" name="username2" value="">
-<br>
-            <input style="margin-top: 15px; margin-bottom:15px;" placeholder="password" type="password" name="password2" value="">
-<br>
-    <a onclick="document.login_form2.submit()" class="bt_login">log in</a><span style="margin-left: 5px;
-margin-right: 5px;"> | </span>
+<body class="page_dashboard">
+    <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="row">
+                    <a class="navbar-brand col-md-12 col-sm-12" href="https://www.bestbequest.com/">
+                        <img class="img-responsive" src="https://www.bestbequest.com/template/bb_2013/images/homepage/bb_logo2.png" alt="BestBequest Logo">
+                    </a>
+                </div> <!-- /.row -->
+            </div> <!-- /.navbar-header -->
+            <div class="navbar-collapse collapse">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form name="login_form" id="header_login" action="https://www.bestbequest.com/login" method="post">
+                        </form>
+                    </div>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="">Meet BestBequest</a></li>
+                    <li class="bold"><a href="https://www.bestbequest.com/why">Top Questions</a></li>
+                    <li class="bold"><a href="https://www.bestbequest.com/press">Press</a></li>
+                    <li class="bold" style="margin-right:0px;"><a href="https://www.bestbequest.com/forgot_password">Forgot Password</a></li>
+                </ul>
+            <form class="navbar-form navbar-right">
+                <input type="hidden" name="login" value="login">
+                <span class="field"><input placeholder="username/email" type="text" name="username" value=""></span>
+                <span class="field"><input placeholder="password" type="password" name="password" value=""></span>
+                <a onclick="document.login_form.submit()" class="bt_login">login</a> <span style="margin-left: 5px;
+                margin-right: 5px;"> | </span>
                 <a href="https://www.bestbequest.com/signup">signup</a>
-<br>
-            </form>
-                          </span>
+              </form>
+            </div> <!-- /.navbar-collapse -->
+        </div> <!-- /.container-fluid -->
+    </div> <!-- /.navbar -->
 
+    <div class="container dashboard-links">
+        <div class="row">
+            <a class="col-md-4" >
 
-              <input type="submit" value="Login" style="display:none">
+            </a>
         </div>
-      </div>
-    </div>
+    </div><!-- /.container -->
     <div class="border_container">
       <div class="container" style="max-width:1000px; width: 100%;" id="new_head">
         <div class="row" style="position:relative;">
-          <div class="col-md-4 col-sm-5" id="new_logo">
-              <a href="https://www.bestbequest.com/"><img class="img-responsive" src="https://www.bestbequest.com/template/bb_2013/images/homepage/bb_logo2.png" alt="BestBequest Logo">
-              <!-- Fix in future, no time now, overflow:hidden wasn't working -->
-              </div>
           <div class="col-sm-6 col-sm-offset-0 col-md-7 col-md-offset-0 col-lg-6 col-lg-offset-0 pull-down" style="margin-right: 20px; float:right; padding-right:0px; margin-top:70px;" id="header_menu">
-            <ul style="float:right;">
+            <ul>
 
 
-              <li>
-                 <a href="">Meet BestBequest</a>
-              </li>
-              <li class="bold">
-                 <a href="https://www.bestbequest.com/why">Top Questions</a>
-              </li>
-              <li class="bold">
-                <a href="https://www.bestbequest.com/press">Press</a>
-              </li>
-              <li class="bold" style="margin-right:0px;">
-                <a href="https://www.bestbequest.com/forgot_password">Forgot Password</a>
-              </li>
                           </ul>
           </div>
         </div>
