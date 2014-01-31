@@ -8,8 +8,8 @@
 // bootstrap variables, move them to /src/less/bootstrap/variables, as it is the
 // modifying file for the actual Bootstrap file, as part of cascading order.
 
-@brand-secondary:                               @mwh_color_figures;
-@brand-dark:                                    @mwh_grey_dark;
+@brand-secondary:                               @bb_color_figures;
+@brand-dark:                                    @bb_grey_dark;
 @brand-danger:                                  #D9534F;
 @brand-info:                                    #5BC0DE;
 
@@ -59,7 +59,7 @@
 
 @global-nav-background:                     @brand-secondary;
 @global-nav-hover-background:               lighten(@global-nav-background, 10%);
-@global-nav-top-menu-color:                 @mwh_color_base;
+@global-nav-top-menu-color:                 @bb_color_base;
 @global-nav-color:                          #000;
 @global-nav-panel-letter-column-size:       @font-size-base;
 @global-nav-weight:                         300;
@@ -67,7 +67,7 @@
 @global-nav-main-link-spacing:              0 0.75em;
 @global-nav-main-link-weight:               600;
 @global-nav-dropdown-width:                 inherit;
-@global-nav-divider-background:             @mwh_color_base;
+@global-nav-divider-background:             @bb_color_base;
 // Jimmy: @global-nav-size not defined!
 // ********************
 @global-nav-size:                           1em;    // Jimmy is putting this
@@ -78,26 +78,26 @@
 //*********** Rename this variable to define its purpose, not its placement
 //*********** Jimmy
 @global-nav-popup-position-left:            -4.5em;
-@global-nav-popup-color:                    @mwh_color_base;
+@global-nav-popup-color:                    @bb_color_base;
 
-@global-nav-panel-background:               @mwh_color_base;
+@global-nav-panel-background:               @bb_color_base;
 @global-nav-panel-header-background:        @brand-secondary;
 @global-nav-panel-header-height:            48;
 @global-nav-panel-header-size:              @font-size-basic*1.8;
 @global-nav-panel-header-backlink-size:     @font-size-basic*2.4;
 @global-nav-panel-header-backlink-weight:   700;
-@global-nav-panel-header-color:             @mwh_color_base;
+@global-nav-panel-header-color:             @bb_color_base;
 @global-nav-panel-header-link-spacing:      0 .5em 0 .5em;
 @global-nav-panel-header-link-radius:       0.25em;
 @global-nav-panel-header-link-margin:       0.25em;
 
-@global-nav-global-nav-carousel-border:          0.1em solid @mwh_grey_medium_light;
+@global-nav-global-nav-carousel-border:          0.1em solid @bb_grey_medium_light;
 @global-nav-global-nav-carousel-item-spacing:    2em 0;
 @global-nav-global-nav-carousel-control-size:    5em;
 @global-nav-global-nav-carousel-control-top:     0;
 
-@global-nav-panel-links-column-item-color:          @mwh_color_text;
-@global-nav-panel-links-column-hover-background:    @mwh_grey_light;
+@global-nav-panel-links-column-item-color:          @bb_color_text;
+@global-nav-panel-links-column-hover-background:    @bb_grey_light;
 @global-nav-panel-links-icon-size:                  1.05em;
 @global-nav-panel-links-icon-color:                 @brand-primary;
 @global-nav-panel-links-icon-spacing:               0.65em 1em;
@@ -105,16 +105,16 @@
 @global-nav-panel-letter-column-height:             45em;
 @global-nav-panel-letter-column-size:               4.8em;
 @global-nav-panel-letter-column-weight:             700;
-@global-nav-panel-letter-column-continue-color:     @mwh_grey_medium_light;
+@global-nav-panel-letter-column-continue-color:     @bb_grey_medium_light;
 
 // Letter Dropdown
 
-@global-nav-panel-letter-dropdown-background:       @mwh_grey_dark;
+@global-nav-panel-letter-dropdown-background:       @bb_grey_dark;
 @global-nav-panel-letter-dropdown-height:           64;
 @global-nav-panel-letter-dropdown-weight:           700;
 @global-nav-panel-letter-dropdown-size:             @font-size-basic*3.6;
 @global-nav-panel-letter-dropdown-selected:         @brand-secondary;
-@global-nav-panel-letter-dropdown-disabled:         @mwh_grey_medium_light;
+@global-nav-panel-letter-dropdown-disabled:         @bb_grey_medium_light;
 
 // Jimmy ***** these variables must be renamed to defined function, not location
 // Sidenav variables
@@ -131,8 +131,8 @@
 // Jimmy ***** these variables must be renamed to defined function, not location
 // if this is global footer, change variable to say @global-footer-_____
 @global-footer-height:         17.5em;
-@global-footer-link-color:     @mwh_color_base;
-@global-footer-header-color:   @mwh_color_base;
+@global-footer-link-color:     @bb_color_base;
+@global-footer-header-color:   @bb_color_base;
 @global-footer-header-size:    1.4em;
 @global-footer-header-style:   uppercase;
 
@@ -165,7 +165,7 @@
 @input-height:              2em;
 @input-padding:             0 0.5em;
 // Jimmy: rejecting this because the bootstrap variable is a color, not a whole border definition
-// @input-border:              0.1em solid @mwh_grey_border;
+// @input-border:              0.1em solid @bb_grey_border;
 @input-radius:              0.2em;
 @textarea-min-height:       10em;
 @textarea-border:           @input-border;
@@ -174,7 +174,7 @@
 @btn-popup-background:      #676B6C;
 @btn-popup-hover:           darken(@btn-popup-background, 10%);
 @btn-popup-weight:          700;
-@btn-popup-color:           @mwh_color_base;
+@btn-popup-color:           @bb_color_base;
 @btn-popup-size:            1.4em;
 
 // Buttons
@@ -211,7 +211,7 @@
 @questions-form-header-margin:      0 -0.625em;
 @questions-form-header-spacing:     0 0.625em;
 @questions-form-header-background:  @brand-secondary;
-@questions-form-header-color:       @mwh_color_base;
+@questions-form-header-color:       @bb_color_base;
 @questions-form-header-radius:      .33em;
 @questions-form-header-height:      @font-size-basic*2.4;
 
@@ -220,7 +220,7 @@
 @related-row-margin:                0 0 1em;
 @related-row-header-color:          @brand-primary;
 @related-row-header-weight:         300;
-@related-row-image-border:          0.1em solid @mwh_grey_active;
+@related-row-image-border:          0.1em solid @bb_grey_active;
 @related-row-image-margin:          0;
 @related-row-figure-caption-color:  #000;
 
