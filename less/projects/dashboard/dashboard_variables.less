@@ -4,10 +4,6 @@
 
 // -------------------------
 
-// Jimmy ******* if the variables in this file are share the same name as
-// bootstrap variables, move them to /src/less/bootstrap/variables, as it is the
-// modifying file for the actual Bootstrap file, as part of cascading order.
-
 @brand-secondary:                               @bb_color_figures;
 @brand-dark:                                    @bb_grey_dark;
 @brand-danger:                                  #D9534F;
@@ -36,8 +32,6 @@
 
 // Basics of a navbar
 @navbar-size:                               @font-size-basic * 1.8;
-//*********** Rename this variable to define its purpose, not its placement
-//*********** Jimmy
 @navbar-right-size:                         @font-size-basic * 1.4;
 @navbar-brand-padding:                      5em;
 @navbar-active-background:                  @brand-secondary;
@@ -68,15 +62,9 @@
 @global-nav-main-link-weight:               600;
 @global-nav-dropdown-width:                 inherit;
 @global-nav-divider-background:             @bb_color_base;
-// Jimmy: @global-nav-size not defined!
-// ********************
-@global-nav-size:                           1em;    // Jimmy is putting this
-                                                    // here temporarily.
-                                                    // Repair later!
+@global-nav-size:                           1em;
 @global-nav-popup-background:               @brand-dark;
 @global-nav-popup-size:                     1.4em;
-//*********** Rename this variable to define its purpose, not its placement
-//*********** Jimmy
 @global-nav-popup-position-left:            -4.5em;
 @global-nav-popup-color:                    @bb_color_base;
 
@@ -116,7 +104,6 @@
 @global-nav-panel-letter-dropdown-selected:         @brand-secondary;
 @global-nav-panel-letter-dropdown-disabled:         @bb_grey_medium_light;
 
-// Jimmy ***** these variables must be renamed to defined function, not location
 // Sidenav variables
 
 @side-nav-icon-size:            3em;
@@ -128,8 +115,6 @@
 
 // Footer variables
 
-// Jimmy ***** these variables must be renamed to defined function, not location
-// if this is global footer, change variable to say @global-footer-_____
 @global-footer-height:         17.5em;
 @global-footer-link-color:     @bb_color_base;
 @global-footer-header-color:   @bb_color_base;
@@ -157,14 +142,12 @@
 // -------------------------
 // Form Variables
 // -------------------------
-// Jimmy: ******* these variables are too generic in naming. Make them more specific
 @form-field-width:          100%;
 @label-weight:              300;
 @label-padding:             1.5em 0 0;
 @input-size:                1.8em;
 @input-height:              2em;
 @input-padding:             0 0.5em;
-// Jimmy: rejecting this because the bootstrap variable is a color, not a whole border definition
 // @input-border:              0.1em solid @bb_grey_border;
 @input-radius:              0.2em;
 @textarea-min-height:       10em;
@@ -178,7 +161,6 @@
 @btn-popup-size:            1.4em;
 
 // Buttons
-// Jimmy: ******* these variables are too generic in naming. Make them more specific
 @button-margin:             1.5em 0 1em;
 @button-radius:             0.2em;
 @button-size:               1.8em;
