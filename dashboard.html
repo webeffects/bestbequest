@@ -336,6 +336,30 @@ margin-right: 5px;"> | </span>
               </div><!-- /.modal-content -->
           </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
+      <div class="modal fade in" id="saved-modal" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-body">
+                      <p>Data successfully saved.</p>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-primary">OK</button>
+                  </div>
+              </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+      <div class="modal fade in" id="error-modal" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-body">
+                      <p>There was an error while saving data: <span class="error-message"></span>.</p>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-primary">OK</button>
+                  </div>
+              </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
       <div class="row" id="account-section" style="display: none;">
           <div class="account-sections">
               <div id="manage-account-info-block" style="display: none;">
@@ -357,31 +381,32 @@ margin-right: 5px;"> | </span>
                       <div class="item manage-account" id="manage-account-contact" style="display: none; min-height: 150px;">
                           <h1>Contact Information</h1>
                           <form class="settings-form">
-                              <input type="text" placeholder="First name:" id="contact-setting-first-name" />
+                              <input type="text" placeholder="First name:" id="contact-setting-first-name" required />
                               <input type="text" placeholder="Middle name:" id="contact-setting-middle-name" />
-                              <input type="text" placeholder="Last name:" id="contact-setting-last-name" />
+                              <input type="text" placeholder="Last name:" id="contact-setting-last-name" required />
                               <input type="text" placeholder="Suffix:" id="contact-setting-suffix" />
                               <input type="text" placeholder="Street address:" id="contact-setting-street" />
                               <input type="text" placeholder="City:" id="contact-setting-city" />
                               <input type="text" placeholder="State:" id="contact-setting-state" />
-                              <input type="text" placeholder="ZipCode:" id="contact-setting-zip" />
-                              <input type="text" placeholder="Country:" id="contact-setting-country" />
+                              <input type="text" placeholder="ZipCode:" id="contact-setting-zip" required />
+                              <input type="text" placeholder="Country:" id="contact-setting-country" required />
                               <input type="text" placeholder="Phone:" id="contact-setting-phone" />
-                              <input type="text" placeholder="Email:" id="contact-setting-email" />
+                              <input type="text" placeholder="Email:" id="contact-setting-email" required />
                               <input type="submit" id="contact-save" value="save changes" class="btn btn_large" />
                               <button id="contact-cancel" class="btn btn_large">Cancel</button>
                           </form>
+                          <div id="manage-account-contact-validation-error" class="validation-error" style="display: none;"></div>
                       </div>
                       <div class="item manage-account" id="manage-account-password" style="display: none; min-height: 150px;">
                           <h1>Change Password</h1>
                           <form class="settings-form">
-                              <input type="password" placeholder="Current:" id="password-setting-current" />
-                              <input type="password" placeholder="New:" id="password-setting-new1" />
-                              <input type="password" placeholder="New:" id="password-setting-new2" />
-                              <input type="password" placeholder="Re-type new:" id="password-setting-repeat" />
+                              <input type="password" placeholder="Current:" id="password-setting-current" required />
+                              <input type="password" placeholder="New:" id="password-setting-new" required />
+                              <input type="password" placeholder="Re-type new:" id="password-setting-repeat" required />
                               <input type="submit" id="password-save" value="save changes" class="btn btn_large" />
                               <button id="password-cancel" class="btn btn_large">Cancel</button>
                           </form>
+                          <div id="manage-account-password-validation-error" class="validation-error" style="display: none;"></div>
                       </div>
                       <div class="item manage-account" id="manage-account-unsubscribe" style="display: none; min-height: 150px;">
                           <h1>Cancel Subscription</h1>
@@ -389,10 +414,9 @@ margin-right: 5px;"> | </span>
                           <form>
                               <div class="btn-group" data-toggle="buttons">
                                   <label class="btn btn-primary">
-                                      <input type="checkbox" id="cancel-subscription-confirm" />
+                                      <input type="checkbox" id="cancel-subscription-confirm" /> I hereby confirm that I wish to cancel this account
                                   </label>
                               </div>
-                              <label> I hereby confirm that I wish to cancel this account </label>
                               <input type="submit" id="unsubscribe" value="confirm" class="btn btn_large" />
                           </form>
                       </div>
