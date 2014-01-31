@@ -295,6 +295,8 @@
   // FORMS FUNCTIONS & HANDLERS
   // ==========================
 
+  var RequiredFieldsValidationMessage = 'You need to fill all required fields.';
+
   var formChanged = false;
 
   // handles changes in input boxes
@@ -314,8 +316,11 @@
       zip = '',
       country = '',
       phone = '',
-      email = '';
-
+      email = '',
+      $validationMessage = $('#manage-account-contact-validation-error');
+    $validationMessage.hide();
+    $validationMessage.html('');
+    $('.settings-form input').removeClass('invalid');
     $('#contact-setting-first-name').val(firstName);
     $('#contact-setting-middle-name').val(middleName);
     $('#contact-setting-last-name').val(lastName);
@@ -330,12 +335,38 @@
     formChanged = false;
   }
 
+  function getContactInformationForm() {
+    return {
+      firstName: $('#contact-setting-first-name').val(),
+      middleName: $('#contact-setting-middle-name').val(),
+      lastName: $('#contact-setting-last-name').val(),
+      suffix: $('#contact-setting-suffix').val(),
+      street: $('#contact-setting-street').val(),
+      city: $('#contact-setting-city').val(),
+      state: $('#contact-setting-state').val(),
+      zip: $('#contact-setting-zip').val(),
+      country: $('#contact-setting-country').val(),
+      phone: $('#contact-setting-phone').val(),
+      email: $('#contact-setting-email').val()
+    };
+  }
+
   function initChangePasswordForm() {
+    var $validationMessage = $('#manage-account-password-validation-error');
+    $validationMessage.hide();
+    $validationMessage.html('');
+    $('.settings-form input').removeClass('invalid');
     $('#password-setting-current').val('');
-    $('#password-setting-new1').val('');
-    $('#password-setting-new2').val('');
+    $('#password-setting-new').val('');
     $('#password-setting-repeat').val('');
     formChanged = false;
+  }
+
+  function getChangePasswordForm() {
+    return {
+      currentPassword: $('#password-setting-current').val(),
+      newPassword: $('#password-setting-new').val()
+    };
   }
 
   function initCancelSubscriptionForm() {
@@ -359,11 +390,80 @@
     }
   }
 
+  // validates required text fields
+  function validateRequiredFields($formEl, trimValues) {
+    var valid = true,
+      inputs;
+    if ($formEl && $formEl.length) {
+      $inputs = $formEl.find('input[required]');
+      $.each($inputs, function () {
+        var trimmedValue = trim($(this).val());
+        if (trimmedValue) {
+          $(this).removeClass('invalid');
+        } else {
+          $(this).addClass('invalid');
+          if (trimValues) {
+            // replace field value with its trimmed value :)
+            $(this).val(trimmedValue);
+          }
+          valid = false;
+        }
+      });
+    }
+    return valid;
+  }
+
   function contactSubmitClick(e) {
     e.preventDefault();
     e.stopPropagation();
 
-    // TODO: save contact form
+    var $form = $(e.currentTarget).closest('.settings-form'),
+      $validationMessage = $('#manage-account-contact-validation-error'),
+      valid = validateRequiredFields($form),
+      postData;
+
+    // validate form
+    if (!valid) {
+      $validationMessage.html(RequiredFieldsValidationMessage);
+      $validationMessage.show();
+      formChanged = true;
+    } else {
+      $validationMessage.hide();
+      $validationMessage.html('');
+
+      // NOTE: uncomment next code to work with real requests
+
+      // // save form data
+      // postData = getContactInformationForm();
+      // $.ajax({
+      //   type: 'POST',
+      //   url: 'http://localhost', // TODO: put some real URL here
+      //   data: postData,
+      //   success: function (data, textStatus, jqXHR) {
+      //     showSavedModal(function () {
+      //       initContactInformationForm();
+      //       collapseManageAccountCarousel();
+      //     });
+      //   },
+      //   error: function (jqXHR, textStatus, error) {
+      //     showErrorModal(textStatus);
+      //   }
+      // });
+
+      // NOTE: next code is just for test purposes.
+      // Comment it out and uncomment the code above to work with real requests
+
+      // success modal test
+      // showSavedModal(function () {
+      //   initContactInformationForm();
+      //   collapseManageAccountCarousel();
+      // });
+
+      // error modal test
+      showErrorModal('Some strange error');
+
+      // ENDOF test code
+    }
   }
 
   function contactCancelClick(e) {
@@ -384,7 +484,68 @@
     e.preventDefault();
     e.stopPropagation();
 
-    // TODO: save change password form
+    var $form = $(e.currentTarget).closest('.settings-form'),
+      $validationMessage = $('#manage-account-password-validation-error'),
+      $newPassword1,
+      $newPassword2,
+      valid = validateRequiredFields($form, true),
+      postData;
+
+    // validate form
+    if (!valid) {
+      $validationMessage.html(RequiredFieldsValidationMessage);
+      $validationMessage.show();
+      formChanged = true;
+    } else {
+      $newPassword1 = $('#password-setting-new');
+      $newPassword2 = $('#password-setting-repeat');
+      // check if new passwords are equal
+      if ($newPassword1.val() !== $newPassword2.val()) {
+        $newPassword1.addClass('invalid');
+        $newPassword2.addClass('invalid');
+        $validationMessage.html('New passwords should be equal.');
+        $validationMessage.show();
+        formChanged = true;
+      } else {
+        $newPassword1.removeClass('invalid');
+        $newPassword2.removeClass('invalid');
+        $validationMessage.hide();
+        $validationMessage.html('');
+
+        // NOTE: uncomment next code to work with real requests
+
+        // // save form data
+        // postData = getChangePasswordForm();
+        // $.ajax({
+        //   type: 'POST',
+        //   url: 'http://localhost', // TODO: put some real URL here
+        //   data: postData,
+        //   success: function (data, textStatus, jqXHR) {
+        //     showSavedModal(function () {
+        //       initChangePasswordForm();
+        //       collapseManageAccountCarousel();
+        //     });
+        //   },
+        //   error: function (jqXHR, textStatus, error) {
+        //     showErrorModal(textStatus);
+        //   }
+        // });
+
+        // NOTE: next code is just for test purposes.
+        // Comment it out and uncomment the code above to work with real requests
+
+        // success modal test
+        showSavedModal(function () {
+          initChangePasswordForm();
+          collapseManageAccountCarousel();
+        });
+
+        // error modal test
+        // showErrorModal('Some strange error');
+
+        // ENDOF test code
+      }
+    }
   }
 
   function passwordCancelClick(e) {
@@ -406,7 +567,21 @@
     e.stopPropagation();
 
     if ($('#cancel-subscription-confirm').prop('checked')) {
-      // TODO: process subscription cancel
+      // process subscription cancel
+      $.ajax({
+        type: 'POST',
+        url: 'http://localhost', // TODO: put some real URL here
+        data: {},
+        success: function (data, textStatus, jqXHR) {
+          showSavedModal(function () {
+            initCancelSubscriptionForm();
+            collapseManageAccountCarousel();
+          });
+        },
+        error: function (jqXHR, textStatus, error) {
+          showErrorModal(textStatus);
+        }
+      });
     }
   }
 
@@ -425,6 +600,7 @@
   }
 
 
+  // shows Cancel Prompt modal
   function showCancelPrompt(callback) {
     var $cancelModal = $('#cancel-modal'),
       $confirmCancelButton = $cancelModal.find('.btn-confirm-cancel');
@@ -449,6 +625,58 @@
     }
   }
 
+  // shows Saved modal
+  function showSavedModal(callback) {
+    var $savedModal = $('#saved-modal'),
+      $okButton = $savedModal.find('.btn');
+    // show 'saved' modal
+    $savedModal.bootstrapModal('show');
+    $okButton.off('click');
+    if (typeof callback === 'function') {
+      // register callback that will be called when 'saved' modal will be closed
+      $okButton.one('click', function () {
+        var $savedModal = $('#saved-modal');
+        $savedModal.one('hidden.bs.modal', function (e) {
+          formChanged = false;
+          callback();
+        });
+        $savedModal.bootstrapModal('hide');
+      });
+    } else {
+      // just close modal
+      $okButton.one('click', function () {
+        $('#saved-modal').bootstrapModal('hide');
+      });
+    }
+  }
+
+  // shows Error modal
+  function showErrorModal(message, callback) {
+    var $errorModal = $('#error-modal'),
+      $okButton = $errorModal.find('.btn');
+    // add error message
+    $errorModal.find('.error-message').html(message);
+    // show error modal
+    $errorModal.bootstrapModal('show');
+    $okButton.off('click');
+    if (typeof callback === 'function') {
+      // register callback that will be called when 'saved' modal will be closed
+      $okButton.one('click', function () {
+        var $errorModal = $('#error-modal');
+        $errorModal.one('hidden.bs.modal', function (e) {
+          formChanged = false;
+          callback();
+        });
+        $errorModal.bootstrapModal('hide');
+      });
+    } else {
+      // just close modal
+      $okButton.one('click', function () {
+        $('#error-modal').bootstrapModal('hide');
+      });
+    }
+  }
+
 
   // ================
   // HELPER FUNCTIONS
@@ -458,6 +686,12 @@
   function getCleanHref(href) {
     var pos = href.indexOf('#');
     return href.slice(pos + 1);
+  }
+
+  // trims leading and trailing spaces
+  function trim(str) {
+    var regex = new RegExp('^\\s+|\\s+$', 'g');
+    return str.replace(regex, '');
   }
 
 
