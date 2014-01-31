@@ -9,10 +9,10 @@
 /* ------------------------------------------ */
 
 // Variables that define Bootstrap styling. Do not touch this file.
-@import "@{mwh_path_bootstrap}variables.less";
+@import "@{bb_path_bootstrap}variables.less";
 
 // a supplemental mixin file is added later to create new breakpoints
-@import "@{mwh_path_bootstrap}mixins.less";
+@import "@{bb_path_bootstrap}mixins.less";
 /* ------------------------------------------ */
 
 
@@ -20,14 +20,14 @@
 /* ------------------------------------------ */
 
 // Normalize is a basic reset: http://necolas.github.io/normalize.css/
-// Jimmy says that we are not going to spend hours and days fighting a
+// Nick says that we are not going to spend hours and days fighting a
 // one-size-fits-all file that causes unpredictable outcomes in cascading
 // orders. The only things it has that are are worth consideration are form
 // controls. Those parts will be moved into a separate file.
-// @import "@{mwh_path_bootstrap}normalize.less";
+// @import "@{bb_path_bootstrap}normalize.less";
 
 // Styling for when user prints the page
-@import "@{mwh_path_bootstrap}print.less";
+@import "@{bb_path_bootstrap}print.less";
 /* ------------------------------------------ */
 
 /* Core CSS --------------------------------- */
@@ -35,131 +35,131 @@
 
 // Scaffolding is Bootstrap's version of a global reset. The key factor is that
 // it redefines the CSS box model.
-@import "@{mwh_path_bootstrap}scaffolding.less";
+@import "@{bb_path_bootstrap}scaffolding.less";
 
 // Type lays out the typographic groundwork. Many rules of typography ignored
 // in this file, and we may have to spend unneccessary effort to fight it later.
-@import "@{mwh_path_bootstrap}type.less";
+@import "@{bb_path_bootstrap}type.less";
 
 // Code for displaying inline code
 // http://getbootstrap.com/css/#code
 // REMOVED because we do not present code on the site.
-// @import "@{mwh_path_bootstrap}code.less";
+// @import "@{bb_path_bootstrap}code.less";
 
 // defines grid system. Insufficient in current version; more breakpoints needed
 // http://getbootstrap.com/css/#grid
-@import "@{mwh_path_bootstrap}grid.less";
+@import "@{bb_path_bootstrap}grid.less";
 
 // tables make basic formatting on tables
 // http://getbootstrap.com/css/#tables
-@import "@{mwh_path_bootstrap}tables.less";
+@import "@{bb_path_bootstrap}tables.less";
 
 // form styling
 // http://getbootstrap.com/css/#forms
-@import "@{mwh_path_bootstrap}forms.less";
+@import "@{bb_path_bootstrap}forms.less";
 
 // button styling
 // http://getbootstrap.com/css/#buttons
-@import "@{mwh_path_bootstrap}buttons.less";
+@import "@{bb_path_bootstrap}buttons.less";
 /* ------------------------------------------ */
 
 /* Components ------------------------------- */
 /* ------------------------------------------ */
 
 // defines transitions in animations
-@import "@{mwh_path_bootstrap}component-animations.less";
+@import "@{bb_path_bootstrap}component-animations.less";
 
 // Glyphicons is a library of iconography
 // http://getbootstrap.com/components/#glyphicons
 // REMOVED because we are using our own custom icon library
-// @import "@{mwh_path_bootstrap}glyphicons.less";
+// @import "@{bb_path_bootstrap}glyphicons.less";
 
 // Dropdowns makes menus and submenus that hide/show on click
 // http://getbootstrap.com/components/#dropdowns
 // requires dropdown plugin http://getbootstrap.com/javascript/#dropdowns
-@import "@{mwh_path_bootstrap}dropdowns.less";
+@import "@{bb_path_bootstrap}dropdowns.less";
 
 // button groups makes groups of button-style links for clicking
 // http://getbootstrap.com/components/#btn-groups
 // can be paired with dropdowns
 // http://getbootstrap.com/components/#btn-dropdowns
-@import "@{mwh_path_bootstrap}button-groups.less";
+@import "@{bb_path_bootstrap}button-groups.less";
 
 // Input groups are for generating forms: text fields, radios, etc
 // http://getbootstrap.com/components/#input-groups
-@import "@{mwh_path_bootstrap}input-groups.less";
+@import "@{bb_path_bootstrap}input-groups.less";
 
 // Navs are for generating rows of menu options. can be combined with dropdowns
 // http://getbootstrap.com/components/#nav
-@import "@{mwh_path_bootstrap}navs.less";
+@import "@{bb_path_bootstrap}navs.less";
 
 // Navbar is for navigational headers for the site. Can be pinned or scrolled
 // http://getbootstrap.com/components/#navbar
 // can be used with scroll spy http://getbootstrap.com/javascript/#scrollspy
-@import "@{mwh_path_bootstrap}navbar.less";
+@import "@{bb_path_bootstrap}navbar.less";
 
 // Breadcrumbs show navigational hierarchy
 // http://getbootstrap.com/components/#breadcrumbs
-@import "@{mwh_path_bootstrap}breadcrumbs.less";
+@import "@{bb_path_bootstrap}breadcrumbs.less";
 
 // Pagination for multiple-page content
 // http://getbootstrap.com/components/#pagination-default
 // REMOVED because we currently aren't using any pagination.
-// @import "@{mwh_path_bootstrap}pagination.less";
+// @import "@{bb_path_bootstrap}pagination.less";
 
 // Pager creates < Prev | Next > styling
 // http://getbootstrap.com/components/#pagination-pager
-@import "@{mwh_path_bootstrap}pager.less";
+@import "@{bb_path_bootstrap}pager.less";
 
 // Labels highlight a piece of inline text
 // http://getbootstrap.com/components/#labels
-@import "@{mwh_path_bootstrap}labels.less";
+@import "@{bb_path_bootstrap}labels.less";
 
 // Badges highlighter for counts, e.g., # of unread messages
 // http://getbootstrap.com/components/#badges
 // REMOVED because this styling is not required
-// @import "@{mwh_path_bootstrap}badges.less";
+// @import "@{bb_path_bootstrap}badges.less";
 
 // Jumbotron is a large callout banner
 // http://getbootstrap.com/examples/jumbotron/
 // REMOVED because it is too generic to be of purposeful use
-// @import "@{mwh_path_bootstrap}jumbotron.less";
+// @import "@{bb_path_bootstrap}jumbotron.less";
 
 // Thumbnails makes grids of content, such as image galleries
 // http://getbootstrap.com/components/#thumbnails
 // REMOVED because the site is not currently serving thumbnails.
-// @import "@{mwh_path_bootstrap}thumbnails.less";
+// @import "@{bb_path_bootstrap}thumbnails.less";
 
 // Alerts are in-page notices, like notes for form errors
 // http://getbootstrap.com/components/#alerts
 // uses Alert plugin http://getbootstrap.com/javascript/#alerts
-@import "@{mwh_path_bootstrap}alerts.less";
+@import "@{bb_path_bootstrap}alerts.less";
 
 // Progress bars allow feedback, set style width: ##%
 // http://getbootstrap.com/components/#progress
-@import "@{mwh_path_bootstrap}progress-bars.less";
+@import "@{bb_path_bootstrap}progress-bars.less";
 
 // media attaches a thumbnail to text, like blog links
 // http://getbootstrap.com/components/#media
 // REMOVED because we are not currently serving up blogrolls
-// @import "@{mwh_path_bootstrap}media.less";
+// @import "@{bb_path_bootstrap}media.less";
 
 // list groups make groupings of listed stuff in borders
 // http://getbootstrap.com/components/#list-group
-@import "@{mwh_path_bootstrap}list-group.less";
+@import "@{bb_path_bootstrap}list-group.less";
 
 // panels make inset content, useful for showing tables
 // http://getbootstrap.com/components/#panels
 // can be used as accordian http://getbootstrap.com/javascript/#collapse
-@import "@{mwh_path_bootstrap}panels.less";
+@import "@{bb_path_bootstrap}panels.less";
 
 // wells make highlighted inset content, like blockquotes
 // http://getbootstrap.com/components/#wells
-@import "@{mwh_path_bootstrap}wells.less";
+@import "@{bb_path_bootstrap}wells.less";
 
 // close for close buttons (deprecated?)
 // REMOVED because it's not in bootstrap documentation
-// @import "@{mwh_path_bootstrap}close.less";
+// @import "@{bb_path_bootstrap}close.less";
 /* ------------------------------------------ */
 
 // Components w/ JavaScript ----------------- */
@@ -168,19 +168,19 @@
 // Modals create pop-up windows
 // http://getbootstrap.com/javascript/#modals
 // REMOVED because we will not be creating modals
-// @import "@{mwh_path_bootstrap}modals.less";
+// @import "@{bb_path_bootstrap}modals.less";
 
 // Tooltips create hints from mouse interactions
 // http://getbootstrap.com/javascript/#tooltips
-@import "@{mwh_path_bootstrap}tooltip.less";
+@import "@{bb_path_bootstrap}tooltip.less";
 
 // Popovers are a more context-filled tooltip. Requires tooltip.less
 // http://getbootstrap.com/javascript/#popovers
-@import "@{mwh_path_bootstrap}popovers.less";
+@import "@{bb_path_bootstrap}popovers.less";
 
 // Carousel makes slideshows
 // http://getbootstrap.com/javascript/#carousel
-@import "@{mwh_path_bootstrap}carousel.less";
+@import "@{bb_path_bootstrap}carousel.less";
 /* ------------------------------------------ */
 
 /* Utily Classes ---------------------------- */
@@ -188,6 +188,6 @@
 
 // Utilities are basic positioning and visibility.
 // Does not use best practices but is required by other LESS files
-@import "@{mwh_path_bootstrap}utilities.less";
-@import "@{mwh_path_bootstrap}responsive-utilities.less";
+@import "@{bb_path_bootstrap}utilities.less";
+@import "@{bb_path_bootstrap}responsive-utilities.less";
 /* ------------------------------------------ */
