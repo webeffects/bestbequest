@@ -1,0 +1,102 @@
+/* Dashboard Account Section ---------------------------- */
+// This file creates the style for all the sections from dashboard Account.
+/* ------------------------------------------ */
+
+.page_dashboard {
+    .account-sections {
+        text-align: center;
+        padding-top: 25px;
+        nav {
+            position: relative;
+            display: inline-block;
+            .account-item {
+                display: inline-block;
+                width: 140px;
+                height: 140px;
+                background: #B8B09B;
+                border: 10px solid #A89F87;
+                border-radius: 50%;
+                text-align: center;
+                font-size: 14px;
+                color: #545759;
+                padding-top: 15px;
+                margin: 0 25px;
+                &:hover, &.selected {
+                    background: #8A8B8C;
+                    border: 10px solid #545759;
+                    color: #FFFFFF;
+                    text-decoration: none;
+                }
+                .dashboard-account-step-number {
+                    font-size: 30px;
+                    text-decoration: underline;
+                    color: inherit;
+                    padding: 0 5px;
+                }
+                .account-text {
+                    display: block;
+                    text-align: center;
+                    padding: 0 20%;
+                    letter-spacing: 0.3px;
+                    line-height: 18px;
+                }
+            }
+        }
+
+        #manage-account-info-block {
+            position: absolute;
+            width: 200px;
+            background: #D6EAEC;
+            border: 10px solid #A89F87;
+            font-size: 24px;
+            color: #0083AC;
+            left: -230px;
+            text-align: left;
+            line-height: 30px;
+            padding: 5px;
+        }
+    }
+    .account-links {
+        position: relative;
+        padding-top: 96px;
+        .account-link-item {
+            width: 80px;
+            text-align: center;
+            display: block;
+            float:left;
+            margin-right: 110px;
+            color: #545759;
+            letter-spacing: 0.3px;
+            &:first-child {
+                margin-left: 15px;
+            }
+        }
+        .account-top-border {
+            border: 1px dashed #8A8B8C;
+            border-bottom: none;
+            width: 561px;
+            height: 16px;
+            margin: 0 auto;
+            display: inline-block;
+            position: absolute;
+            left: 60px;
+            top: 80px;
+            .account-top-inner-border {
+                width: 187px;
+                height: 15px;
+                margin-left: 187px;
+                border-left: 1px dashed #8A8B8C;
+                border-right: 1px dashed #8A8B8C;
+
+            }
+        }
+    }
+    .account-bottom-border {
+        height: 80px;
+        width: 390px;
+        border-left: 1px dashed #8A8B8C;
+        left: 248px;
+        top: 0;
+        position: absolute;
+    }
+}

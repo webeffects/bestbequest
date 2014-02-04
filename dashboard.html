@@ -124,20 +124,28 @@ owl: http://www.w3.org/2002/07/owl#" class="no-js no-touch">
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->
         <div class="row" id="account-section" style="display: none;">
-            <div class="account-sections">
-                <div id="manage-account-info-block" style="display: none;">
-                    Take control of all your primary account functions
-                </div>
-                <a class="account-item" href="#manage-account">1 <span class="account-text"> Manage Account</span></a>
-                <a class="account-item" href="#manage-activation">2 <span class="account-text"> Manage Activation</span></a>
-                <a class="account-item" href="#manage-payments">3 <span class="account-text"> Manage Payments</span></a>
+            <div class="account-sections col-md-6 col-md-offset-3">
+                <nav>
+                    <div id="manage-account-info-block" style="display: none;">
+                        Take control of all your primary account functions
+                    </div>
+                    <a class="account-item" href="#manage-account"><span class="dashboard-account-step-number">1</span> <span class="account-text"> Manage Account</span></a>
+                    <a class="account-item" href="#manage-activation"><span class="dashboard-account-step-number">2</span> <span class="account-text"> Manage Activation</span></a>
+                    <a class="account-item" href="#manage-payments"><span class="dashboard-account-step-number">3</span> <span class="account-text"> Manage Payments</span></a>
+                </nav>
             </div><!-- /.account-sections -->
-            <div class="account-links" style="display: none;">
-                <a class="account-link-item" href="#manage-account-contact">Contact Information</a>
-                <a class="account-link-item" href="#manage-account-password">Change Password</a>
-                <a class="account-link-item" href="#manage-account-unsubscribe">Cancel Subscription</a>
-                <a class="account-link-item" href="#manage-account-upgrade">Upgrade Subscription </a>
-            </div> <!-- /.account-links -->
+            <div class="row">
+                <div class="account-links col-md-8 col-md-offset-2" style="display: none;">
+                    <div class="account-bottom-border"></div>
+                    <div class="account-top-border">
+                        <div class="account-top-inner-border"></div>
+                    </div>
+                    <a class="account-link-item pull-left" href="#manage-account-contact">Contact Information</a>
+                    <a class="account-link-item" href="#manage-account-password">Change Password</a>
+                    <a class="account-link-item" href="#manage-account-unsubscribe">Cancel Subscription</a>
+                    <a class="account-link-item" href="#manage-account-upgrade">Upgrade Subscription </a>
+                </div> <!-- /.account-links -->
+            </div>
             <div id="account-panels" style="display: none; position: relative;">
                 <div id="account-carousel" class="container slide" data-interval="false">
                     <div class="carousel-inner">
@@ -251,7 +259,7 @@ owl: http://www.w3.org/2002/07/owl#" class="no-js no-touch">
         </div><!-- /.row -->
         <div class="row dark-blue-bg dashboard-advice">
             <div class="col-md-9">
-                <h2> <img src="img/logo.jpg"/>Advice </h2>
+                <h2> <img src="img/logo.png"/>Advice </h2>
                 <h3>Selecting temporary and permanent guardians and trustees for minor age or special needs children</h3>
                 <p>
                     There will be times when you will travel out of town and choose to leave your children at home and in the care of a family member or close friend. Have you provided them with the temporary legal authority enabling them to approve  medical treatment should your child become ill or injured in your absence?
@@ -291,32 +299,38 @@ owl: http://www.w3.org/2002/07/owl#" class="no-js no-touch">
                     <a href="#">FAQ's</a>
                     <a href="#">Contact Us</a>
                 </nav> <!-- /.nav -->
-                <nav class="col-md-5">
+                <nav class="col-md-4">
                     <h3>Members</h3>
-                    <a href="#">Join BestBequest and keep your essential documents, personal photos and videos safe and globally accessible in the 21st century <img src="img/cards.gif"/></a>
+                    <a href="#">Join BestBequest and keep your essential documents, personal photos and videos safe and globally accessible in the 21st century <img src="img/cards.png"/></a>
                 </nav><!-- /.nav -->
             </div><!-- /.col-md-10 -->
+            <div class="row bottom-icons">
+                <div class="col-md-5 col-md-offset-1">
+                    <img src="img/safeharbor.png" >
+                    <img src="img/etrust.png" >
+                    <img src="img/bbb.png">
+                </div> <!-- /.col-md-5 -->
+                <div class="col-md-5 pull-right">
+                    <img src="img/microsoft_partner.png">
+                    <img src="img/seal.png">
+                    <img src="img/secure.png">
+                </div> <!-- /.col-md-5 -->
+            </div> <!-- /.row -->
             <div class="row">
-                    <img src="img/safe-harbor.jg" class="col-md-4">
-                    <img src="img/etrust.jpg" class="col-md-4">
-                    <img src="img/bbb.jpg" class="col-md-4">
-                    <img src="img/microsoft.jpg">
-                    <img src="img/p3p.jpg">
-                    <img src="img/secure.jpg">
-            </div>
-            <div class="col-md-3 pull-right">
-                <span class="icon-twitter"></span>
-                <span class="icon-linkedin"></span>
-                <span class="icon-facebook"></span>
-            </div>
+                <div class="col-md-3 pull-right">
+                    <span class="icon-twitter"></span>
+                    <span class="icon-linkedin"></span>
+                    <span class="icon-facebook"></span>
+                </div> <!-- /.col-md-3 -->
+            </div> <!-- /.row -->
         </div> <!-- /.bottom-menus -->
         <div class="footer row">
-            <nav class="footer-menu col-md-5">
+            <nav class="footer-menu col-md-5 text-right">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Use</a>
                 <a href="#">Multiple Patents Pending</a>
             </nav>
-            <a href="#" class="footer-logo col-md-1"><img src="img/bottom-logo.png"></a>
+            <a href="#" class="footer-logo col-md-1 text-center"><img src="img/logo.png"></a>
             <span class="copyright col-md-6">Copyright &copy; 2013 Ptero Tech Inc. All rights reserved | United States</span>
         </div> <!-- /.footer -->
     </div><!-- /.container -->
@@ -349,6 +363,7 @@ owl: http://www.w3.org/2002/07/owl#" class="no-js no-touch">
     <script src="https://www.bestbequest.com/template/bb_2013/js/video-js/video.js" type="text/javascript" ></script>
     <script src="https://www.bestbequest.com/template/bb_2013/js/head.js" type="text/javascript" ></script>
     <script type="text/javascript" src="https://www.bestbequest.com/template/bb_2013/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://www.bestbequest.com/template/bb_2013/js/main.js"></script>
     <script src="js/less.js" type="text/javascript"></script>
     <script src="js/functions.js" type="text/javascript"></script>
     <script>
