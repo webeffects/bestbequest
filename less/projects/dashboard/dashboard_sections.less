@@ -1,0 +1,162 @@
+/* Dashboard Sections ---------------------------- */
+// This file creates the style for all the sections from dashboard page, except the account section.
+/* ------------------------------------------ */
+
+
+.page_dashboard {
+/* Dashboard Details ---------------------------- */
+// This file creates the style for all the sections from dashboard details
+// Dashboard details section, can be found right under top links - Account, media vault, date minder
+/* ------------------------------------------ */
+    .dashboard-details {
+        position: relative;
+        overflow: hidden;
+        padding: 0;
+        .dashboard-details-wrapper {
+            overflow: hidden;
+            position: relative;
+        }
+        img {
+            width: 100%;
+        }
+        .dashboard-details-text {
+            position: absolute;
+            bottom: 0;
+            border-top: 14px solid rgba(0, 131, 171, 0.7);
+            border-bottom: 28px solid rgba(0, 131, 171, 0.7);
+            margin: 0;
+            width: 100%;
+            display: block;
+            .dashboard-details-text-inner {
+                background: #00ACD7;
+                padding-left: 40px;
+                h1 {
+                    margin: 0;
+                    line-height: 40px;
+                    font-size: 26px;
+                    color: #FFF;
+                    font-weight: 100;
+                }
+                h3 {
+                    text-transform: uppercase;
+                    margin: 0;
+                    line-height: 20px;
+                    font-size: 12px;
+                    font-weight: 400;
+                    letter-spacing: 0.3px;
+                    color: #58585B;
+                    .dashboard-title-detail {
+                        color: #FFF;
+                    }
+                }
+                h5 {
+                    font-size: 14px;
+                    margin: 0;
+                    padding: 10px 0;
+                    letter-spacing: 0.3px;
+                    color: #58585B;
+                }
+            }
+        }
+    }
+
+/* Dashboard Advice ---------------------------- */
+// This file creates the style for all the sections from dashboard advice
+// Dashboard details section, can be found under dashboard-details section
+/* ------------------------------------------ */
+    .dark-blue-bg {
+        background: #00396F;
+        color: #C3E6F2;
+    }
+    .blue-bg {
+        background: #0093C9;
+        color: #231F20;
+    }
+    .dashboard-advice {
+        padding: 0 0 0 40px;
+        .dashboard-advice-picture {
+            padding-right: 0;
+        }
+        h2, h3 {
+            width: 70%;
+            margin: 0 15%;
+        }
+        h2 {
+            color: #FFF;
+            line-height: 128px;
+            font-size: 16px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-align: center;
+            text-transform: uppercase;
+            border-bottom: 2px dotted #799900;
+        }
+        h3 {
+            font-size: 18px;
+            padding: 30px 0;
+            text-align: center;
+            font-weight: 200;
+            letter-spacing: 0.3px;
+        }
+        p {
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.3px;
+            font-weight: 300;
+            padding: 0 0 20px;
+        }
+        .read-more {
+            color: #A7A9AB;
+            &:hover {
+                color: #C3E6F2;
+                text-decoration: inherit;
+            }
+        }
+    }
+
+    .dashboard-topic {
+        border-bottom: 9px solid #FFF;
+        box-shadow: 0 4px 0 #A3B75E;
+        .dashboard-topic-picture {
+            padding-left:0;
+            img {
+                width: 100%;
+            }
+        }
+        h2 {
+            line-height: 80px;
+            padding-top: 30px;
+            font-size: 28px;
+            margin: 0;
+            border-bottom: 2px dotted #EED797;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: left;
+            display: block;
+            width:95%;
+        }
+        h3 {
+            font-size: 23px;
+            font-weight: 100;
+            letter-spacing: 1px;
+            width:40%;
+            margin: 30px 0;
+        }
+        p {
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: .3px;
+            padding-right: 20%;
+        }
+        .read-more {
+            color: #FFF;
+            margin-right: 5%;
+            margin-top:30px;
+            &:hover {
+                text-decoration: inherit;
+                color: #231F20;
+            }
+        }
+    }
+
+}

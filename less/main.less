@@ -7,11 +7,12 @@
 /* Paths ------------------------------------ */
 /* ------------------------------------------ */
 // Twitter Bootstrap files and components
-@mwh_path_bootstrap: "../components/bootstrap/less/";
+@bb_path_bootstrap: "../lib/bootstrap/";
 // Font files, including icon fonts
-@mwh_path_fonts: "/";
+@bb_path_fonts: "../../fonts/";
 // Image files, such as corporate logos or backgrounds
-@mwh_path_imate: "/";
+@bb_path_imate: "/";
+
 /* ------------------------------------------ */
 
 // Basic Reset for pages
@@ -69,7 +70,7 @@
 /* ------------------------------------------ */
 
 // Global Navigation
-@import "shared/components/navigation.less";
+@import "shared/components/header.less";
 
 // Global Footer
 @import "shared/components/footer.less";
@@ -81,11 +82,9 @@
 // irrelevant. If CSS lives inside project folder, it must be self-contained
 // and cannot affect styling globally.
 
-// Humanization
-@import "projects/humanization/imports.less";
+// Dashboard
+@import "projects/dashboard/imports.less";
 
-// Personalization (i.e. Bullseye)
-@import "projects/personalization/imports.less";
 /* ------------------------------------------ */
 
 /* Global Utilities, Fallbacks, Mixins ------ */
@@ -99,8 +98,8 @@
 //    (a) resets, utilities, variables
 //    (b) polyfills, mixins, fallbacks for lesser browsers
 // 3. Import project-specific styling
-//    (a) Humanization
-//    (b) Personalization
+//    (a) Dashboard
+//    (b)
 //
 // This file has contains all the imports of all the LESS files for the site.
 // Note that we are taking the route serving one CSS file for all pages and all
