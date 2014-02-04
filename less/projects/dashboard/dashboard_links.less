@@ -1,0 +1,71 @@
+/* Dashboard Links ---------------------------- */
+// This file creates the style for all the big links from dashboard page.
+/* ------------------------------------------ */
+
+.page_dashboard {
+    .dashboard-links {
+        a {
+            text-align: center;
+            border-right: 2px dotted #8A8B8C;
+            height: 100px;
+            display: block;
+            padding-top: 9px;
+            &:last-child {
+                border-right: none;
+            }
+            .dashboard-link-title {
+                display: table;
+                width: 100%;
+                span {
+                    text-align: center;
+                    text-transform: uppercase;
+                    color: #545759;
+                    display: table-cell;
+                    vertical-align: middle;
+                    line-height: 20px;
+                    align: center;
+                    height: 40px;
+                    width: 100%;
+                    margin: 0 auto;
+                }
+            }
+            .progress {
+                float:left;
+                background: #005F9B;
+                color: #231F20;
+                height: 10px;
+                line-height: 10px;
+                font-size: 9px;
+                width:50px;
+                text-align: right;
+                padding-right: 5px;
+                margin-bottom: 0;
+                box-shadow: inset 47px 0 0 0 #D3CDC1;
+            }
+        }
+        .col-md-7 {
+            a {
+                &:last-child {
+                    border-right: 2px dotted #8A8B8C;
+                }
+            }
+        }
+    }
+    .dashboard-legacy {
+        background: #C3E6F2;
+        padding-bottom: 37px;
+        h1 {
+            margin: 0;
+            line-height: 100px;
+            text-transform: uppercase;
+            letter-spacing: .3px;
+            font-size: 28px;
+            font-weight: 200;
+        }
+        .col-md-7, .col-md-5 {
+            border-top: 4px solid #F8DFA3;
+            border-bottom: 4px solid #F8DFA3;
+            background: #FFF;
+        }
+    }
+}

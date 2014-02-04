@@ -1,0 +1,52 @@
+/* Global Header ---------------------------- */
+// This file creates the header at the top of every page.
+/* ------------------------------------------ */
+
+.page_dashboard {
+    .navbar-default {
+        background: none;
+        border-bottom: 4px solid #F8DFA3;
+        margin-bottom: 0;
+        background: #FFF;
+        .navbar-header {
+            width: 336px;
+            z-index: 10;
+            position: relative;
+            .navbar-brand {
+                padding: 20px 0 24px 40px;
+                margin-left: 0;
+            }
+        }
+        .navbar-collapse {
+            position: relative;
+            right: 0;
+            .navbar-form, .navbar-nav {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+            .navbar-nav {
+                li {
+                    a {
+                        border-top: 10px solid #FFF;
+                        padding: 115px 5px 0;
+                        font-family: "Myriad Pro";
+                        letter-spacing: 0.28px;
+                        font-weight: 100;
+                        font-size: 14px;
+                        color: #8A8B8C;
+                        &:hover {
+                            border-top: 10px solid #4DC1DF;
+                            color: #545759;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+
+            .navbar-form {
+                z-index: 11;
+            }
+        }
+    }
+}
