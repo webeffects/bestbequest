@@ -1,0 +1,61 @@
+/* Dashboard Sections ---------------------------- */
+// This file creates the style for all the sections from dashboard page, except the account section.
+/* ------------------------------------------ */
+
+
+.page_dashboard {
+/* Dashboard Details ---------------------------- */
+// This file creates the style for all the sections from dashboard details
+// Dashboard details section, can be found right under top links - Account, media vault, date minder
+/* ------------------------------------------ */
+    .dashboard-details {
+        position: relative;
+        overflow: hidden;
+        padding: 0;
+        .dashboard-details-wrapper {
+            overflow: hidden;
+            position: relative;
+        }
+        img {
+            width: 100%;
+        }
+        .dashboard-details-text {
+            position: absolute;
+            bottom: 0;
+            border-top: 14px solid rgba(0, 131, 171, 0.7);
+            border-bottom: 28px solid rgba(0, 131, 171, 0.7);
+            margin: 0;
+            width: 100%;
+            display: block;
+            .dashboard-details-text-inner {
+                background: #00ACD7;
+                padding-left: 40px;
+                h1 {
+                    margin: 0;
+                    line-height: 40px;
+                    font-size: 26px;
+                    color: #FFF;
+                    font-weight: 100;
+                }
+                h3 {
+                    text-transform: uppercase;
+                    margin: 0;
+                    line-height: 20px;
+                    font-size: 12px;
+                    font-weight: 400;
+                    letter-spacing: 0.3px;
+                    color: #58585B;
+                    .dashboard-title-detail {
+                        color: #FFF;
+                    }
+                }
+                h5 {
+                    font-size: 14px;
+                    margin: 0;
+                    padding: 10px 0;
+                    letter-spacing: 0.3px;
+                    color: #58585B;
+                }
+            }
+        }
+    }
