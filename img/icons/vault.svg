@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="24.737px" height="22.703px" viewBox="0 0 24.737 22.703" enable-background="new 0 0 24.737 22.703" xml:space="preserve">
+<g>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#98D6EB" stroke="#FFFFFF" stroke-width="0.262" d="M24.604,16.97V2.666V1.58
+		c0-0.8-0.648-1.448-1.448-1.448l-2.171-0.001L5.595,0.131H3.423c-0.8,0-1.448,0.648-1.448,1.448v1.085c0,0,0,0,0,0.001V3.75v16.288
+		v1.086c0,0.4,0.162,0.762,0.424,1.024c0.262,0.262,0.624,0.424,1.024,0.424h2.172h15.392h2.172c0.8,0,1.448-0.648,1.448-1.448
+		v-1.086V5.734"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#98D6EB" stroke="#FFFFFF" stroke-width="0.5" d="M2.716,9.959
+		c0,0.225-0.183,0.408-0.408,0.408H0.658c-0.225,0-0.408-0.183-0.408-0.408V5.318c0-0.225,0.183-0.408,0.408-0.408h1.649
+		c0.225,0,0.408,0.183,0.408,0.408V9.959z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#98D6EB" stroke="#FFFFFF" stroke-width="0.5" d="M2.716,17.374
+		c0,0.225-0.183,0.408-0.408,0.408H0.658c-0.225,0-0.408-0.183-0.408-0.408v-4.641c0-0.225,0.183-0.408,0.408-0.408h1.649
+		c0.225,0,0.408,0.183,0.408,0.408V17.374z"/>
+	
+		<line fill="none" stroke="#FFFFFF" stroke-width="2.993" stroke-linecap="round" stroke-miterlimit="10" x1="6.179" y1="18.435" x2="20.328" y2="4.286"/>
+	<path fill="none" stroke="#010101" stroke-width="2.4489" stroke-linecap="round" stroke-miterlimit="10" d="M18.5,6.085"/>
+	
+		<line fill="none" stroke="#FFFFFF" stroke-width="2.993" stroke-linecap="round" stroke-miterlimit="10" x1="20.421" y1="18.435" x2="6.272" y2="4.286"/>
+	<path fill="none" stroke="#010101" stroke-width="2.4489" stroke-linecap="round" stroke-miterlimit="10" d="M8.071,6.113"/>
+	<path fill="none" stroke="#010101" stroke-width="2.4489" stroke-linecap="round" stroke-miterlimit="10" d="M6.564,18.022"/>
+	
+		<line fill="none" stroke="#FFFFFF" stroke-width="1.9047" stroke-linecap="round" stroke-miterlimit="10" x1="21.756" y1="13.676" x2="21.756" y2="8.905"/>
+	<circle fill="#98D6EB" stroke="#FFFFFF" cx="13.302" cy="11.314" r="4.759"/>
+	<circle fill="#FFFFFF" cx="13.302" cy="11.314" r="1.826"/>
+</g>
+</svg>

@@ -91,21 +91,21 @@ owl: http://www.w3.org/2002/07/owl#" class="no-js no-touch">
         <div class="row  dashboard-links">
             <a class="col-md-4" id="account_link" href="javascript:void(0)">
                 <span class="dashboard-link-title"><span>Account</span></span>
-                <span class="icon-account"></span>
+                <img src="img/icons/account.svg" class="account-link-icon" alt="account icon">
                 <span class="progress">95%</span>
-                <span class="icon-down-circle"></span>
+                <span class="glyphicon glyphicon-play"></span>
             </a>
             <a class="col-md-4" href="javascript:void(0)">
                 <span class="dashboard-link-title"><span>Media Vault</span></span>
-                <span class="icon-vault"></span>
+                <img src="img/icons/vault.svg" class="account-link-icon" alt="vault icon">
                 <span class="progress">7%</span>
-                <span class="icon-down-circle"></span>
+                <span class="glyphicon glyphicon-play"></span>
             </a>
             <a class="col-md-4" href="javascript:void(0)">
                 <span class="dashboard-link-title"><span>Date Minder</span></span>
-                <span class="icon-calendar"></span>
+                <img src="img/icons/calendar.svg" class="account-link-icon" alt="calendar icon">
                 <span class="progress">0%</span>
-                <span class="icon-down-circle"></span>
+                <span class="glyphicon glyphicon-play"></span>
             </a>
         </div><!-- /.row -->
         <div class="row">
@@ -140,10 +140,10 @@ owl: http://www.w3.org/2002/07/owl#" class="no-js no-touch">
                     <div class="account-top-border">
                         <div class="account-top-inner-border"></div>
                     </div>
-                    <a class="account-link-item manage-account-contact pull-left" href="#manage-account-contact">Contact Information </a>
-                    <a class="account-link-item manage-account-password" href="#manage-account-password">Change Password</a>
-                    <a class="account-link-item manage-account-unsubscribe" href="#manage-account-unsubscribe">Cancel Subscription</a>
-                    <a class="account-link-item manage-account-upgrade" href="#manage-account-upgrade">Upgrade Subscription </a>
+                    <a class="account-link-item manage-account-contact pull-left" href="#manage-account-contact">Contact Information <img src="img/top-contact-background.png" alt="top contact background"></a>
+                    <a class="account-link-item manage-account-password" href="#manage-account-password">Change Password <img src="img/top-password-background.png" alt="top contact background"></a>
+                    <a class="account-link-item manage-account-unsubscribe" href="#manage-account-unsubscribe">Cancel Subscription <img src="img/top-cancel-background.png" alt="top contact background"></a>
+                    <a class="account-link-item manage-account-upgrade" href="#manage-account-upgrade">Upgrade Subscription <img src="img/top-upgrade-background.png" alt="top contact background"></a>
                 </div> <!-- /.account-links -->
             </div>
             <div id="account-panels" style="display: none; position: relative;">
@@ -189,19 +189,15 @@ owl: http://www.w3.org/2002/07/owl#" class="no-js no-touch">
                             <h1>Cancel Subscription</h1>
                             <p>After your account is cancelled you will no longer be able to access any of your account information</p>
                             <form>
-                                <div class="btn-group" data-toggle="buttons">
-                                    <label class="btn btn-primary">
-                                    <input type="checkbox" id="cancel-subscription-confirm" /> I hereby confirm that I wish to cancel this account
+                                    <input type="checkbox" id="cancel-subscription-confirm" />
+                                    <label class="checkbox_label" for="cancel-subscription-confirm">I hereby confirm that I wish to cancel this account
                                     </label>
-                                </div> <!-- .btn-group -->
-                                <input type="submit" id="unsubscribe" value="confirm" class="btn btn_large" />
+                                    <div class="form-buttons">
+                                        <input type="submit" id="unsubscribe" value="confirm" class="btn btn-large btn-success pull-right" />
+                                    </div>
                             </form>
                             <img src="img/bottom-cancel-background.png" alt="bottom background" class="carousel-bottom-background">
                         </div>
-                    <div class="item manage-account" id="manage-account-upgrade" style="display: none; min-height: 870px;">
-                        <form>
-                            <input type="submit" value="subscribe now>" class="btn btn_large" id="subscribe-single" />
-                            <input type="submit" value="subscribe now>" class="btn btn_large" id="subscribe-joint" />
                         </form>
                         <img src="img/bottom-upgrade-background.png" alt="bottom background" class="carousel-bottom-background">
                     </div> <!-- /.manage-account -->
@@ -221,47 +217,47 @@ owl: http://www.w3.org/2002/07/owl#" class="no-js no-touch">
             <div class="col-md-7">
                 <a class="col-md-3" href="javascript:void(0)">
                     <span class="dashboard-link-title"><span>Personal</span></span>
-                    <span class="icon-person"></span>
+                    <img src="img/icons/person.svg" class="account-link-icon" alt="personal icon">
                     <span class="progress">95%</span>
-                    <span class="icon-down-circle"></span>
+                    <span class="glyphicon glyphicon-play"></span>
                 </a>
                 <a class="col-md-3" href="javascript:void(0)">
                     <span class="dashboard-link-title"><span>Business</span></span>
-                    <span class="icon-business"></span>
+                    <img src="img/icons/building.svg" class="account-link-icon" alt="business icon">
                     <span class="progress">25%</span>
-                    <span class="icon-down-circle"></span>
+                    <span class="glyphicon glyphicon-play"></span>
                 </a>
                 <a class="col-md-3" href="javascript:void(0)">
                     <span class="dashboard-link-title"><span>Legacy Planning</span></span>
-                    <span class="icon-legacy"></span>
+                    <img src="img/icons/flower.svg" class="account-link-icon" alt="legacy planning icon">
                     <span class="progress">0%</span>
-                    <span class="icon-down-circle"></span>
+                    <span class="glyphicon glyphicon-play"></span>
                 </a>
                 <a class="col-md-3" href="javascript:void(0)">
                     <span class="dashboard-link-title"><span>Legal</span></span>
-                    <span class="icon-legal"></span>
+                    <img src="img/icons/balance.svg" class="account-link-icon" alt="account icon">
                     <span class="progress">40%</span>
-                    <span class="icon-down-circle"></span>
+                    <span class="glyphicon glyphicon-play"></span>
                 </a>
             </div><!-- /.col-md-9 -->
             <div class="col-md-5">
                 <a class="col-md-4" href="javascript:void(0)">
                     <span class="dashboard-link-title"><span>Financial</span></span>
-                    <span class="icon-financial"></span>
+                    <img src="img/icons/dollar.svg" class="account-link-icon" alt="financial icon">
                     <span class="progress">70%</span>
-                    <span class="icon-down-circle"></span>
+                    <span class="glyphicon glyphicon-play"></span>
                 </a>
                 <a class="col-md-4" href="javascript:void(0)">
                     <span class="dashboard-link-title"><span>Insurance</span></span>
-                    <span class="icon-insurance"></span>
+                    <img src="img/icons/insurance.svg" class="account-link-icon" alt="insurance icon">
                     <span class="progress">60%</span>
-                    <span class="icon-down-circle"></span>
+                    <span class="glyphicon glyphicon-play"></span>
                 </a>
                 <a class="col-md-4" href="javascript:void(0)">
                     <span class="dashboard-link-title"><span>Special Instructions</span></span>
-                    <span class="icon-star"></span>
+                    <img src="img/icons/star.svg" class="account-link-icon" alt="special icon">
                     <span class="progress">40%</span>
-                    <span class="icon-down-circle"></span>
+                    <span class="glyphicon glyphicon-play"></span>
                 </a>
             </div><!-- /.col-md-3 -->
         </div><!-- /.row -->
