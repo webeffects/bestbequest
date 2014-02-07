@@ -106,3 +106,36 @@
         }
     }
 }
+@media (min-width: @screen-sm-min) {
+    .page_dashboard {
+        .dashboard-links {
+            a {
+                .progress {
+                    left: 20%;
+                }
+                .glyphicon-play {
+                    left: 46.5%;
+                }
+            }
+        }
+        .dashboard-legacy {
+            &.dashboard-links {
+                a {
+                    .dashboard-link-title {
+                        span {
+                            font-size: 12px;
+                            line-height: 15px;
+                        }
+                    }
+                    .glyphicon-play {
+                        left: 42%;
+                    }
+                    .progress {
+                        left: 0;
+                        width: 40px;
+                    }
+                }
+            }
+        }
+    }
+}

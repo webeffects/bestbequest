@@ -373,3 +373,121 @@
     }
 }
 
+@media (min-width: @screen-lg-min) {
+    .page_dashboard {
+        .account-links {
+            margin-left: 13%!important;
+        }
+        #account-panels {
+            #account-carousel {
+                .carousel-bottom-background {
+                    bottom: -70px;
+                }
+            }
+        }
+    }
+}
+@media (min-width: @screen-md-min) {
+    .page_dashboard {
+        .account-links {
+            margin-left: 6%!important;
+        }
+        #account-panels {
+            #account-carousel {
+                .carousel-bottom-background {
+                    bottom: -59px;
+                }
+            }
+        }
+        .subscription-table {
+            tr {
+                &.subscription-buttons {
+                    td {
+                        input {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: @screen-sm-min) {
+    .page_dashboard {
+        #account-panels {
+            #account-carousel {
+                .carousel-bottom-background {
+                    bottom: -46px;
+                }
+            }
+        }
+        .account-sections {
+            nav {
+                .account-item {
+                    margin: 0 5px;
+                }
+            }
+        }
+        .account-links {
+            padding-left: 60px;
+            .account-link-item {
+                margin-right: 60px;
+                &.manage-account-password {
+                    margin-right: 70px;
+                    &.selected {
+                        img {
+                            margin-left: -25px;
+                        }
+                    }
+                }
+                &.manage-account-unsubscribe {
+                    margin-right: 80px;
+                    &.selected {
+                        img {
+                            margin-left: -20px;
+                        }
+                    }
+                }
+                &.manage-account-upgrade {
+                    &.selected {
+                        img {
+                            margin-left: -10px;
+                        }
+                    }
+                }
+                &.selected {
+                    img {
+                        width: 117px;
+                        margin-bottom: -57px;
+                        margin-left: -17px;
+                    }
+                }
+            }
+            .account-top-border {
+                width: 450px;
+                left: 100px;
+                .account-top-inner-border {
+                    margin-left: 135px;
+                    width: 153px;
+                }
+            }
+        }
+        .account-bottom-border {
+            left: 236px;
+        }
+        .subscription-table {
+            tr {
+                &.subscription-buttons {
+                    td {
+                        input {
+                            font-size: 14px;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
