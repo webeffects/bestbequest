@@ -117,6 +117,43 @@ owl: http://www.w3.org/2002/07/owl#" class="no-js no-touch">
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->
         <div class="row" id="account-section" style="display: none;">
+            <div class="modal fade in" id="cancel-modal" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <p>Data has been changed. Do you really want to cancel and lose your changes?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                            <button type="button" class="btn btn-primary btn-confirm-cancel">Yes, cancel changes</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            <div class="modal fade in" id="saved-modal" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <p>Data successfully saved.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">OK</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            <div class="modal fade in" id="error-modal" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <p>There was an error while saving data: <span class="error-message"></span>.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">OK</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
             <div style="float:right"><a id="account-hide">X close</a></div>
             <div class="account-sections col-sm-12 col-md-8 col-lg-6 col-sm-offset-0 col-md-offset-2 col-lg-offset-3">
                 <nav>

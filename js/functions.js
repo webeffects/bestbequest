@@ -668,6 +668,19 @@
     e.stopPropagation();
 
     // TODO: process single subscription
+    $.ajax({
+      type: 'POST',
+      url: 'http://localhost', // TODO: put some real URL here
+      data: {},
+      success: function(data, textStatus, jqXHR) {
+        showSavedModal(function() {
+          collapseManageAccountCarousel();
+        });
+      },
+      error: function(jqXHR, textStatus, error) {
+        showErrorModal(textStatus);
+      }
+    });
   }
 
   function subscribeJointClick(e) {
@@ -675,6 +688,19 @@
     e.stopPropagation();
 
     // TODO: process joint subscription
+    $.ajax({
+      type: 'POST',
+      url: 'http://localhost', // TODO: put some real URL here
+      data: {},
+      success: function(data, textStatus, jqXHR) {
+        showSavedModal(function() {
+          collapseManageAccountCarousel();
+        });
+      },
+      error: function(jqXHR, textStatus, error) {
+        showErrorModal(textStatus);
+      }
+    });
   }
 
 
