@@ -10,11 +10,16 @@
             height: 100px;
             display: block;
             padding-top: 9px;
+            position: relative;
             &:last-child {
                 border-right: none;
             }
             &:hover {
                 background: #E9E5DF;
+                .glyphicon-play {
+                    color: #FFF;
+                    border-color: #FFF;
+                }
             }
             .dashboard-link-title {
                 display: table;
@@ -22,11 +27,11 @@
                 span {
                     text-align: center;
                     text-transform: uppercase;
+                    font-family: @font-family-gotham;
                     color: #545759;
                     display: table-cell;
                     vertical-align: middle;
                     line-height: 20px;
-                    align: center;
                     height: 40px;
                     width: 100%;
                     margin: 0 auto;
@@ -44,6 +49,26 @@
                 padding-right: 5px;
                 margin-bottom: 0;
                 box-shadow: inset 47px 0 0 0 #D3CDC1;
+                position: absolute;
+                display: block;
+                left: 30%;
+                bottom: 5px;
+            }
+            .glyphicon-play {
+                position: absolute;
+                top: auto;
+                bottom: 5px;
+                left: 48%;
+                border: 2px solid #97D5EB;
+                border-radius: 50%;
+                color: #FB3448;
+                font-size: 8px;
+                line-height: 14px;
+                transform:rotate(90deg);
+                -ms-transform:rotate(90deg); /* IE 9 */
+                -webkit-transform:rotate(90deg); /* Safari and Chrome */
+                width: 18px;
+                height: 18px;
             }
         }
         .col-md-7 {
@@ -61,7 +86,7 @@
             margin: 0;
             line-height: 100px;
             text-transform: uppercase;
-            letter-spacing: .3px;
+            font-family: @font-family-gotham;
             font-size: 28px;
             font-weight: 200;
         }
@@ -70,6 +95,14 @@
             border-bottom: 4px solid #F8DFA3;
             background: #FFF;
             padding: 0;
+        }
+        &.dashboard-links {
+            .progress {
+                left: 5px;
+            }
+            .glyphicon-play {
+                left: 45%;
+            }
         }
     }
 }

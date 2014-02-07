@@ -5,7 +5,7 @@
 .page_dashboard {
     .account-sections {
         text-align: center;
-        padding-top: 25px;
+        padding: 25px 0;
         nav {
             position: relative;
             display: inline-block;
@@ -59,6 +59,7 @@
     .account-links {
         position: relative;
         padding-top: 96px;
+        top: -25px;
         .account-link-item {
             width: 80px;
             text-align: center;
@@ -69,6 +70,21 @@
             letter-spacing: 0.3px;
             &:first-child {
                 margin-left: 15px;
+            }
+            img {
+                margin-left: -54px;
+                margin-bottom: -53px;
+                visibility: hidden;
+            }
+            &.selected {
+                img {
+                    visibility: visible;
+                }
+            }
+            &.manage-account-upgrade.selected {
+                img {
+                    margin-left: -40px;
+                }
             }
         }
         .account-top-border {
@@ -99,4 +115,261 @@
         top: 0;
         position: absolute;
     }
+
+/* Dashboard Carousel Section ---------------------------- */
+// This file creates the style for all the sections from dashboard Carousel.
+/* ------------------------------------------ */
+    #account-panels {
+        #account-carousel {
+            margin-left: 0;
+            padding: 0;
+            .carousel-inner {
+                padding: 0 0 80px;
+                margin-left: 0;
+                background: none;
+                background: #C3E6F2;
+            }
+            .manage-account {
+                padding: 60px 15% 20px;
+                h1 {
+                    margin-top: 0;
+                    font-size: 18px;
+                    font-weight: 100;
+                    letter-spacing: 1px;
+                    position: absolute;
+                    left: 40px;
+                    top: 20px;
+                    color: #FFF;
+                    font-family: @font-family-gotham;
+
+                }
+            }
+            .carousel-bottom-background {
+                position:absolute;
+                width:100%;
+                bottom: -79px;
+                left: 0;
+            }
+            .carousel-control {
+                width: 8.333333333333332%;
+                background-image: none!important;
+                color: #545759;
+                font-size: 25px;
+            }
+            #manage-account-contact {
+                background: #7a9c3e;
+                .account-left-fields {
+                    width: 36.11%;
+                }
+                #contact-setting-middle-name, #contact-setting-state {
+                    width: 19.44%;
+                }
+                #contact-setting-last-name {
+                    width: 29.738888888889%;
+                }
+                #contact-setting-suffix {
+                    width: 10.833333333333%;
+                    margin-right: 0;
+                }
+                #contact-setting-zip {
+                    width: 21.527777777778%;
+                }
+                #contact-setting-country {
+                    width: 19.283333333333%;
+                    margin-right: 0;
+                }
+                #contact-setting-street {
+                    width: 100%;
+                    margin-right: 0;
+                }
+                #contact-setting-email {
+                    margin-right: 0;
+                    width: 62.6%;
+                }
+                .form-buttons {
+                    margin-left: 36.11%;
+                    padding-left: 7px;
+                }
+            }
+            #manage-account-password {
+                background: #9fa2a2;
+                .settings-form {
+                    width: 60%;
+                    input {
+                        width: 48%;
+                    }
+                    .form-buttons {
+                        padding-right: 10px;
+                        input {
+                            width: auto;
+                        }
+                    }
+                }
+                padding-bottom: 80px;
+            }
+            #manage-account-unsubscribe {
+                background: #a9a089;
+                padding-bottom: 200px;
+                padding-top: 120px;
+                p {
+                    position: absolute;
+                    left: 40px;
+                    top: 60px;
+                }
+                label {
+                    width: 94.5%;
+                }
+                .form-buttons {
+                    padding-top: 10px;
+                    text-align: right;
+                    input {
+                        background: #799900;
+                        color: #231F20;
+                    }
+                }
+            }
+            #manage-account-upgrade {
+                background: #eae8e0;
+                h1 {
+                    color: #545759;
+                }
+            }
+        }
+    }
+    .subscription-form {
+        float: none;
+    }
+    .subscription-prices-table {
+        font-family: @font-family-gotham;
+        tr {
+            td {
+                border: none;
+                text-align: center;
+                color: #545759;
+                &:first-child {
+                    width:50%;
+                }
+            }
+            &.subscription-prices-title {
+                td {
+                    font-size: 28px;
+                    font-weight: 400;
+                    &.silver {
+                        color: #7A8A98;
+                    }
+                    &.gold {
+                        color: #A28C4E;
+                    }
+                }
+            }
+            &.subscription-prices {
+                td {
+                    font-size: 38px;
+                    line-height: 40px;
+                    .amount {
+                        &:before {
+                            content: "$";
+                            font-size: 26px;
+                            margin-top: -5px;
+                            padding-right: 3px;
+                            padding-bottom: 5px;
+                        }
+                        sup {
+                            font-size: 26px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .subscription-table {
+        tr {
+            td, th {
+                font-size: 16px;
+                font-family: @font-family-gotham;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                border-bottom: 4px solid #E9E5DF;
+                border-right: 4px solid #E9E5DF;
+                padding: 0;
+            }
+            td {
+                background: rgba(0, 172,215, 1);
+                color: #FFF;
+                padding: 0;
+                &:first-child {
+                    text-align: left;
+                    padding-left: 30px;
+                    width: 50%;
+                    color: #545759;
+                }
+                &:last-child {
+                    border-right: none;
+                }
+                [class*="glyphicon"] {
+                    color: #FFF;
+                    font-size: 25px;
+                    line-height: 40px;
+                }
+                &.no-option, .grey-bg{
+                    background: #B2B3B2;
+                }
+                .grey-bg {
+                    padding: 2px;
+                }
+            }
+            th {
+                background: #707170;
+                color: #00ACD7;
+                padding-left: 30px;
+                text-align: left;
+                font-weight: 400;
+                &:last-child {
+                    border-right: none;
+                }
+            }
+            &.second-option {
+                td {
+                    background: rgba(0, 172,215, .8);
+                }
+            }
+            &.third-option {
+                td {
+                    background: rgba(0, 172,215, .6);
+                }
+            }
+            &.subscription-buttons {
+                td {
+                    background: none;
+                    border-bottom: none;
+                    padding-top: 30px;
+                    input {
+                        width: 100%;
+                        padding: 0;
+                        height: 40px;
+                        font-family: @font-family-serif;
+                        font-size: 18px;
+                        font-weight: 700;
+                        text-align: center;
+                        color: #FFF;
+                        border-radius: 0;
+                        &.silver-button {
+                            background: #7A8A98;
+                            &:hover {
+                                background: lighten(#7A8A98, 10%)
+                            }
+                        }
+                        &.golden-button {
+                            background: #A28C4E;
+                            &:hover {
+                                background: lighten(#A28C4E, 10%)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
+

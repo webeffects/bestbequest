@@ -20,7 +20,7 @@
         .navbar-collapse {
             position: relative;
             right: 0;
-            .navbar-form, .navbar-nav {
+            .navbar-form, .navbar-nav, .dashboard-username {
                 position: absolute;
                 top: 0;
                 right: 0;
@@ -30,8 +30,7 @@
                     a {
                         border-top: 10px solid #FFF;
                         padding: 115px 5px 0;
-                        font-family: "Myriad Pro";
-                        letter-spacing: 0.28px;
+                        font-family: 'Gotham SSm A', 'Gotham SSm B';
                         font-weight: 100;
                         font-size: 14px;
                         color: #8A8B8C;
@@ -46,6 +45,13 @@
 
             .navbar-form {
                 z-index: 11;
+            }
+            .dashboard-username {
+                top: 15px;
+                color: #799900;
+                font-family: @font-family-gotham;
+                font-size: 18px;
+                text-transform: capitalize;
             }
         }
     }

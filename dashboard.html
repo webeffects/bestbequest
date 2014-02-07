@@ -70,19 +70,12 @@ owl: http://www.w3.org/2002/07/owl#" class="no-js no-touch">
                     </div>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="">Meet BestBequest</a></li>
+                    <li><a href="https://www.bestbequest.com/">Meet BestBequest</a></li>
                     <li class="bold"><a href="https://www.bestbequest.com/why">Top Questions</a></li>
                     <li class="bold"><a href="https://www.bestbequest.com/press">Press</a></li>
                     <li class="bold" style="margin-right:0px;"><a href="https://www.bestbequest.com/forgot_password">Forgot Password</a></li>
                 </ul>
-            <form class="navbar-form navbar-right">
-                <input type="hidden" name="login" value="login">
-                <span class="field"><input placeholder="username/email" type="text" name="username" value=""></span>
-                <span class="field"><input placeholder="password" type="password" name="password" value=""></span>
-                <a onclick="document.login_form.submit()" class="bt_login">login</a> <span style="margin-left: 5px;
-                margin-right: 5px;"> | </span>
-                <a href="https://www.bestbequest.com/signup">signup</a>
-              </form>
+                <a class="dashboard-username navbar-right" href="javascript:void(0)">John Smith</a>
             </div> <!-- /.navbar-collapse -->
         </div> <!-- /.container-fluid -->
     </div> <!-- /.navbar -->
@@ -91,21 +84,21 @@ owl: http://www.w3.org/2002/07/owl#" class="no-js no-touch">
         <div class="row  dashboard-links">
             <a class="col-md-4" id="account_link" href="javascript:void(0)">
                 <span class="dashboard-link-title"><span>Account</span></span>
-                <span class="icon-account"></span>
+                <img src="img/icons/account.svg" class="account-link-icon" alt="account icon">
                 <span class="progress">95%</span>
-                <span class="icon-down-circle"></span>
+                <span class="glyphicon glyphicon-play"></span>
             </a>
             <a class="col-md-4" href="javascript:void(0)">
                 <span class="dashboard-link-title"><span>Media Vault</span></span>
-                <span class="icon-vault"></span>
+                <img src="img/icons/vault.svg" class="account-link-icon" alt="vault icon">
                 <span class="progress">7%</span>
-                <span class="icon-down-circle"></span>
+                <span class="glyphicon glyphicon-play"></span>
             </a>
             <a class="col-md-4" href="javascript:void(0)">
                 <span class="dashboard-link-title"><span>Date Minder</span></span>
-                <span class="icon-calendar"></span>
+                <img src="img/icons/calendar.svg" class="account-link-icon" alt="calendar icon">
                 <span class="progress">0%</span>
-                <span class="icon-down-circle"></span>
+                <span class="glyphicon glyphicon-play"></span>
             </a>
         </div><!-- /.row -->
         <div class="row">
@@ -140,33 +133,36 @@ owl: http://www.w3.org/2002/07/owl#" class="no-js no-touch">
                     <div class="account-top-border">
                         <div class="account-top-inner-border"></div>
                     </div>
-                    <a class="account-link-item pull-left" href="#manage-account-contact">Contact Information</a>
-                    <a class="account-link-item" href="#manage-account-password">Change Password</a>
-                    <a class="account-link-item" href="#manage-account-unsubscribe">Cancel Subscription</a>
-                    <a class="account-link-item" href="#manage-account-upgrade">Upgrade Subscription </a>
+                    <a class="account-link-item manage-account-contact pull-left" href="#manage-account-contact">Contact Information <img src="img/top-contact-background.png" alt="top contact background"></a>
+                    <a class="account-link-item manage-account-password" href="#manage-account-password">Change Password <img src="img/top-password-background.png" alt="top contact background"></a>
+                    <a class="account-link-item manage-account-unsubscribe" href="#manage-account-unsubscribe">Cancel Subscription <img src="img/top-cancel-background.png" alt="top contact background"></a>
+                    <a class="account-link-item manage-account-upgrade" href="#manage-account-upgrade">Upgrade Subscription <img src="img/top-upgrade-background.png" alt="top contact background"></a>
                 </div> <!-- /.account-links -->
             </div>
             <div id="account-panels" style="display: none; position: relative;">
-                <div id="account-carousel" class="container slide" data-interval="false">
-                    <div class="carousel-inner">
+                <div id="account-carousel" class="container slide row" data-interval="false">
+                    <div class="carousel-inner col-md-12">
                         <div class="item manage-account" id="manage-account-contact" style="display: none; min-height: 150px;">
                             <h1>Contact Information</h1>
                             <form class="settings-form">
-                                <input type="text" placeholder="First name:" id="contact-setting-first-name" required />
+                                <input type="text" placeholder="First name:" id="contact-setting-first-name" class="account-left-fields" required />
                                 <input type="text" placeholder="Middle name:" id="contact-setting-middle-name" />
                                 <input type="text" placeholder="Last name:" id="contact-setting-last-name" required />
                                 <input type="text" placeholder="Suffix:" id="contact-setting-suffix" />
                                 <input type="text" placeholder="Street address:" id="contact-setting-street" />
-                                <input type="text" placeholder="City:" id="contact-setting-city" />
+                                <input type="text" placeholder="City:" id="contact-setting-city" class="account-left-fields" />
                                 <input type="text" placeholder="State:" id="contact-setting-state" />
                                 <input type="text" placeholder="ZipCode:" id="contact-setting-zip" required />
                                 <input type="text" placeholder="Country:" id="contact-setting-country" required />
-                                <input type="text" placeholder="Phone:" id="contact-setting-phone" />
+                                <input type="text" placeholder="Phone:" id="contact-setting-phone" class="account-left-fields" />
                                 <input type="text" placeholder="Email:" id="contact-setting-email" required />
-                                <input type="submit" id="contact-save" value="save changes" class="btn btn_large" />
-                                <button id="contact-cancel" class="btn btn_large">Cancel</button>
+                                <div class="form-buttons">
+                                    <input type="submit" id="contact-save" value="save changes" class="btn btn_large" />
+                                    <button id="contact-cancel" class="btn btn_large">Cancel</button>
+                                </div>
                             </form>
                             <div id="manage-account-contact-validation-error" class="validation-error" style="display: none;"></div> <!-- /.validation-error -->
+                            <img src="img/bottom-contact-background.png" alt="bottom background" class="carousel-bottom-background">
                         </div><!-- /.manage-account -->
                         <div class="item manage-account" id="manage-account-password" style="display: none; min-height: 150px;">
                             <h1>Change Password</h1>
@@ -174,35 +170,223 @@ owl: http://www.w3.org/2002/07/owl#" class="no-js no-touch">
                                 <input type="password" placeholder="Current:" id="password-setting-current" required />
                                 <input type="password" placeholder="New:" id="password-setting-new" required />
                                 <input type="password" placeholder="Re-type new:" id="password-setting-repeat" required />
-                                <input type="submit" id="password-save" value="save changes" class="btn btn_large" />
-                                <button id="password-cancel" class="btn btn_large">Cancel</button>
+                                <div class="form-buttons text-right">
+                                    <input type="submit" id="password-save" value="save changes" class="btn btn_large" />
+                                    <button id="password-cancel" class="btn btn_large">Cancel</button>
+                                </div>
                             </form>
                             <div id="manage-account-password-validation-error" class="validation-error" style="display: none;"></div><!-- /.validation-error -->
+                            <img src="img/bottom-password-background.png" alt="bottom background" class="carousel-bottom-background">
                         </div><!-- /.manage-account -->
                         <div class="item manage-account" id="manage-account-unsubscribe" style="display: none; min-height: 150px;">
                             <h1>Cancel Subscription</h1>
                             <p>After your account is cancelled you will no longer be able to access any of your account information</p>
                             <form>
-                                <div class="btn-group" data-toggle="buttons">
-                                    <label class="btn btn-primary">
-                                    <input type="checkbox" id="cancel-subscription-confirm" /> I hereby confirm that I wish to cancel this account
+                                    <input type="checkbox" id="cancel-subscription-confirm" />
+                                    <label class="checkbox_label" for="cancel-subscription-confirm">I hereby confirm that I wish to cancel this account
                                     </label>
-                                </div> <!-- .btn-group -->
-                                <input type="submit" id="unsubscribe" value="confirm" class="btn btn_large" />
+                                    <div class="form-buttons">
+                                        <input type="submit" id="unsubscribe" value="confirm" class="btn btn-large btn-success pull-right" />
+                                    </div>
                             </form>
+                            <img src="img/bottom-cancel-background.png" alt="bottom background" class="carousel-bottom-background">
                         </div>
-                    <div class="item manage-account" id="manage-account-upgrade" style="display: none; min-height: 870px;">
-                        <form>
-                            <input type="submit" value="subscribe now>" class="btn btn_large" id="subscribe-single" />
-                            <input type="submit" value="subscribe now>" class="btn btn_large" id="subscribe-joint" />
+                    <div class="item manage-account" id="manage-account-upgrade" style="display: none; ">
+                        <h1>Upgrade your yearly subscription</h1>
+                        <form class="col-md-10 col-md-offset-1 subscription-form">
+                            <div class="table-responsive">
+                                <table class="table subscription-prices-table">
+                                    <thead>
+                                        <tr class="subscription-prices-title">
+                                            <td></td>
+                                            <td class="silver">silver</td>
+                                            <td class="gold">gold</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="subscription-prices">
+                                            <td></td>
+                                            <td><span class="amount">249.<sup>99</sup></span></td>
+                                            <td><span class="amount">349.<sup>99</sup></span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="table subscription-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Account Features</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Storage size</td>
+                                            <td>
+                                                <span class="grey-bg">20</span> GB
+                                            </td>
+                                            <td>
+                                                <span class="grey-bg">30</span> GB
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Joint Account</td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Personal Dashboard</td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Interview</td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Reports</td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Add Section Pages</td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email exchange</td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Edit pages</td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Business Survival Plan</td>
+                                            <td class="no-option">
+                                                <span class="glyphicon glyphicon-minus"></span>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Uploads | Downloads</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                        <tr class="second-option">
+                                            <td>Documents</td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                        </tr>
+                                        <tr class="second-option">
+                                            <td>Media vault {photos + videos}</td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                        </tr>
+                                        <tr class="second-option">
+                                            <td>Reports</td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>Account Support</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                        <tr class="third-option">
+                                            <td>Email Support</td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                        </tr>
+                                        <tr class="third-option">
+                                            <td>Live Support</td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                        </tr>
+                                        <tr class="third-option">
+                                            <td>Text Verification</td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </td>
+                                        </tr>
+                                        <tr class="subscription-buttons">
+                                            <td></td>
+                                            <td >
+                                                <input type="submit" value="subscribe now>" class="btn btn-large silver-button" id="subscribe-single" />
+                                            </td>
+                                            <td>
+                                                <input type="submit" value="subscribe now>" class="btn btn-large golden-button" id="subscribe-joint" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </form>
+                        <img src="img/bottom-upgrade-background.png" alt="bottom background" class="carousel-bottom-background">
                     </div> <!-- /.manage-account -->
                 </div> <!-- /.carousel-inner -->
                 <!-- Controls -->
-                <a class="left carousel-control" href="#account-carousel" data-slide="prev">
+                <a class="left carousel-control col-md-1" href="#account-carousel" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
-                <a class="right carousel-control" href="#account-carousel" data-slide="next">
+                <a class="right carousel-control col-md-1" href="#account-carousel" data-slide="next">
                 <span class="glyphicon glyphicon-chevron-right"></span>
                 </a>
             </div><!-- /.account-carousel -->
@@ -213,47 +397,47 @@ owl: http://www.w3.org/2002/07/owl#" class="no-js no-touch">
             <div class="col-md-7">
                 <a class="col-md-3" href="javascript:void(0)">
                     <span class="dashboard-link-title"><span>Personal</span></span>
-                    <span class="icon-person"></span>
+                    <img src="img/icons/person.svg" class="account-link-icon" alt="personal icon">
                     <span class="progress">95%</span>
-                    <span class="icon-down-circle"></span>
+                    <span class="glyphicon glyphicon-play"></span>
                 </a>
                 <a class="col-md-3" href="javascript:void(0)">
                     <span class="dashboard-link-title"><span>Business</span></span>
-                    <span class="icon-business"></span>
+                    <img src="img/icons/building.svg" class="account-link-icon" alt="business icon">
                     <span class="progress">25%</span>
-                    <span class="icon-down-circle"></span>
+                    <span class="glyphicon glyphicon-play"></span>
                 </a>
                 <a class="col-md-3" href="javascript:void(0)">
                     <span class="dashboard-link-title"><span>Legacy Planning</span></span>
-                    <span class="icon-legacy"></span>
+                    <img src="img/icons/flower.svg" class="account-link-icon" alt="legacy planning icon">
                     <span class="progress">0%</span>
-                    <span class="icon-down-circle"></span>
+                    <span class="glyphicon glyphicon-play"></span>
                 </a>
                 <a class="col-md-3" href="javascript:void(0)">
                     <span class="dashboard-link-title"><span>Legal</span></span>
-                    <span class="icon-legal"></span>
+                    <img src="img/icons/balance.svg" class="account-link-icon" alt="account icon">
                     <span class="progress">40%</span>
-                    <span class="icon-down-circle"></span>
+                    <span class="glyphicon glyphicon-play"></span>
                 </a>
             </div><!-- /.col-md-9 -->
             <div class="col-md-5">
                 <a class="col-md-4" href="javascript:void(0)">
                     <span class="dashboard-link-title"><span>Financial</span></span>
-                    <span class="icon-financial"></span>
+                    <img src="img/icons/dollar.svg" class="account-link-icon" alt="financial icon">
                     <span class="progress">70%</span>
-                    <span class="icon-down-circle"></span>
+                    <span class="glyphicon glyphicon-play"></span>
                 </a>
                 <a class="col-md-4" href="javascript:void(0)">
                     <span class="dashboard-link-title"><span>Insurance</span></span>
-                    <span class="icon-insurance"></span>
+                    <img src="img/icons/insurance.svg" class="account-link-icon" alt="insurance icon">
                     <span class="progress">60%</span>
-                    <span class="icon-down-circle"></span>
+                    <span class="glyphicon glyphicon-play"></span>
                 </a>
                 <a class="col-md-4" href="javascript:void(0)">
                     <span class="dashboard-link-title"><span>Special Instructions</span></span>
-                    <span class="icon-star"></span>
+                    <img src="img/icons/star.svg" class="account-link-icon" alt="special icon">
                     <span class="progress">40%</span>
-                    <span class="icon-down-circle"></span>
+                    <span class="glyphicon glyphicon-play"></span>
                 </a>
             </div><!-- /.col-md-3 -->
         </div><!-- /.row -->
@@ -284,56 +468,83 @@ owl: http://www.w3.org/2002/07/owl#" class="no-js no-touch">
                 <a class="read-more pull-right" href="#">read more ></a>
             </div><!-- /.col-md-6 -->
         </div> <!-- /.row -->
-        <div class="row bottom-menus">
-            <div class="col-md-10 col-md-offset-2">
-                <nav class="col-md-4">
-                    <h3>About Us</h3>
-                    <a href="#">Why choose BestBequest</a>
-                    <a href="#">Who is BestBequest</a>
-                    <a href="#">Our promise</a>
-                    <a href="#">Press room</a>
-                </nav><!-- /.nav -->
-                <nav class="col-md-3">
-                    <h3>Get help</h3>
-                    <a href="#">Disclaimers</a>
-                    <a href="#">FAQ's</a>
-                    <a href="#">Contact Us</a>
-                </nav> <!-- /.nav -->
-                <nav class="col-md-4">
-                    <h3>Members</h3>
-                    <a href="#">Join BestBequest and keep your essential documents, personal photos and videos safe and globally accessible in the 21st century <img src="img/cards.png"/></a>
-                </nav><!-- /.nav -->
-            </div><!-- /.col-md-10 -->
-            <div class="row bottom-icons">
-                <div class="col-md-5 col-md-offset-1">
-                    <img src="img/safeharbor.png" >
-                    <img src="img/etrust.png" >
-                    <img src="img/bbb.png">
-                </div> <!-- /.col-md-5 -->
-                <div class="col-md-5 pull-right">
-                    <img src="img/microsoft_partner.png">
-                    <img src="img/seal.png">
-                    <img src="img/secure.png">
-                </div> <!-- /.col-md-5 -->
-            </div> <!-- /.row -->
-            <div class="row">
-                <div class="col-md-3 pull-right">
-                    <span class="icon-twitter"></span>
-                    <span class="icon-linkedin"></span>
-                    <span class="icon-facebook"></span>
-                </div> <!-- /.col-md-3 -->
-            </div> <!-- /.row -->
-        </div> <!-- /.bottom-menus -->
-        <div class="footer row">
-            <nav class="footer-menu col-md-5 text-right">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Use</a>
-                <a href="#">Multiple Patents Pending</a>
-            </nav>
-            <a href="#" class="footer-logo col-md-1 text-center"><img src="img/logo.png"></a>
-            <span class="copyright col-md-6">Copyright &copy; 2013 Ptero Tech Inc. All rights reserved | United States</span>
-        </div> <!-- /.footer -->
     </div><!-- /.container -->
+    <div class="row bottom-menus">
+        <div class="col-md-10 col-md-offset-1">
+            <nav class="col-md-4">
+                <a href="https://www.bestbequest.com/copyright">
+                    Copyright
+                </a>
+                <a href="https://www.bestbequest.com/contact">
+                    Contact Us
+                </a>
+                <a href="https://www.bestbequest.com/data_policy">
+                    Data Storage Policy
+                </a>
+            </nav><!-- /.nav -->
+            <nav class="col-md-4">
+                <a href="https://www.bestbequest.com/disclaimer">
+                    Disclaimer/HIPAA
+                </a>
+                <a href="https://www.bestbequest.com/faq">
+                    FAQ's
+                </a>
+                <a href="https://www.bestbequest.com/mission_statement">
+                    Mission
+                </a>
+                <a href="https://www.bestbequest.com/our_promise">
+                    Our Promise
+                </a>
+            </nav> <!-- /.nav -->
+            <nav class="col-md-4">
+                <a href="https://www.bestbequest.com/privacy_policy">
+                    Privacy Policy
+                </a>
+                <a href="https://www.bestbequest.com/terms_and_conditions">
+                    Terms and Conditions
+                </a>
+                <a href="https://www.bestbequest.com/">
+                    Who is BestBequest
+                </a>
+            </nav><!-- /.nav -->
+        </div><!-- /.col-md-10 -->
+        <div class="row hidden-xs hidden-sm">
+            <div class="col-md-10 col-md-offset-1  bottom-ribbons ">
+                <a target="_blank" class="col-md-4 text-center" href="http://tech.co/meet-24-startups-pitching-tech-cocktail-celebrate-2013-10"><img style="width:115px" class="" src="https://www.bestbequest.com/template/bb_2013/images/dc_ribbon.png" alt="ribbon"></a>
+                <a target="_blank" class="col-md-4 text-center" href="http://www.pcmag.com/article2/0,2817,2428803,00.asp"><img style="width:325px;" src="https://www.bestbequest.com/template/bb_2013/images/homepage/pc_mag.png" alt="ribbon">
+                <a target="_blank" class="col-md-4 text-center" href="http://tech.co/meet-24-startups-pitching-tech-cocktail-celebrate-2013-10"> <img style="width:115px; " class="" src="https://www.bestbequest.com/template/bb_2013/images/final_ribbon.png" alt="ribbon"></a>
+            </a>
+            </div>
+        </div>
+        <div class="row bottom-icons">
+            <div class="col-md-10 col-md-offset-1 bottom-icons">
+                <div class="col-md-2">
+                    <a href="http://www.etrust.org/cert/567566.html" target="_blank"><img src="https://www.bestbequest.com/w3c/etrust_small.gif" border="0" alt="Click to Verify"></a>
+                </div>
+                <div class="col-md-2">
+                    <a href="https://safeharbor.export.gov/list.aspx" target="_blank"><img style="width:150px; height: 45px;" src="https://www.bestbequest.com/w3c/safe_harbor.jpg"></a>
+                </div>
+                <div class="col-md-3">
+                    <a class="logo_float" title="BestBequest.com BBB Business Review" target="_blank" href="http://www.bbb.org/houston/business-reviews/records-management/BestBequest-com-in-houston-tx-90028354/#bbbonlineclick"><img alt="BestBequest.com BBB Business Review" src="https://seal-houston.bbb.org/seals/blue-seal-200-42-BestBequest-com-90028354.png"></a>
+                </div>
+                <div class="col-md-1">
+                    <a class="logo_float" href="http://www.p3pseal.com/verify.php?sid=B31C8A80C1" target="_blank"><img src="https://www.bestbequest.com/w3c/p3pseal.png"></a>
+                </div>
+                <div class="col-md-2">
+                    <script language="JavaScript" type="text/javascript"> SiteSeal("https://seal.networksolutions.com/images/prorecblue.gif", "NETSP", "none");</script><a href="#" onclick="window.open(&quot;https://seals.networksolutions.com/siteseal_seek/siteseal?v_shortname=NETSP&amp;v_querytype=W&amp;v_search=www.bestbequest.com&amp;x=5&amp;y=5&quot;,&quot;NETSP&quot;,&quot;width=450,height=500,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,copyhistory=no,resizable=no&quot;);return false;"><img src="https://seal.networksolutions.com/images/prorecblue.gif" style="border:none;" oncontextmenu="alert('This SiteSeal is protected');return false;"></a>
+                </div>
+            </div>
+        </div> <!-- /.row -->
+    </div> <!-- /.bottom-menus -->
+    <div class="footer row">
+        <nav class="footer-menu col-md-5 text-right">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Multiple Patents Pending</a>
+        </nav>
+        <a href="#" class="footer-logo col-md-1 text-center"><img src="img/logo.png"></a>
+        <span class="copyright col-md-6">Copyright &copy; 2013 Ptero Tech Inc. All rights reserved | United States</span>
+    </div> <!-- /.footer -->
     <!-- Javascript files - for faster load -->
 
     <script>var has_key = false ;var www_root = WWW_ROOT='https://www.bestbequest.com/'; var www_template = WWW_TEMPLATE='https://www.bestbequest.com/template/bb_2013';</script>

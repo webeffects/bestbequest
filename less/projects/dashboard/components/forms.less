@@ -1,0 +1,100 @@
+/* Dashboard Form Elements ---------------------------- */
+// This file creates the style for all the form elements.
+/* ------------------------------------------ */
+
+.page_dashboard {
+    input, label,
+    .radio_label:before, .checkbox_label:before {
+        background-color: rgba(255,255,255,.2);
+        border: none;
+        border-radius: 5px;
+        padding: 0 5px;
+        height: 30px;
+        line-height: 30px;
+        font-family: @font-family-gotham;
+        .placeholder(@color: #545759);
+        margin-bottom: 15px;
+        margin-right:7px;
+    }
+    .form-buttons {
+        input, button {
+            padding: 0 15px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        input {
+            background: #0083AC;
+            color: #FFF;
+            margin-bottom: 0;
+        }
+        button {
+            background: #707170;
+            color: #231F20;
+            height: 30px;
+            line-height: 30px;
+            font-family: @font-family-gotham;
+        }
+    }
+   input[type="radio"], input[type="checkbox"] {
+        display: none;
+    }
+    label {
+        font-weight: 400;
+        margin: 5px 0;
+        display: inline-block;
+    }
+    .radio_label, .checkbox_label {
+        // display: inline-block;
+        cursor: pointer;
+        margin-left: 37px;
+        position: relative;
+        width: 100%;
+    }
+    .radio_label:before, .checkbox_label:before {
+        position: absolute;
+        display: inline-block;
+        content: "";
+        top: 0;
+        left: -37px;
+        width: 30px;
+        height: 30px;
+        background: none;
+        background-color: rgba(255,255,255,.2);
+        border-radius: 5px;
+        line-height: 30px;
+    }
+    .radio_label:before {
+        border-radius: 50%;
+    }
+    .checkbox_label:before {
+        border-radius: 3px;
+    }
+
+    input[type="checkbox"]:checked + label:before, input[type="radio"]:checked + label:before {
+        text-align: center;
+
+    }
+    input[type="checkbox"]:checked + label:before {
+        border-width: 1px;
+        font-family: 'Glyphicons Halflings';
+        content:"\e013";
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        width: 30px;
+        height: 30px;
+    }
+    input[type="radio"]:checked + label:before {
+        border-width: 1px;
+        content:"*";
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 30px;
+        width: 30px;
+        height: 30px;
+    }
+    .radio_label:hover:before, .checkbox_label:hover:before {
+        border: 1px solid #545759;
+        color: #545759;
+    }
+}
