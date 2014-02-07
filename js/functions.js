@@ -94,11 +94,13 @@
   }
 
   //fires from carousel when user clicks right/left arrows
-  function slideSwitched(e) {
+  function beforeSlideSwitched(e) {
     var hideLeft = false,
       hideRight = false,
       curSlide = $('.carousel-inner > .active.item'),
       nextSlide;
+
+    $('img.arrow-carousel-top').fadeTo(400, 0); // slowly hide current link's arrow
 
     if (e.direction === 'left') {
       //right direction
@@ -119,6 +121,16 @@
     }
 
     hideArrows(hideLeft, hideRight);
+  }
+
+  function afterSlideSwitched() {
+    var currentId = $('.item.manage-account.active').attr('id');
+    // select corresponding link and show its arrow
+    $('.account-link-item').removeClass('selected');
+    $('.account-link-item[href="#' + currentId + '"]').addClass('selected');
+    $('a.selected .arrow-carousel-top').css({
+      visibility: 'visible'
+    }).fadeTo(400, 1.0);
   }
 
   // handles clicks on links in Manage Account subsection
@@ -243,6 +255,7 @@
   // hides whole Account section
   function collapseAccountSection() {
     var collapseFunction = function() {
+      $('.arrow-carousel-top').fadeTo(0, 0); // hide links' arrows
       $('#account-section').stop(true, true).slideUp(function() {
         // unset and hide active account carousel slide
         var $currentSlide = $('.item.manage-account.active'),
@@ -280,7 +293,8 @@
         backgroundHeight = $accountPanels.outerHeight() + 'px';
         // set strict height of account panels block (for proper slide up effect)
         $accountPanels.css('height', backgroundHeight);
-        // fade out current account carousel slide
+        // fade out current account carousel slide with its arrow
+        $('.arrow-carousel-top').fadeTo(400, 0);
         $currentSlide.fadeOut(function() {
           // unset active account carousel slide
           $(this).removeClass('active');
@@ -343,6 +357,7 @@
         // unset active account carousel slide
         $(this).removeClass('active');
         // slide up account panels block
+        $('.arrow-carousel-top').fadeTo(0, 0); // hide links' arrows
         $accountPanels.stop(true, true).slideUp(function() {
           // remove height of account panels block for future changes
           $(this).css('height', '');
@@ -817,7 +832,8 @@
     $('#unsubscribe').on('click', unsubscribeClick);
     $('#subscribe-single').on('click', subscribeSingleClick);
     $('#subscribe-joint').on('click', subscribeJointClick);
-    $('#account-carousel').on('slide.bs.carousel', slideSwitched);
+    $('#account-carousel').on('slide.bs.carousel', beforeSlideSwitched);
+    $('#account-carousel').on('slid.bs.carousel', afterSlideSwitched);
   });
 
 })(jQuery);
