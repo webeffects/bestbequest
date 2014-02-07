@@ -1,4 +1,4 @@
-(function ($) {
+(function($) {
 
   // ==============
   // EVENT HANDLERS
@@ -9,13 +9,36 @@
     e.preventDefault();
     e.stopPropagation();
 
+    var $accountSection = $('#account-section'),
+      $root = $('html, body');
+
     // slide down (if hidden) or slide up (if showing) Account section
-    var $accountSection = $('#account-section');
     if ($accountSection.is(':hidden')) {
+
       $accountSection.stop(true, true).slideDown();
+      //scroll page to "account" section
+      $root.animate({
+        scrollTop: $accountSection.offset().top
+      }, 500);
+
     } else {
       collapseAccountSection();
     }
+  }
+
+  function hideAccountManagementClick(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    var $root = $('html, body');
+
+    //scroll page to top
+    $root.animate({
+      scrollTop: 0
+    }, 500);
+
+    //hide "account" section
+    collapseAccountSection();
   }
 
   // handles clicks on bubble buttons in Account section
@@ -32,29 +55,70 @@
     $el.addClass('selected');
 
     switch (href) {
-    case 'manage-account':
-      // hide other subsections if showing
-      collapseManageActivationSection();
-      collapseManagePaymentsSection();
-      $accountLinks = $('.account-links');
-      if ($accountLinks.is(':hidden')) {
-        // slide down links block
-        $('.account-links').stop(true, true).slideDown(function () {
-          // fade in info block
-          $('#manage-account-info-block').fadeIn();
-        });
-      }
-      break;
-    case 'manage-activation':
-      collapseManageAccountSection();
-      collapseManagePaymentsSection();
-      break;
-    case 'manage-payments':
-      collapseManageAccountSection();
-      collapseManagePaymentsSection();
-      break;
-    default:
+      case 'manage-account':
+        // hide other subsections if showing
+        collapseManageActivationSection();
+        collapseManagePaymentsSection();
+        $accountLinks = $('.account-links');
+        if ($accountLinks.is(':hidden')) {
+          // slide down links block
+          $('.account-links').stop(true, true).slideDown(function() {
+            // fade in info block
+            $('#manage-account-info-block').fadeIn();
+          });
+        }
+        break;
+      case 'manage-activation':
+        collapseManageAccountSection();
+        collapseManagePaymentsSection();
+        break;
+      case 'manage-payments':
+        collapseManageAccountSection();
+        collapseManagePaymentsSection();
+        break;
+      default:
     }
+  }
+
+  //hides left/right arrows in carousel
+  function hideArrows(hideLeft, hideRight) {
+    $('a.left.carousel-control').css('visibility', 'visible');
+    $('a.right.carousel-control').css('visibility', 'visible');
+
+    if (hideLeft) {
+      $('a.left.carousel-control').css('visibility', 'hidden');
+    }
+    if (hideRight) {
+      $('a.right.carousel-control').css('visibility', 'hidden');
+    }
+  }
+
+  //fires from carousel when user clicks right/left arrows
+  function slideSwitched(e) {
+    var hideLeft = false,
+      hideRight = false,
+      curSlide = $('.carousel-inner > .active.item'),
+      nextSlide;
+
+    if (e.direction === 'left') {
+      //right direction
+      nextSlide = curSlide.next('.item');
+      if (nextSlide.next('.item').length === 0) {
+        //we have no next slide
+        hideRight = true;
+      }
+    }
+
+    if (e.direction === 'right') {
+      nextSlide = curSlide.prev('.item');
+      //left direction
+      if (nextSlide.prev('.item').length === 0) {
+        //we have no prev slide
+        hideLeft = true;
+      }
+    }
+
+    hideArrows(hideLeft, hideRight);
   }
 
   // handles clicks on links in Manage Account subsection
@@ -71,7 +135,7 @@
     $('.account-link-item').removeClass('selected');
     $el.addClass('selected');
 
-    showAccountSettingsForm = function () {
+    showAccountSettingsForm = function() {
       // init new slide
       initAccountSlideForm(href);
       // show account panels block with selected account carousel slide
@@ -82,7 +146,7 @@
       if (formChanged) {
         // if we're trying to open new form while having unsaved data in current form,
         // show cancel prompt first
-        showCancelPrompt(function () {
+        showCancelPrompt(function() {
           // if we have some slide showing, reinit it before moving to next slide
           initAccountSlideForm(currentId);
           showAccountSettingsForm();
@@ -98,7 +162,7 @@
     e.stopPropagation();
 
     var direction = $(e.currentTarget).attr('data-slide'),
-      slideCarousel = function () {
+      slideCarousel = function() {
         // to make carousel controls work properly we need to show all the slides
         $('.item.manage-account').css('display', '');
         $('#account-carousel').carousel(direction);
@@ -107,7 +171,7 @@
     if (formChanged) {
       // if we're trying to slide to new form while having unsaved data in current form,
       // show cancel prompt first
-      showCancelPrompt(function () {
+      showCancelPrompt(function() {
         var $currentSlide = $('.item.manage-account.active');
         // if we have some slide showing, reinit it before moving to next slide
         if ($currentSlide.length) {
@@ -141,26 +205,35 @@
       // set height of account panels block (for proper slide down effect)
       $accountPanels.css('height', backgroundHeight);
       // slide down account panels block
-      $accountPanels.stop(true, true).slideDown(function () {
+      $accountPanels.stop(true, true).slideDown(function() {
         var $currentSlide = $('#' + id);
         // remove height of account panels block to allow its adaptive resizing
         $(this).css('height', '');
+        $('a.selected .arrow-carousel-top').css({
+          visibility: 'visible'
+        });
         // fade in current account carousel slide
-        $currentSlide.fadeIn(function () {
+        $currentSlide.add('a.selected .arrow-carousel-top').fadeIn(function() {
           // set active account carousel slide
           $(this).addClass('active');
+          $('a.selected .arrow-carousel-top').fadeTo(400, 1.0);
         });
       });
     } else {
       $currentSlide = $('.item.manage-account.active');
       // check if user wants to see the other slide
       if ($currentSlide.attr('id') !== id) {
+        $('.arrow-carousel-top').fadeTo(400, 0);
         // fade out current account carousel slide
-        $currentSlide.fadeOut(function () {
+        $currentSlide.fadeOut(function() {
           $(this).removeClass('active');
+          $('a.selected .arrow-carousel-top').css({
+            visibility: 'visible'
+          });
           // fade in and set active account carousel slide
-          $('#' + id).fadeIn(function () {
+          $('#' + id).add('a.selected .arrow-carousel-top').fadeIn(function() {
             $(this).addClass('active');
+            $('a.selected .arrow-carousel-top').fadeTo(400, 1.0);
           });
         });
       }
@@ -169,8 +242,8 @@
 
   // hides whole Account section
   function collapseAccountSection() {
-    var collapseFunction = function () {
-      $('#account-section').stop(true, true).slideUp(function () {
+    var collapseFunction = function() {
+      $('#account-section').stop(true, true).slideUp(function() {
         // unset and hide active account carousel slide
         var $currentSlide = $('.item.manage-account.active'),
           $accountPanels = $('#account-panels');
@@ -198,7 +271,7 @@
 
   // hides Manage Account subsection blocks
   function collapseManageAccountSection() {
-    var collapseFunction = function () {
+    var collapseFunction = function() {
       var $currentSlide = $('.item.manage-account.active'),
         $accountPanels,
         backgroundHeight;
@@ -208,7 +281,7 @@
         // set strict height of account panels block (for proper slide up effect)
         $accountPanels.css('height', backgroundHeight);
         // fade out current account carousel slide
-        $currentSlide.fadeOut(function () {
+        $currentSlide.fadeOut(function() {
           // unset active account carousel slide
           $(this).removeClass('active');
           // then hide account panels block
@@ -230,7 +303,7 @@
     var $accountPanels = $('#account-panels');
     if (!$accountPanels.is(':hidden')) {
       // slide up account panels block then hide links block
-      $accountPanels.stop(true, true).slideUp(function () {
+      $accountPanels.stop(true, true).slideUp(function() {
         // remove height of account panels block for future changes
         $(this).css('height', '');
         collapseManageAccountSectionLinksBlock();
@@ -248,7 +321,7 @@
       // fade out info block
       $('#manage-account-info-block').fadeOut();
       // slide up account links block
-      $accountLinks.stop(true, true).slideUp(function () {
+      $accountLinks.stop(true, true).slideUp(function() {
         // deselect all Manage Account subsection links
         $('.account-link-item').removeClass('selected');
       });
@@ -266,11 +339,11 @@
       // set strict height of account panels block (for proper slide up effect)
       $accountPanels.css('height', backgroundHeight);
       // fade out current account carousel slide
-      $currentSlide.fadeOut(function () {
+      $currentSlide.fadeOut(function() {
         // unset active account carousel slide
         $(this).removeClass('active');
         // slide up account panels block
-        $accountPanels.stop(true, true).slideUp(function () {
+        $accountPanels.stop(true, true).slideUp(function() {
           // remove height of account panels block for future changes
           $(this).css('height', '');
           // deselect all Manage Account subsection links
@@ -374,20 +447,25 @@
   }
 
   function initAccountSlideForm(id) {
+    var hideLeft = false,
+      hideRight = false;
     switch (id) {
-    case 'manage-account-contact':
-      initContactInformationForm();
-      break;
-    case 'manage-account-password':
-      initChangePasswordForm();
-      break;
-    case 'manage-account-unsubscribe':
-      initCancelSubscriptionForm();
-      break;
-    case 'manage-account-upgrade':
-      break;
-    default:
+      case 'manage-account-contact':
+        initContactInformationForm();
+        hideLeft = true;
+        break;
+      case 'manage-account-password':
+        initChangePasswordForm();
+        break;
+      case 'manage-account-unsubscribe':
+        initCancelSubscriptionForm();
+        break;
+      case 'manage-account-upgrade':
+        hideRight = true;
+        break;
+      default:
     }
+    hideArrows(hideLeft, hideRight);
   }
 
   // validates required text fields
@@ -396,7 +474,7 @@
       inputs;
     if ($formEl && $formEl.length) {
       $inputs = $formEl.find('input[required]');
-      $.each($inputs, function () {
+      $.each($inputs, function() {
         var trimmedValue = trim($(this).val());
         if (trimmedValue) {
           $(this).removeClass('invalid');
@@ -471,7 +549,7 @@
     e.stopPropagation();
 
     if (formChanged) {
-      showCancelPrompt(function () {
+      showCancelPrompt(function() {
         initContactInformationForm();
         collapseManageAccountCarousel();
       });
@@ -535,7 +613,7 @@
         // Comment it out and uncomment the code above to work with real requests
 
         // success modal test
-        showSavedModal(function () {
+        showSavedModal(function() {
           initChangePasswordForm();
           collapseManageAccountCarousel();
         });
@@ -553,7 +631,7 @@
     e.stopPropagation();
 
     if (formChanged) {
-      showCancelPrompt(function () {
+      showCancelPrompt(function() {
         initChangePasswordForm();
         collapseManageAccountCarousel();
       });
@@ -572,13 +650,13 @@
         type: 'POST',
         url: 'http://localhost', // TODO: put some real URL here
         data: {},
-        success: function (data, textStatus, jqXHR) {
-          showSavedModal(function () {
+        success: function(data, textStatus, jqXHR) {
+          showSavedModal(function() {
             initCancelSubscriptionForm();
             collapseManageAccountCarousel();
           });
         },
-        error: function (jqXHR, textStatus, error) {
+        error: function(jqXHR, textStatus, error) {
           showErrorModal(textStatus);
         }
       });
@@ -609,9 +687,9 @@
     $confirmCancelButton.off('click');
     if (typeof callback === 'function') {
       // register callback that will be called when cancel will be confirmed
-      $confirmCancelButton.one('click', function () {
+      $confirmCancelButton.one('click', function() {
         var $cancelModal = $('#cancel-modal');
-        $cancelModal.one('hidden.bs.modal', function (e) {
+        $cancelModal.one('hidden.bs.modal', function(e) {
           formChanged = false;
           callback();
         });
@@ -619,7 +697,7 @@
       });
     } else {
       // just close modal when cancel will be confirmed
-      $confirmCancelButton.one('click', function () {
+      $confirmCancelButton.one('click', function() {
         $('#cancel-modal').bootstrapModal('hide');
       });
     }
@@ -634,9 +712,9 @@
     $okButton.off('click');
     if (typeof callback === 'function') {
       // register callback that will be called when 'saved' modal will be closed
-      $okButton.one('click', function () {
+      $okButton.one('click', function() {
         var $savedModal = $('#saved-modal');
-        $savedModal.one('hidden.bs.modal', function (e) {
+        $savedModal.one('hidden.bs.modal', function(e) {
           formChanged = false;
           callback();
         });
@@ -644,7 +722,7 @@
       });
     } else {
       // just close modal
-      $okButton.one('click', function () {
+      $okButton.one('click', function() {
         $('#saved-modal').bootstrapModal('hide');
       });
     }
@@ -661,9 +739,9 @@
     $okButton.off('click');
     if (typeof callback === 'function') {
       // register callback that will be called when 'saved' modal will be closed
-      $okButton.one('click', function () {
+      $okButton.one('click', function() {
         var $errorModal = $('#error-modal');
-        $errorModal.one('hidden.bs.modal', function (e) {
+        $errorModal.one('hidden.bs.modal', function(e) {
           formChanged = false;
           callback();
         });
@@ -671,7 +749,7 @@
       });
     } else {
       // just close modal
-      $okButton.one('click', function () {
+      $okButton.one('click', function() {
         $('#error-modal').bootstrapModal('hide');
       });
     }
@@ -695,12 +773,13 @@
   }
 
 
-  $(document).ready(function () {
+  $(document).ready(function() {
     // redefine Bootstrap modal plugin since in head.js there is Simple Modal jQuery plugin with the same name
     var bootstrapModal = $.fn.modal.noConflict();
     $.fn.bootstrapModal = bootstrapModal;
     // register event handlers
     $('#account_link').on('click', accountClick);
+    $('#account-hide').on('click', hideAccountManagementClick);
     $('.account-item').on('click', accountItemClick);
     $('.account-link-item').on('click', accountLinkItemClick);
     $('.carousel-control').on('click', carouselControlClick);
@@ -712,6 +791,7 @@
     $('#unsubscribe').on('click', unsubscribeClick);
     $('#subscribe-single').on('click', subscribeSingleClick);
     $('#subscribe-joint').on('click', subscribeJointClick);
+    $('#account-carousel').on('slide.bs.carousel', slideSwitched);
   });
 
 })(jQuery);
